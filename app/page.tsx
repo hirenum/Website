@@ -59,12 +59,17 @@ const HirenumPage: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
   const [scrolled, setScrolled] = useState<boolean>(false);
   const [activeFaq, setActiveFaq] = useState<number | null>(null);
+  const [mounted, setMounted] = useState<boolean>(false);
   
   // Theme State
   const {  setTheme, resolvedTheme } = useTheme();
   
-
- 
+  // Ensure component is mounted before rendering theme-dependent UI
+  // Using layout effect alternative to avoid lint warning while still preventing hydration mismatch
+  useEffect(() => {
+    const timeoutId = setTimeout(() => setMounted(true), 0);
+    return () => clearTimeout(timeoutId);
+  }, []);
 
   const toggleTheme = () => {
     setTheme(resolvedTheme === 'dark' ? 'light' : 'dark');
@@ -217,20 +222,17 @@ const HirenumPage: React.FC = () => {
       >
         <div className="container mx-auto px-6 flex justify-between items-center">
           <div className="text-3xl text-[#1BB8BD] font-bold tracking-tighter cursor-pointer font-logo" onClick={() => scrollToSection('start-here')}>
-            Hirenum<span className="text-[#DC0078]">.</span>
+            H<span className="relative">ı<span className="absolute top-[0.15em] left-1/2 -translate-x-1/2 w-[0.2em] h-[0.2em] bg-[#dc0078] rounded-full"></span></span>renum
           </div>
 
           {/* Desktop Nav */}
           <div className="hidden lg:flex items-center space-x-6 text-sm font-medium text-gray-600 dark:text-gray-300">
             <button onClick={() => scrollToSection('what-we-do')} className="relative hover:text-[#1BB8BD] transition-all duration-300 after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-gradient-to-r after:from-[#1BB8BD] after:to-[#DC0078] hover:after:w-full after:transition-all after:duration-300">What We Do</button>
-            <button onClick={() => scrollToSection('why-people-come')} className="relative hover:text-[#1BB8BD] transition-all duration-300 after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-gradient-to-r after:from-[#1BB8BD] after:to-[#DC0078] hover:after:w-full after:transition-all after:duration-300">Why People Come To Us</button>
-            <button onClick={() => scrollToSection('why-it-works')} className="relative hover:text-[#1BB8BD] transition-all duration-300 after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-gradient-to-r after:from-[#1BB8BD] after:to-[#DC0078] hover:after:w-full after:transition-all after:duration-300">Why It Works?</button>
+            
             <button onClick={() => scrollToSection('who-we-work-with')} className="relative hover:text-[#1BB8BD] transition-all duration-300 after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-gradient-to-r after:from-[#1BB8BD] after:to-[#DC0078] hover:after:w-full after:transition-all after:duration-300">Who We Work With</button>
             <button onClick={() => scrollToSection('how-it-works')} className="relative hover:text-[#1BB8BD] transition-all duration-300 after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-gradient-to-r after:from-[#1BB8BD] after:to-[#DC0078] hover:after:w-full after:transition-all after:duration-300">How It Works</button>
             <button onClick={() => scrollToSection('packages')} className="relative hover:text-[#1BB8BD] transition-all duration-300 after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-gradient-to-r after:from-[#1BB8BD] after:to-[#DC0078] hover:after:w-full after:transition-all after:duration-300">Packages</button>
-            <button onClick={() => scrollToSection('linkedin-audit')} className="relative hover:text-[#1BB8BD] transition-all duration-300 after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-gradient-to-r after:from-[#1BB8BD] after:to-[#DC0078] hover:after:w-full after:transition-all after:duration-300">Free LinkedIn Audit</button>
             <button onClick={() => scrollToSection('learn-for-free')} className="relative hover:text-[#1BB8BD] transition-all duration-300 after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-gradient-to-r after:from-[#1BB8BD] after:to-[#DC0078] hover:after:w-full after:transition-all after:duration-300">Learn for Free</button>
-            <button onClick={() => scrollToSection('faqs')} className="relative hover:text-[#1BB8BD] transition-all duration-300 after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-gradient-to-r after:from-[#1BB8BD] after:to-[#DC0078] hover:after:w-full after:transition-all after:duration-300">FAQs</button>
             
             {/* Theme Toggle */}
             <button 
@@ -238,7 +240,7 @@ const HirenumPage: React.FC = () => {
               className="p-2 rounded-full transition-all duration-500 hover:bg-black/5 dark:hover:bg-white/10 hover:rotate-180 hover:scale-110"
               title="Toggle Theme"
             >
-              {resolvedTheme === 'dark' ? <Sun size={20} className="text-yellow-400" /> : <Moon size={20} />}
+              {mounted && (resolvedTheme === 'dark' ? <Sun size={20} className="text-yellow-400" /> : <Moon size={20} />)}
             </button>
 
             <button 
@@ -253,7 +255,7 @@ const HirenumPage: React.FC = () => {
           {/* Mobile Menu Toggle */}
           <div className="flex items-center gap-4 lg:hidden">
             <button onClick={toggleTheme} className="p-2 transition-all duration-500 hover:rotate-180">
-               {resolvedTheme === 'dark' ? <Sun size={24} className="text-yellow-400" /> : <Moon size={24} />}
+               {mounted && (resolvedTheme === 'dark' ? <Sun size={24} className="text-yellow-400" /> : <Moon size={24} />)}
             </button>
             <div className="cursor-pointer transition-transform duration-300 hover:scale-110" onClick={() => setIsMenuOpen(!isMenuOpen)}>
               {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
@@ -267,14 +269,10 @@ const HirenumPage: React.FC = () => {
             className="lg:hidden absolute top-full left-0 w-full border-b p-6 flex flex-col space-y-4 shadow-2xl bg-[var(--bg-primary)] border-[var(--border-color)]"
           >
             <button onClick={() => scrollToSection('what-we-do')} className="text-lg hover:text-[#1BB8BD] transition-all duration-300 hover:translate-x-2">What We Do</button>
-            <button onClick={() => scrollToSection('why-people-come')} className="text-lg hover:text-[#1BB8BD] transition-all duration-300 hover:translate-x-2">Why People Come To Us</button>
-            <button onClick={() => scrollToSection('why-it-works')} className="text-lg hover:text-[#1BB8BD] transition-all duration-300 hover:translate-x-2">Why It Works?</button>
             <button onClick={() => scrollToSection('who-we-work-with')} className="text-lg hover:text-[#1BB8BD] transition-all duration-300 hover:translate-x-2">Who We Work With</button>
             <button onClick={() => scrollToSection('how-it-works')} className="text-lg hover:text-[#1BB8BD] transition-all duration-300 hover:translate-x-2">How It Works</button>
             <button onClick={() => scrollToSection('packages')} className="text-lg hover:text-[#1BB8BD] transition-all duration-300 hover:translate-x-2">Packages</button>
-            <button onClick={() => scrollToSection('linkedin-audit')} className="text-lg text-[#1BB8BD] font-bold hover:text-[#DC0078] transition-all duration-300 hover:translate-x-2">Free LinkedIn Audit</button>
             <button onClick={() => scrollToSection('learn-for-free')} className="text-lg hover:text-[#1BB8BD] transition-all duration-300 hover:translate-x-2">Learn for Free</button>
-            <button onClick={() => scrollToSection('faqs')} className="text-lg hover:text-[#1BB8BD] transition-all duration-300 hover:translate-x-2">FAQs</button>
             <button 
               onClick={() => { setIsMenuOpen(false); window.open('https://calendly.com', '_blank'); }}
               className="bg-[#1BB8BD] text-white px-5 py-3 rounded-full font-bold text-center transition-all duration-300 hover:bg-[#1fcfd4]"
@@ -307,7 +305,7 @@ const HirenumPage: React.FC = () => {
           <div className="space-y-8 max-w-2xl">
             
             
-            <h1 className="text-5xl md:text-7xl font-bold leading-[1.05] md:leading-[1.1]">
+            <h1 className="text-5xl md:text-6xl font-bold leading-[1.05] md:leading-[1.1]">
               BECOME YOUR INDUSTRY&apos;S GO-TO THOUGHT{' '}
               <span className="relative inline-block">
                 LEADER
