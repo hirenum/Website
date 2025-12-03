@@ -234,7 +234,7 @@ const HirenumPage: React.FC = () => {
     },
     { 
       title: "Grow", 
-      desc: "We don&apos;t set and forget. We track analytics, learn what works, and adjust your strategy for compound growth over time.",
+      desc: "We don't set and forget. We track analytics, learn what works, and adjust your strategy for compound growth over time.",
       details: ["Track Analytics", "Refine Hooks & Topics", "Evolve Strategy"]
     }
   ];
@@ -826,7 +826,7 @@ const HirenumPage: React.FC = () => {
               viewport={{ once: true }}
               className="text-base md:text-lg text-gray-500 dark:text-gray-400 max-w-2xl mx-auto leading-relaxed"
             >
-              People don&apos;t just buy products, services or roles.
+              People don{"'"}t just buy products, services or roles.
               They buy into people,<br></br> their judgment, their track record, their ideas.
               <br />
               <span className="text-[#1BB8BD]">A strong personal brand on LinkedIn helps you:</span>
@@ -839,23 +839,22 @@ const HirenumPage: React.FC = () => {
               {[
                 {
                   title: "Earn trust faster",
-                  desc: "When people can see your thinking, experience and consistency, trust doesn&apos;t start at zero.",
+                  desc: "When people can see your thinking, experience and consistency, trust doesn't start at zero.",
                   icon: (
                     <svg className="w-8 h-8" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <circle cx="10" cy="10" r="4" stroke="#DC0078" strokeWidth="1.5"/>
-                      <circle cx="10" cy="22" r="2" stroke="#DC0078" strokeWidth="1.5"/>
-                      <path d="M14 10H24" stroke="#DC0078" strokeWidth="1.5"/>
-                      <path d="M12 22H24" stroke="#DC0078" strokeWidth="1.5"/>
+                      <path d="M16 4L6 8V14C6 20.63 10.28 26.79 16 28C21.72 26.79 26 20.63 26 14V8L16 4Z" stroke="#DC0078" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                      <path d="M11 16L14 19L21 12" stroke="#DC0078" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                     </svg>
                   )
                 },
                 {
-                  title: "Create demand, not just respond to it",
-                  desc: "Your content and presence gently educate your audience on who you are and why you&apos;re the right choice.",
+                  title: "Create demand, don't chase it",
+                  desc: "Your content and presence gently educate your audience on who you are and why you're the right choice.",
                   icon: (
                     <svg className="w-8 h-8" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M8 20L14 14L18 18L24 12" stroke="#DC0078" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                      <path d="M20 12H24V16" stroke="#DC0078" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                      <circle cx="16" cy="16" r="10" stroke="#DC0078" strokeWidth="1.5"/>
+                      <path d="M16 11V21" stroke="#DC0078" strokeWidth="1.5" strokeLinecap="round"/>
+                      <path d="M11 16H21" stroke="#DC0078" strokeWidth="1.5" strokeLinecap="round"/>
                     </svg>
                   )
                 },
@@ -864,8 +863,10 @@ const HirenumPage: React.FC = () => {
                   desc: "with a professional brand, a sharp site, and a story that gets taken seriously",
                   icon: (
                     <svg className="w-8 h-8" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M8 8L16 4L24 8V16C24 20.4183 20.4183 24 16 24C11.5817 24 8 20.4183 8 16V8Z" stroke="#DC0078" strokeWidth="1.5"/>
-                      <path d="M12 14L15 17L20 12" stroke="#DC0078" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                      <rect x="6" y="18" width="6" height="10" stroke="#DC0078" strokeWidth="1.5"/>
+                      <rect x="13" y="12" width="6" height="16" stroke="#DC0078" strokeWidth="1.5"/>
+                      <rect x="20" y="6" width="6" height="22" stroke="#DC0078" strokeWidth="1.5"/>
+                      <path d="M9 4L16 8L23 4" stroke="#DC0078" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                     </svg>
                   )
                 }
@@ -906,11 +907,10 @@ const HirenumPage: React.FC = () => {
                   desc: "Roles, clients, partnerships and speaking invites that match your values, skills and direction.",
                   icon: (
                     <svg className="w-8 h-8" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <rect x="6" y="8" width="14" height="16" rx="1" stroke="#DC0078" strokeWidth="1.5"/>
-                      <path d="M10 14H16" stroke="#DC0078" strokeWidth="1.5"/>
-                      <path d="M10 18H14" stroke="#DC0078" strokeWidth="1.5"/>
-                      <path d="M24 10V22" stroke="#DC0078" strokeWidth="1.5" strokeLinecap="round"/>
-                      <path d="M20 14L24 10L28 14" stroke="#DC0078" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                      <circle cx="16" cy="16" r="12" stroke="#DC0078" strokeWidth="1.5"/>
+                      <circle cx="16" cy="16" r="8" stroke="#DC0078" strokeWidth="1.5"/>
+                      <circle cx="16" cy="16" r="4" stroke="#DC0078" strokeWidth="1.5"/>
+                      <circle cx="16" cy="16" r="1.5" fill="#DC0078"/>
                     </svg>
                   )
                 },
@@ -919,14 +919,9 @@ const HirenumPage: React.FC = () => {
                   desc: "Instead of competing on price or title, you stand out on perspective, clarity and authority.",
                   icon: (
                     <svg className="w-8 h-8" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M8 8L12 4L16 8" stroke="#DC0078" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                      <path d="M12 4V16" stroke="#DC0078" strokeWidth="1.5" strokeLinecap="round"/>
-                      <path d="M24 24L20 28L16 24" stroke="#DC0078" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                      <path d="M20 28V16" stroke="#DC0078" strokeWidth="1.5" strokeLinecap="round"/>
-                      <path d="M8 24L12 28L16 24" stroke="#DC0078" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                      <path d="M12 28V16" stroke="#DC0078" strokeWidth="1.5" strokeLinecap="round"/>
-                      <path d="M24 8L20 4L16 8" stroke="#DC0078" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                      <path d="M20 4V16" stroke="#DC0078" strokeWidth="1.5" strokeLinecap="round"/>
+                      <path d="M16 4L18.5 11H26L20 15.5L22.5 23L16 18.5L9.5 23L12 15.5L6 11H13.5L16 4Z" stroke="#DC0078" strokeWidth="1.5" strokeLinejoin="round"/>
+                      <path d="M8 26H24" stroke="#DC0078" strokeWidth="1.5" strokeLinecap="round"/>
+                      <path d="M10 28H22" stroke="#DC0078" strokeWidth="1.5" strokeLinecap="round"/>
                     </svg>
                   )
                 }
@@ -980,44 +975,46 @@ const HirenumPage: React.FC = () => {
             {[
               {
                 title: "Founders & Entrepreneurs",
-                desc: "You&apos;re building or scaling a business and want your personal brand to drive trust with potential clients and partners, warm inbound leads, and speaking, press and collaboration opportunities.",
+                desc: "You're building or scaling a business and want your personal brand to drive trust with potential clients and partners, warm inbound leads, and speaking, press and collaboration opportunities.",
                 icon: (
                   <svg className="w-12 h-12" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M24 8L28 16H36L30 22L32 30L24 26L16 30L18 22L12 16H20L24 8Z" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round"/>
-                    <path d="M24 26V40" stroke="currentColor" strokeWidth="1.5"/>
-                    <path d="M18 36H30" stroke="currentColor" strokeWidth="1.5"/>
-                    <circle cx="24" cy="17" r="3" fill="#DC0078" fillOpacity="0.5"/>
+                    <path d="M24 8V14" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+                    <path d="M24 14L32 22H16L24 14Z" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round"/>
+                    <path d="M16 22V38H32V22" stroke="currentColor" strokeWidth="1.5"/>
+                    <path d="M20 38V30H28V38" stroke="currentColor" strokeWidth="1.5"/>
+                    <circle cx="24" cy="8" r="3" className="fill-[#DC0078]/50 group-hover:fill-[#1BB8BD]/50 transition-colors duration-300"/>
+                    <path d="M10 40H38" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
                   </svg>
                 )
               },
               {
                 title: "C-Suite & Corporate Leaders",
-                desc: "You lead teams, functions or entire organisations, but your voice isn&apos;t visible outside internal rooms. You want to shape conversations in your industry, attract top talent, and build a public reputation that reflects your leadership.",
+                desc: "You lead teams, functions or entire organisations, but your voice isn't visible outside internal rooms. You want to shape conversations in your industry, attract top talent, and build a public reputation that reflects your leadership.",
                 icon: (
                   <svg className="w-12 h-12" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <rect x="14" y="6" width="20" height="14" rx="2" stroke="currentColor" strokeWidth="1.5"/>
-                    <circle cx="24" cy="13" r="4" stroke="currentColor" strokeWidth="1.5"/>
-                    <path d="M24 20V26" stroke="currentColor" strokeWidth="1.5"/>
-                    <path d="M12 26H36" stroke="currentColor" strokeWidth="1.5"/>
-                    <path d="M12 26V42" stroke="currentColor" strokeWidth="1.5"/>
-                    <path d="M24 26V42" stroke="currentColor" strokeWidth="1.5"/>
-                    <path d="M36 26V42" stroke="currentColor" strokeWidth="1.5"/>
-                    <circle cx="12" cy="32" r="3" stroke="#DC0078" strokeWidth="1.5"/>
-                    <circle cx="24" cy="32" r="3" stroke="#DC0078" strokeWidth="1.5"/>
-                    <circle cx="36" cy="32" r="3" stroke="#DC0078" strokeWidth="1.5"/>
+                    <circle cx="24" cy="12" r="6" stroke="currentColor" strokeWidth="1.5"/>
+                    <path d="M24 18V24" stroke="currentColor" strokeWidth="1.5"/>
+                    <path d="M12 36V32C12 28.6863 14.6863 26 18 26H30C33.3137 26 36 28.6863 36 32V36" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+                    <circle cx="12" cy="24" r="4" stroke="currentColor" strokeWidth="1.5"/>
+                    <circle cx="36" cy="24" r="4" stroke="currentColor" strokeWidth="1.5"/>
+                    <path d="M8 40V38C8 36.3431 9.34315 35 11 35H13" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+                    <path d="M40 40V38C40 36.3431 38.6569 35 37 35H35" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+                    <circle cx="24" cy="12" r="2" className="fill-[#DC0078]/50 group-hover:fill-[#1BB8BD]/50 transition-colors duration-300"/>
                   </svg>
                 )
               },
               {
                 title: "Ambitious Professionals",
-                desc: "You&apos;re good at what you do and you&apos;re ready for better roles, better opportunities, and a stronger, more visible professional identity.",
+                desc: "You're good at what you do and you're ready for better roles, better opportunities, and a stronger, more visible professional identity.",
                 icon: (
                   <svg className="w-12 h-12" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M8 40L16 28L24 32L32 20L40 8" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                    <circle cx="40" cy="8" r="4" stroke="#DC0078" strokeWidth="1.5"/>
-                    <path d="M36 12L40 8L44 12" stroke="#DC0078" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                    <circle cx="24" cy="32" r="3" stroke="currentColor" strokeWidth="1.5"/>
-                    <circle cx="16" cy="28" r="3" stroke="currentColor" strokeWidth="1.5"/>
+                    <circle cx="24" cy="10" r="6" stroke="currentColor" strokeWidth="1.5"/>
+                    <path d="M24 16V20" stroke="currentColor" strokeWidth="1.5"/>
+                    <path d="M16 20H32L34 42H14L16 20Z" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round"/>
+                    <path d="M24 20V28" className="stroke-[#DC0078] group-hover:stroke-[#1BB8BD] transition-colors duration-300" strokeWidth="1.5"/>
+                    <path d="M21 20L24 26L27 20" className="stroke-[#DC0078] group-hover:stroke-[#1BB8BD] transition-colors duration-300" strokeWidth="1.5" strokeLinejoin="round"/>
+                    <path d="M20 32H28" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+                    <path d="M19 36H29" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
                   </svg>
                 )
               }
@@ -1063,23 +1060,22 @@ const HirenumPage: React.FC = () => {
               },
               {
                 title: "Traditional Industry Experts",
-                desc: "You may not come from a &apos;digital native&apos; space, but your work has real impact. You want to go beyond word-of-mouth, reach new markets or geographies, and become known for your experience and results.",
+                desc: "You may not come from a 'digital native' space, but your work has real impact. You want to go beyond word-of-mouth, reach new markets or geographies, and become known for your experience and results.",
                 icon: (
                   <svg className="w-12 h-12" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <rect x="8" y="12" width="18" height="28" rx="2" stroke="currentColor" strokeWidth="1.5"/>
-                    <path d="M12 18H22" stroke="currentColor" strokeWidth="1.5"/>
-                    <path d="M12 24H20" stroke="currentColor" strokeWidth="1.5"/>
-                    <path d="M12 30H18" stroke="currentColor" strokeWidth="1.5"/>
-                    <path d="M30 8L38 16V40H30V8Z" stroke="currentColor" strokeWidth="1.5"/>
-                    <path d="M30 8V16H38" stroke="currentColor" strokeWidth="1.5"/>
-                    <circle cx="34" cy="26" r="4" stroke="#DC0078" strokeWidth="1.5"/>
-                    <path d="M34 32V36" stroke="#DC0078" strokeWidth="1.5"/>
+                    <path d="M8 40H40" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+                    <path d="M12 40V24H18V40" stroke="currentColor" strokeWidth="1.5"/>
+                    <path d="M22 40V18H28V40" stroke="currentColor" strokeWidth="1.5"/>
+                    <path d="M32 40V12H38V40" stroke="currentColor" strokeWidth="1.5"/>
+                    <path d="M15 20V16L24 10L33 16V20" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round"/>
+                    <circle cx="24" cy="10" r="3" fill="#DC0078" fillOpacity="0.5"/>
+                    <path d="M6 44H42" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
                   </svg>
                 )
               },
               {
                 title: "And You",
-                desc: "If you&apos;re reading this thinking: &apos;I know I should be more visible.&apos; &apos;I want my name to mean something in my industry.&apos; &apos;I want content and a profile that work for me, not against me.&apos; Then yes, this is for you.",
+                desc: "If you're reading this thinking: 'I know I should be more visible.' 'I want my name to mean something in my industry.' 'I want content and a profile that work for me, not against me.' Then yes, this is for you.",
                 icon: (
                   <svg className="w-12 h-12" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <circle cx="24" cy="16" r="8" stroke="currentColor" strokeWidth="1.5"/>
@@ -1127,7 +1123,7 @@ const HirenumPage: React.FC = () => {
               onClick={() => window.open('https://calendly.com', '_blank')}
               className="bg-[#1BB8BD] text-white px-8 py-4 rounded-full font-bold hover:bg-[#1fcfd4] transition-all duration-300 inline-flex items-center gap-2 shadow-lg shadow-[#1BB8BD]/20 hover:shadow-[0_0_30px_rgba(27,184,189,0.4)] hover:scale-105 font-btn"
             >
-              <span className="mr-2">🚀</span> Let&apos;s Talk
+              <span className="mr-2">🚀</span> Let{"'"}s Talk
             </button>
           </motion.div>
         </div>
