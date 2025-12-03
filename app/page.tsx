@@ -975,7 +975,7 @@ const HirenumPage: React.FC = () => {
             {[
               {
                 title: "Founders & Entrepreneurs",
-                desc: "You're building or scaling a business and want your personal brand to drive trust with potential clients and partners, warm inbound leads, and speaking, press and collaboration opportunities.",
+                desc: "Building or scaling a business and need a personal brand that drives trust, warm leads, and high-value opportunities.",
                 icon: (
                   <svg className="w-12 h-12" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M24 8V14" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
@@ -989,7 +989,7 @@ const HirenumPage: React.FC = () => {
               },
               {
                 title: "C-Suite & Corporate Leaders",
-                desc: "You lead teams, functions or entire organisations, but your voice isn't visible outside internal rooms. You want to shape conversations in your industry, attract top talent, and build a public reputation that reflects your leadership.",
+                desc: " Leading teams but lacking external visibility, and want to shape industry conversations, attract talent, and build a public leadership reputation.",
                 icon: (
                   <svg className="w-12 h-12" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <circle cx="24" cy="12" r="6" stroke="currentColor" strokeWidth="1.5"/>
@@ -1005,7 +1005,7 @@ const HirenumPage: React.FC = () => {
               },
               {
                 title: "Ambitious Professionals",
-                desc: "You're good at what you do and you're ready for better roles, better opportunities, and a stronger, more visible professional identity.",
+                desc: "Skilled in your field and ready for better roles, bigger opportunities, and a stronger professional identity.",
                 icon: (
                   <svg className="w-12 h-12" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <circle cx="24" cy="10" r="6" stroke="currentColor" strokeWidth="1.5"/>
@@ -1046,7 +1046,7 @@ const HirenumPage: React.FC = () => {
             {[
               {
                 title: "Creators & Coaches",
-                desc: "You already create or want to start creating content, but need clarity on your niche and message, a strategy that ties content to clients, and a consistent, professional LinkedIn presence.",
+                desc: "Creating or wanting to create content, and need clarity, strategy, and a consistent, professional LinkedIn presence that converts.",
                 icon: (
                   <svg className="w-12 h-12" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <rect x="6" y="10" width="36" height="24" rx="2" stroke="currentColor" strokeWidth="1.5"/>
@@ -1060,7 +1060,7 @@ const HirenumPage: React.FC = () => {
               },
               {
                 title: "Traditional Industry Experts",
-                desc: "You may not come from a 'digital native' space, but your work has real impact. You want to go beyond word-of-mouth, reach new markets or geographies, and become known for your experience and results.",
+                desc: "Impactful in non-digital industries and want to move beyond word-of-mouth to reach new markets and become known for your expertise.",
                 icon: (
                   <svg className="w-12 h-12" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M8 40H40" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
@@ -1075,7 +1075,7 @@ const HirenumPage: React.FC = () => {
               },
               {
                 title: "And You",
-                desc: "If you're reading this thinking: 'I know I should be more visible.' 'I want my name to mean something in my industry.' 'I want content and a profile that work for me, not against me.' Then yes, this is for you.",
+                desc: "Want to be more visible, build a name in your industry, and develop content and a profile that genuinely work for you.",
                 icon: (
                   <svg className="w-12 h-12" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <circle cx="24" cy="16" r="8" stroke="currentColor" strokeWidth="1.5"/>
