@@ -173,7 +173,7 @@ const HirenumPage: React.FC = () => {
   // Set video playback speed to standard slow motion (75% speed)
   useEffect(() => {
     if (videoRef.current) {
-      videoRef.current.playbackRate = 0.75;
+      videoRef.current.playbackRate = 0.65;
     }
   }, []);
 
