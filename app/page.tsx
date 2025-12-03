@@ -318,7 +318,7 @@ const HirenumPage: React.FC = () => {
             className="absolute top-0 right-0 w-full h-full object-cover 
                        opacity-30 sm:opacity-40 md:opacity-50 lg:opacity-50 
                        dark:opacity-60 dark:sm:opacity-70 dark:md:opacity-90 dark:lg:opacity-100
-                       brightness-75 saturate-50 contrast-90
+                       brightness-110 saturate-75 contrast-75
                        dark:brightness-[0.8] dark:saturate-75 dark:contrast-95
                        [mask-image:linear-gradient(to_right,transparent_0%,transparent_10%,rgba(0,0,0,0.15)_30%,rgba(0,0,0,0.4)_50%,rgba(0,0,0,0.7)_70%,rgba(0,0,0,0.9)_100%)]
                        sm:[mask-image:linear-gradient(to_right,transparent_0%,transparent_15%,rgba(0,0,0,0.2)_35%,rgba(0,0,0,0.5)_55%,rgba(0,0,0,0.75)_75%,rgba(0,0,0,0.9)_100%)]
@@ -351,7 +351,7 @@ const HirenumPage: React.FC = () => {
               <span className="relative inline-block whitespace-nowrap">
                 THOUGHT LEADER
                 <svg 
-                  className="absolute -bottom-2 sm:-bottom-2 left-0 w-full" 
+                  className="absolute -bottom-3 sm:-bottom-4 left-0 w-full" 
                   viewBox="0 0 200 12" 
                   fill="none" 
                   xmlns="http://www.w3.org/2000/svg"
