@@ -170,10 +170,10 @@ const HirenumPage: React.FC = () => {
     return () => clearTimeout(timeoutId);
   }, []);
 
-  // Set video playback speed to slow motion
+  // Set video playback speed to standard slow motion (75% speed)
   useEffect(() => {
     if (videoRef.current) {
-      videoRef.current.playbackRate = 0.5; // 50% speed for slow motion
+      videoRef.current.playbackRate = 0.75;
     }
   }, []);
 
