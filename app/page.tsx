@@ -7,9 +7,7 @@ import {
   Menu, X, ArrowRight, Check, ChevronDown, 
   Linkedin, Instagram, Mail, Globe, User, 
   Users, Zap, Sun, Moon,
-  FileText, Megaphone, Clock, Target, 
-  Fingerprint,
-  Eye, Mic, Activity, ArrowUp, MoreHorizontal, Heart, ThumbsUp
+  FileText, Megaphone, Clock, Target
 } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 
@@ -54,6 +52,106 @@ interface MobilePainPointNode {
   icon: LucideIcon;
   isHighlight?: boolean;
 }
+
+// Bullet Point Component for Service Cards
+const BulletItem: React.FC<{ text: string }> = ({ text }) => (
+  <li className="flex items-start gap-2 sm:gap-3 text-left">
+    <div className="mt-2 sm:mt-2.5 w-2 h-2 rounded-full bg-[#DC0078] flex-shrink-0" />
+    <span className="text-sm sm:text-base text-[var(--text-secondary)] leading-relaxed">{text}</span>
+  </li>
+);
+
+// Brand Architecture Illustration - Person designing brand identity
+const BrandIllustration: React.FC = () => (
+  <svg viewBox="0 0 120 120" className="w-20 h-20 sm:w-24 sm:h-24 lg:w-28 lg:h-28">
+    {/* Person */}
+    <circle cx="60" cy="28" r="12" fill="#1BB8BD" opacity="0.9"/>
+    <path d="M45 45 Q60 55 75 45 L72 75 Q60 80 48 75 Z" fill="#1BB8BD" opacity="0.8"/>
+    {/* Building blocks / Brand elements */}
+    <rect x="25" y="82" width="22" height="22" rx="3" fill="#DC0078" opacity="0.8">
+      <animate attributeName="y" values="82;78;82" dur="3s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="49" y="88" width="22" height="22" rx="3" fill="#1BB8BD" opacity="0.7">
+      <animate attributeName="y" values="88;84;88" dur="3s" repeatCount="indefinite" begin="0.5s"/>
+    </rect>
+    <rect x="73" y="82" width="22" height="22" rx="3" fill="#DC0078" opacity="0.6">
+      <animate attributeName="y" values="82;78;82" dur="3s" repeatCount="indefinite" begin="1s"/>
+    </rect>
+    {/* Sparkles */}
+    <circle cx="30" cy="35" r="2" fill="#DC0078">
+      <animate attributeName="opacity" values="0.3;1;0.3" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="90" cy="40" r="2" fill="#1BB8BD">
+      <animate attributeName="opacity" values="0.3;1;0.3" dur="2s" repeatCount="indefinite" begin="0.7s"/>
+    </circle>
+  </svg>
+);
+
+// Growth Strategy Illustration - Upward chart with dynamic elements
+const StrategyIllustration: React.FC = () => (
+  <svg viewBox="0 0 120 120" className="w-20 h-20 sm:w-24 sm:h-24 lg:w-28 lg:h-28">
+    {/* Chart bars */}
+    <rect x="20" y="70" width="16" height="35" rx="3" fill="#1BB8BD" opacity="0.5">
+      <animate attributeName="height" values="35;40;35" dur="2s" repeatCount="indefinite"/>
+      <animate attributeName="y" values="70;65;70" dur="2s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="42" y="55" width="16" height="50" rx="3" fill="#DC0078" opacity="0.6">
+      <animate attributeName="height" values="50;58;50" dur="2s" repeatCount="indefinite" begin="0.3s"/>
+      <animate attributeName="y" values="55;47;55" dur="2s" repeatCount="indefinite" begin="0.3s"/>
+    </rect>
+    <rect x="64" y="40" width="16" height="65" rx="3" fill="#1BB8BD" opacity="0.7">
+      <animate attributeName="height" values="65;72;65" dur="2s" repeatCount="indefinite" begin="0.6s"/>
+      <animate attributeName="y" values="40;33;40" dur="2s" repeatCount="indefinite" begin="0.6s"/>
+    </rect>
+    <rect x="86" y="22" width="16" height="83" rx="3" fill="#DC0078" opacity="0.8">
+      <animate attributeName="height" values="83;90;83" dur="2s" repeatCount="indefinite" begin="0.9s"/>
+      <animate attributeName="y" values="22;15;22" dur="2s" repeatCount="indefinite" begin="0.9s"/>
+    </rect>
+    {/* Growth arrow */}
+    <path d="M25 75 Q55 50 95 20" stroke="#1BB8BD" strokeWidth="3" fill="none" strokeLinecap="round">
+      <animate attributeName="stroke-dasharray" values="0,200;150,200" dur="2s" repeatCount="indefinite"/>
+    </path>
+    {/* Arrow head */}
+    <polygon points="95,15 100,25 90,25" fill="#1BB8BD">
+      <animate attributeName="opacity" values="0;1;1" dur="2s" repeatCount="indefinite"/>
+    </polygon>
+  </svg>
+);
+
+// Collaboration Illustration - Two people working together
+const CollaborationIllustration: React.FC = () => (
+  <svg viewBox="0 0 120 120" className="w-20 h-20 sm:w-24 sm:h-24 lg:w-28 lg:h-28">
+    {/* Person 1 */}
+    <circle cx="38" cy="35" r="10" fill="#1BB8BD" opacity="0.9"/>
+    <path d="M25 50 Q38 58 51 50 L49 72 Q38 76 27 72 Z" fill="#1BB8BD" opacity="0.8"/>
+    {/* Person 2 */}
+    <circle cx="82" cy="35" r="10" fill="#DC0078" opacity="0.9"/>
+    <path d="M69 50 Q82 58 95 50 L93 72 Q82 76 71 72 Z" fill="#DC0078" opacity="0.8"/>
+    {/* Connection / Handshake */}
+    <path d="M50 65 Q60 55 70 65" stroke="#1BB8BD" strokeWidth="3" fill="none" strokeLinecap="round">
+      <animate attributeName="stroke-dasharray" values="0,50;40,50" dur="1.5s" repeatCount="indefinite"/>
+    </path>
+    {/* Shared element / Document */}
+    <rect x="48" y="80" width="24" height="28" rx="3" fill="url(#collab-gradient)" opacity="0.8">
+      <animate attributeName="y" values="80;77;80" dur="2s" repeatCount="indefinite"/>
+    </rect>
+    <defs>
+      <linearGradient id="collab-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stopColor="#1BB8BD"/>
+        <stop offset="100%" stopColor="#DC0078"/>
+      </linearGradient>
+    </defs>
+    {/* Document lines */}
+    <line x1="52" y1="88" x2="68" y2="88" stroke="white" strokeWidth="2" opacity="0.6"/>
+    <line x1="52" y1="93" x2="64" y2="93" stroke="white" strokeWidth="2" opacity="0.6"/>
+    <line x1="52" y1="98" x2="68" y2="98" stroke="white" strokeWidth="2" opacity="0.6"/>
+    {/* Energy dots */}
+    <circle cx="60" cy="45" r="3" fill="#DC0078">
+      <animate attributeName="opacity" values="0.3;1;0.3" dur="1.5s" repeatCount="indefinite"/>
+      <animate attributeName="r" values="2;4;2" dur="1.5s" repeatCount="indefinite"/>
+    </circle>
+  </svg>
+);
 
 const HirenumPage: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
@@ -228,7 +326,7 @@ const HirenumPage: React.FC = () => {
       <nav 
         className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${scrolled ? 'backdrop-blur-md py-4 border-b bg-[var(--nav-bg)] border-[var(--border-color)]' : 'bg-transparent py-6 border-transparent'}`}
       >
-        <div className="container mx-auto px-6 flex justify-between items-center">
+        <div className="w-full px-8 flex justify-between items-center">
           <div className="text-3xl text-[#1BB8BD] font-bold tracking-tighter cursor-pointer font-logo" onClick={() => scrollToSection('start-here')}>
             H<span className="relative">ı<span className="absolute top-[0.15em] left-1 -translate-x-1/2 w-[0.2em] h-[0.2em] bg-[#dc0078] rounded-full"></span></span>renum
           </div>
@@ -304,7 +402,7 @@ const HirenumPage: React.FC = () => {
       </div>
 
       {/* --- HERO SECTION --- */}
-      <section id="start-here" className="relative min-h-screen flex items-center pt-20 overflow-hidden">
+      <section id="start-here" className="relative min-h-[100svh] flex items-center pt-20 sm:pt-24 md:pt-28 lg:pt-32 pb-8 sm:pb-12 md:pb-16 lg:pb-20 px-4 sm:px-6 md:px-8 lg:px-12 overflow-hidden">
         {/* Video Background - Full Section */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           {/* Mobile: hidden or very subtle, Tablet: moderate, Desktop: full effect */}
@@ -316,51 +414,51 @@ const HirenumPage: React.FC = () => {
             muted 
             playsInline
             className="absolute top-0 right-0 w-full h-full object-cover 
-                       opacity-30 sm:opacity-40 md:opacity-50 lg:opacity-50 
-                       dark:opacity-60 dark:sm:opacity-70 dark:md:opacity-90 dark:lg:opacity-100
+                       opacity-20 sm:opacity-30 md:opacity-40 lg:opacity-50 
+                       dark:opacity-40 dark:sm:opacity-60 dark:md:opacity-80 dark:lg:opacity-100
                        brightness-110 saturate-75 contrast-75
                        dark:brightness-[0.8] dark:saturate-75 dark:contrast-95
-                       [mask-image:linear-gradient(to_right,transparent_0%,transparent_10%,rgba(0,0,0,0.15)_30%,rgba(0,0,0,0.4)_50%,rgba(0,0,0,0.7)_70%,rgba(0,0,0,0.9)_100%)]
-                       sm:[mask-image:linear-gradient(to_right,transparent_0%,transparent_15%,rgba(0,0,0,0.2)_35%,rgba(0,0,0,0.5)_55%,rgba(0,0,0,0.75)_75%,rgba(0,0,0,0.9)_100%)]
-                       md:[mask-image:linear-gradient(to_right,transparent_0%,transparent_20%,rgba(0,0,0,0.25)_40%,rgba(0,0,0,0.55)_60%,rgba(0,0,0,0.8)_80%,rgba(0,0,0,0.95)_100%)]
+                       [mask-image:linear-gradient(to_bottom,transparent_0%,rgba(0,0,0,0.3)_20%,rgba(0,0,0,0.5)_50%,rgba(0,0,0,0.3)_80%,transparent_100%)]
+                       sm:[mask-image:linear-gradient(to_right,transparent_0%,transparent_10%,rgba(0,0,0,0.15)_30%,rgba(0,0,0,0.4)_50%,rgba(0,0,0,0.7)_70%,rgba(0,0,0,0.9)_100%)]
+                       md:[mask-image:linear-gradient(to_right,transparent_0%,transparent_15%,rgba(0,0,0,0.2)_35%,rgba(0,0,0,0.5)_55%,rgba(0,0,0,0.75)_75%,rgba(0,0,0,0.9)_100%)]
                        lg:[mask-image:linear-gradient(to_right,transparent_0%,transparent_25%,rgba(0,0,0,0.3)_45%,rgba(0,0,0,0.6)_65%,rgba(0,0,0,0.85)_85%,rgba(0,0,0,1)_100%)]"
           >
             <source src="/neon-tunnel.mp4" type="video/mp4" />
           </video>
           {/* Additional fade overlays for smoother blending - responsive */}
           <div className="absolute inset-0 bg-gradient-to-t from-[var(--bg-primary)] via-transparent to-[var(--bg-primary)] 
-                          opacity-80 sm:opacity-75 md:opacity-70 lg:opacity-60
-                          dark:opacity-60 dark:sm:opacity-55 dark:md:opacity-50 dark:lg:opacity-40"></div>
+                          opacity-90 sm:opacity-80 md:opacity-70 lg:opacity-60
+                          dark:opacity-70 dark:sm:opacity-60 dark:md:opacity-50 dark:lg:opacity-40"></div>
           <div className="absolute inset-0 bg-[var(--bg-primary)] 
-                          opacity-50 sm:opacity-40 md:opacity-30 lg:opacity-20
-                          dark:opacity-20 dark:sm:opacity-10 dark:md:opacity-5 dark:lg:opacity-0"></div>
+                          opacity-60 sm:opacity-50 md:opacity-30 lg:opacity-20
+                          dark:opacity-30 dark:sm:opacity-20 dark:md:opacity-5 dark:lg:opacity-0"></div>
           <div className="absolute inset-0 bg-gradient-to-br from-[#1BB8BD]/5 via-transparent to-[#DC0078]/5 mix-blend-overlay"></div>
         </div>
 
         {/* Abstract Background Elements */}
-        <div className="glow-orb top-0 right-[-200px] animate-pulse"></div>
-        <div className="glow-orb bottom-[-200px] left-[-200px] opacity-50"></div>
+        <div className="glow-orb top-0 right-[-200px] animate-pulse hidden sm:block"></div>
+        <div className="glow-orb bottom-[-200px] left-[-200px] opacity-50 hidden sm:block"></div>
 
-        <div className="container mx-auto px-6 grid md:grid-cols-2 gap-12 items-center relative z-10">
-          <div className="space-y-8 max-w-2xl">
+        <div className="container mx-auto grid md:grid-cols-2 gap-6 sm:gap-8 md:gap-10 lg:gap-12 items-center relative z-10">
+          <div className="space-y-3 sm:space-y-4 md:space-y-5 lg:space-y-6 max-w-2xl">
             
             
-            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-bold leading-[1.1]">
-              <span className="block whitespace-nowrap">BECOME YOUR</span>
-              <span className="block whitespace-nowrap">INDUSTRY&apos;S GO-TO</span>
-              <span className="relative inline-block whitespace-nowrap">
+            <h1 className="text-2xl min-[360px]:text-[1.7rem] min-[400px]:text-[1.9rem] min-[480px]:text-[2.2rem] sm:text-[2.5rem] md:text-[2.75rem] lg:text-[3.25rem] xl:text-[3.75rem] 2xl:text-[4.5rem] font-bold leading-[1.05] tracking-tight">
+              <span className="block">BECOME YOUR</span>
+              <span className="block">INDUSTRY&apos;S GO-TO</span>
+              <span className="relative inline-block">
                 THOUGHT LEADER
-                <svg 
-                  className="absolute -bottom-3 sm:-bottom-4 left-0 w-full" 
-                  viewBox="0 0 200 12" 
-                  fill="none" 
+                <svg
+                  className="absolute bottom-0 min-[480px]:-bottom-0.5 sm:-bottom-1 md:-bottom-1 lg:-bottom-2 left-0 w-full h-2 sm:h-3 md:h-4"
+                  viewBox="0 0 200 12"
+                  fill="none"
                   xmlns="http://www.w3.org/2000/svg"
                   preserveAspectRatio="none"
                 >
-                  <path 
-                    d="M2 8C20 4 60 2 100 5C140 8 180 6 198 4" 
-                    stroke="#DC0078" 
-                    strokeWidth="2" 
+                  <path
+                    d="M2 8C20 4 60 2 100 5C140 8 180 6 198 4"
+                    stroke="#DC0078"
+                    strokeWidth="2"
                     strokeLinecap="round"
                   />
                 </svg>
@@ -369,14 +467,14 @@ const HirenumPage: React.FC = () => {
               
             </h1>
 
-            <p className="text-l max-w-lg leading-relaxed text-gray-600 dark:text-gray-400">
+            <p className="text-sm min-[400px]:text-[0.9rem] min-[480px]:text-base sm:text-[1.05rem] lg:text-lg xl:text-xl max-w-lg leading-relaxed text-gray-600 dark:text-gray-400">
               We help founders, entrepreneurs, C-suites and professionals build powerful <span className="text-[#1BB8BD] font-medium">LinkedIn personal brands</span> that turn visibility into authority, and authority into inbound opportunities.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 pt-4">
-              <button onClick={() => window.open('https://calendly.com', '_blank')} className="bg-[#1BB8BD] text-white text-lg font-bold px-8 py-4 rounded-full transition-all duration-500 flex items-center justify-center gap-2 group relative overflow-hidden hover:shadow-[0_10px_40px_rgba(27,184,189,0.4)] hover:scale-105 active:scale-95 font-btn">
-                <span className="relative z-10">BOOK A DISCOVERY CALL</span>
-                <ArrowRight className="relative z-10 group-hover:translate-x-2 transition-transform duration-300" />
+            <div className="flex flex-col min-[480px]:flex-row gap-3 sm:gap-4 pt-2 sm:pt-3 md:pt-4">
+              <button onClick={() => window.open('https://calendly.com', '_blank')} className="bg-[#1BB8BD] text-white text-sm min-[480px]:text-base lg:text-lg font-bold px-5 min-[480px]:px-6 sm:px-8 py-3 sm:py-4 rounded-full transition-all duration-500 flex items-center justify-center gap-2 group relative overflow-hidden hover:shadow-[0_10px_40px_rgba(27,184,189,0.4)] hover:scale-105 active:scale-95 font-btn w-full min-[480px]:w-auto">
+                <span className="relative z-10 whitespace-nowrap">BOOK A DISCOVERY CALL</span>
+                <ArrowRight className="relative z-10 group-hover:translate-x-2 transition-transform duration-300 w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" />
                 <div className="absolute inset-0 bg-gradient-to-r from-[#DC0078] to-[#1BB8BD] translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-500"></div>
               </button>
               
@@ -425,375 +523,100 @@ const HirenumPage: React.FC = () => {
             </p>
           </div>
 
-          {/* Service Cards - Alternating Layout */}
-          <div className="space-y-16 max-w-6xl mx-auto">
+
+          {/* Service Cards - 3 Column Layout */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 lg:gap-6 max-w-6xl mx-auto">
             
-            {/* Card 1: Architect Your Brand - Image Left, Content Right */}
+            {/* Card 1: Architect Your Brand */}
             <motion.div 
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
+              transition={{ duration: 0.6, delay: 0 }}
               viewport={{ once: true }}
-              className="grid md:grid-cols-2 gap-8 items-center"
+              className="flex flex-col items-start text-left space-y-4 sm:space-y-5 lg:space-y-6 group px-2 py-4 sm:px-3 sm:py-4"
             >
-              {/* Visual Card */}
-              <div className="relative aspect-square md:aspect-[4/3] rounded-3xl group shadow-2xl p-[2px] bg-[conic-gradient(from_180deg_at_0%_0%,#ffffff_0deg,#d0d0e0_15deg,#a0a0b0_30deg,#606070_50deg,#303040_70deg,transparent_90deg,transparent_360deg)]">
-                <div className="relative w-full h-full rounded-[22px] overflow-hidden bg-gradient-to-br from-[var(--bg-secondary)] via-[var(--bg-primary)] to-[var(--bg-secondary)] dark:from-[#0a0a14] dark:via-[#02040a] dark:to-[#0a0a14]">
-                {/* Shine Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-tr from-[#1BB8BD]/10 via-transparent to-[#DC0078]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none z-30" />
-                
-                {/* Deep Space Background with Color Gradient */}
-                <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,rgba(27,184,189,0.15)_0%,transparent_50%),radial-gradient(ellipse_at_bottom_right,rgba(220,0,120,0.1)_0%,transparent_50%)] dark:bg-[radial-gradient(ellipse_at_top_left,rgba(27,184,189,0.1)_0%,transparent_50%),radial-gradient(ellipse_at_bottom_right,rgba(220,0,120,0.08)_0%,transparent_50%)]" />
-                
-                {/* Animated Grid Floor */}
-                <div className="absolute inset-0 opacity-15 dark:opacity-25 pointer-events-none" 
-                     style={{ 
-                         backgroundImage: 'linear-gradient(rgba(27, 184, 189, 0.4) 1px, transparent 1px), linear-gradient(90deg, rgba(27, 184, 189, 0.4) 1px, transparent 1px)',
-                         backgroundSize: '40px 40px',
-                         transform: 'perspective(500px) rotateX(60deg) translateY(100px) scale(2)',
-                     }} 
-                />
-
-                {/* Rotating Data Rings */}
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="absolute w-[450px] h-[450px] border border-[#1BB8BD]/20 dark:border-[#1BB8BD]/15 rounded-full animate-[spin_30s_linear_infinite]" />
-                  <div className="absolute w-[350px] h-[350px] border-2 border-dashed border-[#DC0078]/40 dark:border-[#DC0078]/30 rounded-full animate-[spin_20s_linear_infinite_reverse]" />
-                  <div className="absolute w-[280px] h-[280px] border-2 border-transparent border-t-[#1BB8BD]/50 dark:border-t-[#1BB8BD]/40 border-b-[#DC0078]/50 dark:border-b-[#DC0078]/40 rounded-full animate-[spin_8s_ease-in-out_infinite]" />
-                </div>
-                
-                {/* Central Core */}
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="relative z-10">
-                    <div className="absolute inset-0 bg-gradient-to-br from-[#1BB8BD]/40 to-[#DC0078]/30 dark:from-[#1BB8BD]/30 dark:to-[#DC0078]/20 blur-3xl rounded-full" />
-                    <div className="w-32 h-32 rounded-full bg-gradient-to-br from-[var(--bg-primary)] to-[var(--bg-secondary)] dark:from-[#0a0a14] dark:to-[#02040a] border-2 border-[#1BB8BD]/40 dark:border-[#1BB8BD]/30 backdrop-blur-md flex items-center justify-center shadow-[0_0_80px_rgba(27,184,189,0.3),0_0_40px_rgba(220,0,120,0.2)] dark:shadow-[0_0_80px_rgba(27,184,189,0.25),0_0_40px_rgba(220,0,120,0.15)] relative z-10">
-                      <Fingerprint size={64} className="text-[#1BB8BD] drop-shadow-[0_0_15px_rgba(27,184,189,0.6)]" />
-                    </div>
-                    
-                    {/* Floating Badges */}
-                    <motion.div 
-                      animate={{ y: [0, -12, 0] }}
-                      transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                      className="absolute -top-6 -right-16 px-4 py-2.5 bg-gradient-to-r from-[var(--bg-primary)] to-[var(--bg-secondary)] dark:from-[#0a0a14] dark:to-[#0f0f1a] backdrop-blur-md border border-[#DC0078]/40 rounded-full flex items-center gap-2 shadow-lg shadow-[#DC0078]/20 z-20"
-                    >
-                      <div className="w-2 h-2 rounded-full bg-gradient-to-r from-[#DC0078] to-[#ff4d9d] animate-pulse shadow-[0_0_8px_#DC0078]" />
-                      <Eye size={14} className="text-[#DC0078]" />
-                    </motion.div>
-                    
-                    <motion.div 
-                      animate={{ y: [0, 12, 0] }}
-                      transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-                      className="absolute -bottom-6 -left-16 px-4 py-2.5 bg-gradient-to-r from-[var(--bg-primary)] to-[var(--bg-secondary)] dark:from-[#0a0a14] dark:to-[#0f0f1a] backdrop-blur-md border border-[#1BB8BD]/40 rounded-full flex items-center gap-2 shadow-lg shadow-[#1BB8BD]/20 z-20"
-                    >
-                      <div className="w-2 h-2 rounded-full bg-gradient-to-r from-[#1BB8BD] to-[#4de0e5] animate-pulse shadow-[0_0_8px_#1BB8BD]" />
-                      <Mic size={14} className="text-[#1BB8BD]" />
-                    </motion.div>
-                  </div>
-                </div>
-                </div>
+              {/* Illustration */}
+              <div className="w-full flex justify-center group-hover:scale-105 transition-transform duration-300">
+                <BrandIllustration />
               </div>
               
-              {/* Content */}
-              <div className="space-y-6">
-                <div className="mb-4">
-                  <h3 className="text-3xl md:text-4xl font-bold">
-                    Architect Your <span className="text-[#1BB8BD]">Brand</span>
-                  </h3>
-                </div>
-                <p className="text-xl text-[#1BB8BD] font-medium">We help you uncover and define:</p>
-                <ul className="space-y-4">
-                  {[
-                    "Your story, journey and core expertise",
-                    "Your positioning and proposition ",
-                    "Founder’s voice ",
-                    
-                  ].map((item, idx) => (
-                    <li key={idx} className="flex items-start gap-4">
-                      <div className="mt-1 min-w-[24px]">
-                        <div className="w-6 h-6 rounded-full bg-[#DC0078]/20 flex items-center justify-center">
-                          <div className="w-2 h-2 rounded-full bg-[#DC0078]" />
-                        </div>
-                      </div>
-                      <span className="text-lg text-[var(--text-secondary)] leading-relaxed">{item}</span>
-                    </li>
-                  ))}
+              {/* Heading */}
+              <h3 className="text-lg sm:text-xl lg:text-2xl font-bold w-full text-center">
+                Architect Your <span className="text-[#1BB8BD]">Brand</span>
+              </h3>
+              
+              {/* Body */}
+              <p className="text-sm sm:text-base font-medium w-full text-center">We help you uncover and define:</p>
+              
+              {/* Points */}
+              <div className="w-full flex justify-center">
+                <ul className="space-y-2 sm:space-y-3">
+                  <BulletItem text="Your story, journey and core expertise" />
+                  <BulletItem text="Your positioning and proposition" />
+                  <BulletItem text="Founder's voice" />
                 </ul>
-                {/* <div className="p-4 rounded-xl bg-[var(--bg-secondary)] dark:bg-[#0a0a14] border border-[#1BB8BD]/20 relative overflow-hidden group/summary">
-                  <div className="absolute inset-0 bg-gradient-to-r from-[#1BB8BD]/10 to-transparent opacity-0 group-hover/summary:opacity-100 transition-opacity" />
-                  <p className="text-[var(--text-secondary)] italic relative z-10">
-                    &quot;So your brand stops being vague and starts becoming crystal clear to you and to your audience.&quot;
-                  </p>
-                </div> */}
               </div>
             </motion.div>
 
-            {/* Card 2: Build a Scaling Strategy - Content Left, Image Right */}
+            {/* Card 2: Build a Scaling Strategy */}
             <motion.div 
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
               viewport={{ once: true }}
-              className="grid md:grid-cols-2 gap-8 items-center"
+              className="flex flex-col items-start text-left space-y-4 sm:space-y-5 lg:space-y-6 group px-2 py-4 sm:px-3 sm:py-4"
             >
-              {/* Content */}
-              <div className="space-y-6 md:order-1 order-2">
-                <div className="mb-4">
-                  <h3 className="text-3xl md:text-4xl font-bold">
-                    Build a Scaling <span className="text-[#1BB8BD]">Strategy</span>
-                  </h3>
-                </div>
-                <p className="text-xl text-[#1BB8BD] font-medium">Once your brand is clear, we design how it grows:</p>
-                <ul className="space-y-4">
-                  {[
-                    "Content pillars and key topics",
-                    "Posting rhythm and formats that suit your schedule",
-                    "How your content supports your business goals.",
-                    
-                  ].map((item, idx) => (
-                    <li key={idx} className="flex items-start gap-4">
-                      <div className="mt-1 min-w-[24px]">
-                        <div className="w-6 h-6 rounded-full bg-[#DC0078]/20 flex items-center justify-center">
-                          <div className="w-2 h-2 rounded-full bg-[#DC0078]" />
-                        </div>
-                      </div>
-                      <span className="text-lg text-[var(--text-secondary)] leading-relaxed">{item}</span>
-                    </li>
-                  ))}
-                </ul>
-                {/* <div className="p-4 rounded-xl bg-[var(--bg-secondary)] dark:bg-[#0a0a14] border border-[#1BB8BD]/20 relative overflow-hidden group/summary">
-                  <div className="absolute inset-0 bg-gradient-to-r from-[#1BB8BD]/10 to-transparent opacity-0 group-hover/summary:opacity-100 transition-opacity" />
-                  <p className="text-[var(--text-secondary)] italic relative z-10">
-                    &quot;This becomes your LinkedIn growth system, not just a random posting habit.&quot;
-                  </p>
-                </div> */}
+              {/* Illustration */}
+              <div className="w-full flex justify-center group-hover:scale-105 transition-transform duration-300">
+                <StrategyIllustration />
               </div>
-
-              {/* Visual Card */}
-              <div className="relative aspect-square md:aspect-[4/3] rounded-3xl group shadow-2xl md:order-2 order-1 p-[2px] bg-[conic-gradient(from_270deg_at_100%_0%,#ffffff_0deg,#d0d0e0_15deg,#a0a0b0_30deg,#606070_50deg,#303040_70deg,transparent_90deg,transparent_360deg)]">
-                <div className="relative w-full h-full rounded-[22px] overflow-hidden bg-gradient-to-br from-[var(--bg-secondary)] via-[var(--bg-primary)] to-[var(--bg-secondary)] dark:from-[#0a0a14] dark:via-[#02040a] dark:to-[#0a0a14]">
-                {/* Shine Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-tr from-[#DC0078]/10 via-transparent to-[#1BB8BD]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none z-30" />
-                
-                {/* Cyber Grid Background with Color Accents */}
-                <div className="absolute inset-0 bg-[linear-gradient(rgba(220,0,120,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(27,184,189,0.05)_1px,transparent_1px)] dark:bg-[linear-gradient(rgba(220,0,120,0.04)_1px,transparent_1px),linear-gradient(90deg,rgba(27,184,189,0.04)_1px,transparent_1px)] bg-[size:20px_20px]" />
-                <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(220,0,120,0.15)_0%,transparent_50%),radial-gradient(ellipse_at_bottom_left,rgba(27,184,189,0.1)_0%,transparent_50%)] dark:bg-[radial-gradient(ellipse_at_top_right,rgba(220,0,120,0.1)_0%,transparent_50%),radial-gradient(ellipse_at_bottom_left,rgba(27,184,189,0.08)_0%,transparent_50%)]" />
-                <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[var(--bg-secondary)]/80 dark:to-[#02040a]/80" />
-
-                {/* Falling Data Stream with alternating colors */}
-                <div className="absolute inset-0 flex justify-around opacity-15 dark:opacity-25 pointer-events-none">
-                  {[0.5, 0.7, 0.4, 0.8, 0.6, 0.55].map((opacity, i) => (
-                    <div key={i} className={`w-[2px] h-[150%] -mt-[25%] bg-gradient-to-b from-transparent ${i % 2 === 0 ? 'via-[#1BB8BD]' : 'via-[#DC0078]'} to-transparent animate-pulse`} style={{ animationDelay: `${i * 0.7}s`, opacity }} />
-                  ))}
-                </div>
-
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="relative w-full max-w-sm px-8 z-10">
-                    {/* Floating Stats Card */}
-                    <motion.div 
-                      initial={{ opacity: 0, x: 20 }} 
-                      whileInView={{ opacity: 1, x: 0 }} 
-                      transition={{ delay: 0.5 }}
-                      className="absolute -top-16 right-0 bg-gradient-to-br from-[var(--bg-primary)] to-[var(--bg-secondary)] dark:from-[#0a0a14] dark:to-[#0f0f1a] backdrop-blur-md border border-[#1BB8BD]/30 px-5 py-4 rounded-xl shadow-2xl shadow-[#1BB8BD]/20 flex items-center gap-4"
-                    >
-                      <div className="flex flex-col gap-2">
-                        <Activity size={18} className="text-[#1BB8BD] drop-shadow-[0_0_8px_rgba(27,184,189,0.5)]" />
-                        <div className="flex gap-1 items-end h-5">
-                          <div className="w-1.5 h-full bg-gradient-to-t from-[#1BB8BD]/60 to-[#1BB8BD] rounded-sm" />
-                          <div className="w-1.5 h-2/3 bg-gradient-to-t from-[#DC0078]/40 to-[#DC0078]/70 rounded-sm" />
-                          <div className="w-1.5 h-4/5 bg-gradient-to-t from-[#1BB8BD]/50 to-[#1BB8BD]/90 rounded-sm" />
-                          <div className="w-1.5 h-full bg-gradient-to-t from-[#DC0078]/60 to-[#DC0078] rounded-sm" />
-                        </div>
-                      </div>
-                      <div className="h-8 w-[1px] bg-gradient-to-b from-[#1BB8BD]/40 via-[#DC0078]/30 to-[#1BB8BD]/40" />
-                      <div className="bg-gradient-to-br from-[#1BB8BD]/20 to-[#DC0078]/10 p-2 rounded-full border border-[#1BB8BD]/20">
-                        <ArrowUp size={14} className="text-[#1BB8BD] drop-shadow-[0_0_6px_rgba(27,184,189,0.5)]" />
-                      </div>
-                    </motion.div>
-
-                    {/* Dynamic Graph */}
-                    <div className="flex items-end justify-between h-48 gap-3 mt-8">
-                      {[35, 50, 40, 65, 90].map((h, i) => (
-                        <motion.div 
-                          key={i}
-                          initial={{ height: 0 }} 
-                          whileInView={{ height: `${h}%` }} 
-                          transition={{ duration: 0.8, delay: i * 0.1, type: "spring", stiffness: 50 }}
-                          className="w-full rounded-t-xl relative group/bar"
-                        >   
-                          {/* Glass Bar with Gradient */}
-                          <div className={`absolute inset-0 rounded-t-xl backdrop-blur-sm border-x border-t ${i === 4 ? 'bg-gradient-to-b from-[#1BB8BD] via-[#4de0e5]/60 to-[#DC0078]/50 border-[#1BB8BD]/50 shadow-[0_-10px_30px_rgba(27,184,189,0.3)]' : i % 2 === 0 ? 'bg-gradient-to-b from-[#1BB8BD]/30 to-[#1BB8BD]/10 border-[#1BB8BD]/30 group-hover/bar:from-[#1BB8BD]/50 group-hover/bar:to-[#1BB8BD]/20' : 'bg-gradient-to-b from-[#DC0078]/25 to-[#DC0078]/10 border-[#DC0078]/30 group-hover/bar:from-[#DC0078]/40 group-hover/bar:to-[#DC0078]/15'} transition-all duration-300`} />
-                          
-                          {/* Inner Glow for tallest bar */}
-                          {i === 4 && <div className="absolute top-0 inset-x-0 h-1.5 bg-gradient-to-r from-[#1BB8BD] via-[#4de0e5] to-[#1BB8BD] shadow-[0_0_20px_#1BB8BD,0_0_40px_rgba(27,184,189,0.5)]" />}
-                        </motion.div>
-                      ))}
-                    </div>
-                    
-                    {/* Base Line with gradient */}
-                    <div className="h-[2px] w-full bg-gradient-to-r from-transparent via-[#1BB8BD]/50 to-transparent mt-[-1px] relative z-20" />
-                  </div>
-                </div>
-                </div>
+              
+              {/* Heading */}
+              <h3 className="text-lg sm:text-xl lg:text-2xl font-bold w-full text-center">
+                Build a Scaling <span className="text-[#1BB8BD]">Strategy</span>
+              </h3>
+              
+              {/* Body */}
+              <p className="text-sm sm:text-base font-medium w-full text-center">Once brand is clear, we map its growth:</p>
+              
+              {/* Points */}
+              <div className="w-full flex justify-center">
+                <ul className="space-y-2 sm:space-y-3">
+                  <BulletItem text="Content pillars and key topics" />
+                  <BulletItem text="Posting rhythm and formats that suit your schedule" />
+                  <BulletItem text="How your content supports your business goals" />
+                </ul>
               </div>
             </motion.div>
 
-            {/* Card 3: Co-Create & Execute - Image Left, Content Right */}
+            {/* Card 3: Co-Create & Execute */}
             <motion.div 
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
               viewport={{ once: true }}
-              className="grid md:grid-cols-2 gap-8 items-center"
+              className="flex flex-col items-start text-left space-y-4 sm:space-y-5 lg:space-y-6 group px-2 py-4 sm:px-3 sm:py-4"
             >
-              {/* Visual Card */}
-              <div className="relative aspect-square md:aspect-[4/3] rounded-3xl group shadow-2xl p-[2px] bg-[conic-gradient(from_180deg_at_0%_0%,#ffffff_0deg,#d0d0e0_15deg,#a0a0b0_30deg,#606070_50deg,#303040_70deg,transparent_90deg,transparent_360deg)]">
-                <div className="relative w-full h-full rounded-[22px] overflow-hidden bg-[var(--bg-secondary)] dark:bg-[#02040a]">
-                {/* Shine Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-tr from-[#1BB8BD]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none z-30" />
-                
-                {/* Warp Speed Background */}
-                <div className="absolute inset-0">
-                  {[
-                    { top: '15%', left: '10%', width: '120px', opacity: 0.2 },
-                    { top: '25%', left: '80%', width: '80px', opacity: 0.15 },
-                    { top: '40%', left: '5%', width: '100px', opacity: 0.25 },
-                    { top: '55%', left: '70%', width: '140px', opacity: 0.1 },
-                    { top: '70%', left: '20%', width: '90px', opacity: 0.2 },
-                    { top: '85%', left: '60%', width: '110px', opacity: 0.18 },
-                    { top: '10%', left: '45%', width: '70px', opacity: 0.12 },
-                    { top: '35%', left: '35%', width: '130px', opacity: 0.22 },
-                    { top: '60%', left: '90%', width: '85px', opacity: 0.15 },
-                    { top: '80%', left: '15%', width: '95px', opacity: 0.2 },
-                    { top: '20%', left: '55%', width: '60px', opacity: 0.1 },
-                    { top: '45%', left: '25%', width: '115px', opacity: 0.25 },
-                    { top: '65%', left: '50%', width: '75px', opacity: 0.18 },
-                    { top: '90%', left: '40%', width: '100px', opacity: 0.15 },
-                    { top: '5%', left: '75%', width: '125px', opacity: 0.2 },
-                    { top: '30%', left: '95%', width: '65px', opacity: 0.12 },
-                    { top: '50%', left: '8%', width: '135px', opacity: 0.22 },
-                    { top: '75%', left: '85%', width: '80px', opacity: 0.15 },
-                    { top: '95%', left: '30%', width: '105px', opacity: 0.18 },
-                    { top: '12%', left: '65%', width: '90px', opacity: 0.2 },
-                  ].map((line, i) => (
-                    <div 
-                      key={i}
-                      className="absolute bg-[#1BB8BD]/20 dark:bg-[#1BB8BD]/10 rounded-full"
-                      style={{
-                        top: line.top,
-                        left: line.left,
-                        width: line.width,
-                        height: '1px',
-                        transform: 'rotate(-45deg)',
-                        opacity: line.opacity
-                      }}
-                    />
-                  ))}
-                  <div className="absolute inset-0 bg-gradient-to-br from-[#DC0078]/10 dark:from-[#DC0078]/5 via-transparent to-[#1BB8BD]/10 dark:to-[#1BB8BD]/5" />
-                </div>
-
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="relative w-full max-w-[320px]">
-                    {/* Social Post Card - Glassmorphism */}
-                    <motion.div 
-                      initial={{ y: 40, opacity: 0 }}
-                      whileInView={{ y: 0, opacity: 1 }}
-                      transition={{ duration: 0.6 }}
-                      className="bg-[var(--bg-primary)] dark:bg-[#0a0a14] backdrop-blur-xl border border-[#1BB8BD]/20 rounded-2xl p-5 shadow-[0_20px_50px_-12px_rgba(27,184,189,0.15)] dark:shadow-[0_20px_50px_-12px_rgba(27,184,189,0.1)] relative z-10"
-                    >
-                      <div className="absolute -inset-0.5 bg-gradient-to-br from-[#1BB8BD]/10 to-transparent rounded-2xl opacity-50 pointer-events-none" />
-                      
-                      <div className="flex items-center justify-between mb-4 relative">
-                        <div className="flex items-center gap-3">
-                          <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#1BB8BD] to-[#DC0078] p-[1px]">
-                            <div className="w-full h-full bg-[var(--bg-primary)] dark:bg-[#0a0a14] rounded-full" />
-                          </div>
-                          <div>
-                            <div className="h-2 w-20 bg-[#1BB8BD]/30 rounded-full mb-1.5" />
-                            <div className="h-2 w-12 bg-[#1BB8BD]/20 rounded-full" />
-                          </div>
-                        </div>
-                        <MoreHorizontal size={16} className="text-[var(--text-secondary)]" />
-                      </div>
-                      
-                      <div className="space-y-2.5 mb-5 relative">
-                        <div className="h-2 w-full bg-[#1BB8BD]/15 rounded-full" />
-                        <div className="h-2 w-[90%] bg-[#1BB8BD]/15 rounded-full" />
-                        <div className="h-2 w-[95%] bg-[#1BB8BD]/15 rounded-full" />
-                      </div>
-                      
-                      <div className="h-32 w-full bg-gradient-to-br from-[#1BB8BD]/10 to-[#DC0078]/10 rounded-xl mb-4 flex items-center justify-center relative overflow-hidden group/card-image border border-[#1BB8BD]/10">
-                        <div className="absolute inset-0 bg-[#1BB8BD]/20 blur-2xl opacity-0 group-hover/card-image:opacity-50 transition-opacity duration-500" />
-                        <Zap size={32} className="text-[#1BB8BD]/60 relative z-10" />
-                      </div>
-                      
-                      <div className="flex justify-between text-[var(--text-secondary)] relative">
-                        <div className="flex gap-1 items-center">
-                          <Heart size={18} className="text-[#DC0078]/60" />
-                          <div className="flex gap-1 ml-1">
-                            <div className="w-1 h-1 rounded-full bg-[#DC0078]/40" />
-                            <div className="w-1 h-1 rounded-full bg-[#DC0078]/40" />
-                            <div className="w-1 h-1 rounded-full bg-[#DC0078]/40" />
-                          </div>
-                        </div>
-                        <div className="flex gap-4">
-                          <div className="w-16 h-4 bg-[#1BB8BD]/15 rounded-full" />
-                        </div>
-                      </div>
-                    </motion.div>
-
-                    {/* Floating Reactions */}
-                    <motion.div 
-                      initial={{ opacity: 0, y: 0 }}
-                      whileInView={{ opacity: [0, 1, 0], y: -100, x: 20 }}
-                      transition={{ duration: 2, repeat: Infinity, delay: 0.5 }}
-                      className="absolute -right-6 bottom-20 p-2.5 bg-gradient-to-tr from-[#DC0078] to-[#DC0078]/70 rounded-full shadow-lg shadow-[#DC0078]/30 z-0"
-                    >
-                      <Heart size={14} fill="white" className="text-white" />
-                    </motion.div>
-                    <motion.div 
-                      initial={{ opacity: 0, y: 0 }}
-                      whileInView={{ opacity: [0, 1, 0], y: -120, x: -30 }}
-                      transition={{ duration: 2.5, repeat: Infinity, delay: 1.2 }}
-                      className="absolute -left-6 bottom-28 p-2.5 bg-gradient-to-tr from-[#1BB8BD] to-[#1BB8BD]/70 rounded-full shadow-lg shadow-[#1BB8BD]/30 z-0"
-                    >
-                      <ThumbsUp size={14} fill="white" className="text-white" />
-                    </motion.div>
-                  </div>
-                </div>
-                </div>
+              {/* Illustration */}
+              <div className="w-full flex justify-center group-hover:scale-105 transition-transform duration-300">
+                <CollaborationIllustration />
               </div>
               
-              {/* Content */}
-              <div className="space-y-6">
-                <div className="mb-4">
-                  <h3 className="text-3xl md:text-4xl font-bold">
-                    Co-Create & <span className="text-[#1BB8BD]">Execute</span>
-                  </h3>
-                </div>
-                <p className="text-xl text-[#1BB8BD] font-medium">Depending on your package, we:</p>
-                <ul className="space-y-4">
-                  {[
-                    "Fully optimize your LinkedIn profile and company page.",
-                    "Co-create content with you",
-                    
-                    "Support you in networking and outreach",
-                    
-                  ].map((item, idx) => (
-                    <li key={idx} className="flex items-start gap-4">
-                      <div className="mt-1 min-w-[24px]">
-                        <div className="w-6 h-6 rounded-full bg-[#DC0078]/20 flex items-center justify-center">
-                          <div className="w-2 h-2 rounded-full bg-[#DC0078]" />
-                        </div>
-                      </div>
-                      <span className="text-lg text-[var(--text-secondary)] leading-relaxed">{item}</span>
-                    </li>
-                  ))}
+              {/* Heading */}
+              <h3 className="text-lg sm:text-xl lg:text-2xl font-bold w-full text-center">
+                Co-Create and  <span className="text-[#1BB8BD]">Execute</span>
+              </h3>
+              
+              {/* Body */}
+              <p className="text-sm sm:text-base font-medium w-full text-center">Depending on your package, we:</p>
+              
+              {/* Points */}
+              <div className="w-full flex justify-center">
+                <ul className="space-y-2 sm:space-y-3">
+                  <BulletItem text="Fully optimize your LinkedIn profile and company page" />
+                  <BulletItem text="Co-create content with you" />
+                  <BulletItem text="Support you in networking and outreach" />
                 </ul>
-                {/* <div className="p-4 rounded-xl bg-[var(--bg-secondary)] dark:bg-[#0a0a14] border border-[#1BB8BD]/20 relative overflow-hidden group/summary">
-                  <div className="absolute inset-0 bg-gradient-to-r from-[#1BB8BD]/10 to-transparent opacity-0 group-hover/summary:opacity-100 transition-opacity" />
-                  <p className="text-[var(--text-secondary)] italic relative z-10">
-                    &quot;So you&apos;re not alone, not guessing — you have a partner building your presence with you.&quot;
-                  </p>
-                </div> */}
               </div>
             </motion.div>
 
