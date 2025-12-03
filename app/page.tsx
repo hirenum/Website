@@ -390,14 +390,14 @@ const HirenumPage: React.FC = () => {
       </nav>
 
       {/* --- FLOATING CTA --- */}
-      <div className="fixed bottom-6 right-6 z-40 animate-bounce-slow">
+      <div className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-40 animate-bounce-slow">
         <button 
           onClick={() => scrollToSection('linkedin-audit')}
-          className="bg-gradient-brand text-white font-bold py-3 px-6 rounded-full shadow-lg shadow-[#DC0078]/30 hover:shadow-[0_0_30px_rgba(220,0,120,0.6)] transition-all duration-500 transform hover:-translate-y-2 hover:scale-110 flex items-center gap-2 group relative overflow-hidden font-btn"
+          className="bg-gradient-to-r from-[#A9318A] to-[#DC0078] dark:from-[#A9318A] dark:to-[#DC0078] text-white font-bold py-2.5 px-4 sm:py-3 sm:px-6 rounded-full shadow-lg shadow-[#A9318A]/40 dark:shadow-[#DC0078]/30 hover:shadow-[0_0_30px_rgba(169,49,138,0.6)] dark:hover:shadow-[0_0_30px_rgba(220,0,120,0.6)] transition-all duration-500 transform hover:-translate-y-2 hover:scale-110 flex items-center gap-1.5 sm:gap-2 group relative overflow-hidden font-btn text-xs sm:text-sm md:text-base"
         >
           <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-500"></div>
-          <Zap size={18} fill="currentColor" className="relative z-10 group-hover:rotate-12 transition-transform duration-300" /> 
-          <span className="relative z-10">Free LinkedIn Audit</span>
+          <Zap size={14} fill="currentColor" className="relative z-10 group-hover:rotate-12 transition-transform duration-300 sm:w-[18px] sm:h-[18px]" /> 
+          <span className="relative z-10 whitespace-nowrap">Free LinkedIn Audit</span>
         </button>
       </div>
 
