@@ -645,16 +645,16 @@ const HirenumPage: React.FC = () => {
           </div>
 
           {/* Tree Branch Layout - Desktop */}
-          <div className="hidden lg:block relative max-w-7xl mx-auto h-[800px]">
+          <div className="hidden lg:block relative max-w-7xl mx-auto h-[700px] xl:h-[800px]">
             
             {/* Central Node Text */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20 text-center w-[400px]">
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20 text-center w-[280px] lg:w-[320px] xl:w-[400px]">
                <motion.h2 
                  initial={{ opacity: 0, scale: 0.8 }}
                  whileInView={{ opacity: 1, scale: 1 }}
                  transition={{ duration: 0.5 }}
                  viewport={{ once: true }}
-                 className="text-5xl font-bold leading-tight bg-clip-text text-transparent bg-gradient-to-r from-zinc-900 to-zinc-600 dark:from-white dark:to-zinc-400"
+                 className="text-3xl lg:text-4xl xl:text-5xl font-bold leading-tight bg-clip-text text-transparent bg-gradient-to-r from-zinc-900 to-zinc-600 dark:from-white dark:to-zinc-400"
                >
                  Most people come to us when...
                </motion.h2>
@@ -714,7 +714,7 @@ const HirenumPage: React.FC = () => {
             {painPointNodes.map((node, idx) => (
               <motion.div
                 key={idx}
-                className="absolute w-[300px]"
+                className="absolute w-[220px] lg:w-[250px] xl:w-[300px]"
                 style={{ 
                   top: node.top, 
                   left: node.left, 
@@ -727,21 +727,21 @@ const HirenumPage: React.FC = () => {
                 viewport={{ once: true }}
               >
                 <div className={`
-                  relative p-6 rounded-2xl border backdrop-blur-md overflow-hidden group transition-all duration-300
+                  relative p-4 lg:p-5 xl:p-6 rounded-2xl border backdrop-blur-md overflow-hidden group transition-all duration-300
                   bg-white/80 dark:bg-zinc-900/80 border-white/20 dark:border-white/10 hover:border-[#DC0078]/30
                 `}>
                   {/* Gradient Background for Card */}
                   <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-r from-[#DC0078]/5 to-[#1BB8BD]/5" />
                   
-                  <div className="relative z-10 flex items-start gap-4">
+                  <div className="relative z-10 flex items-start gap-3 xl:gap-4">
                     <div className="
-                      p-3 rounded-xl flex-shrink-0 transition-colors duration-300
+                      p-2 lg:p-2.5 xl:p-3 rounded-xl flex-shrink-0 transition-colors duration-300
                       bg-gray-100 dark:bg-white/5 text-[#DC0078] group-hover:bg-[#DC0078] group-hover:text-white
                     ">
-                      <node.icon size={24} />
+                      <node.icon className="w-5 h-5 lg:w-5 lg:h-5 xl:w-6 xl:h-6" />
                     </div>
                     <div>
-                      <p className="font-medium leading-relaxed text-gray-700 dark:text-gray-200">
+                      <p className="text-sm lg:text-sm xl:text-base font-medium leading-relaxed text-gray-700 dark:text-gray-200">
                         {node.text}
                       </p>
                     </div>
