@@ -299,21 +299,29 @@ const HirenumPage: React.FC = () => {
       <section id="start-here" className="relative min-h-screen flex items-center pt-20 overflow-hidden">
         {/* Video Background - Full Section */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          {/* Mobile: hidden or very subtle, Tablet: moderate, Desktop: full effect */}
           <video 
             autoPlay 
             loop 
             muted 
             playsInline
-            className="absolute top-0 right-0 w-full h-full object-cover"
+            className="absolute top-0 right-0 w-full h-full object-cover 
+                       opacity-30 sm:opacity-40 md:opacity-50 lg:opacity-50 
+                       dark:opacity-60 dark:sm:opacity-70 dark:md:opacity-90 dark:lg:opacity-100"
             style={{ 
-              maskImage: 'linear-gradient(to right, transparent 0%, transparent 30%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0.6) 70%, rgba(0,0,0,0.8) 100%)',
-              WebkitMaskImage: 'linear-gradient(to right, transparent 0%, transparent 30%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0.6) 70%, rgba(0,0,0,0.8) 100%)'
+              maskImage: 'linear-gradient(to right, transparent 0%, transparent 20%, rgba(0,0,0,0.2) 40%, rgba(0,0,0,0.5) 60%, rgba(0,0,0,0.7) 80%, rgba(0,0,0,0.9) 100%)',
+              WebkitMaskImage: 'linear-gradient(to right, transparent 0%, transparent 20%, rgba(0,0,0,0.2) 40%, rgba(0,0,0,0.5) 60%, rgba(0,0,0,0.7) 80%, rgba(0,0,0,0.9) 100%)'
             }}
           >
             <source src="/neon-tunnel.mp4" type="video/mp4" />
           </video>
-          {/* Additional fade overlays for smoother blending */}
-          <div className="absolute inset-0 bg-gradient-to-t from-[var(--bg-primary)] via-transparent to-[var(--bg-primary)] opacity-50"></div>
+          {/* Additional fade overlays for smoother blending - responsive */}
+          <div className="absolute inset-0 bg-gradient-to-t from-[var(--bg-primary)] via-transparent to-[var(--bg-primary)] 
+                          opacity-80 sm:opacity-75 md:opacity-70 lg:opacity-60
+                          dark:opacity-60 dark:sm:opacity-55 dark:md:opacity-50 dark:lg:opacity-40"></div>
+          <div className="absolute inset-0 bg-[var(--bg-primary)] 
+                          opacity-50 sm:opacity-40 md:opacity-30 lg:opacity-20
+                          dark:opacity-20 dark:sm:opacity-10 dark:md:opacity-5 dark:lg:opacity-0"></div>
           <div className="absolute inset-0 bg-gradient-to-br from-[#1BB8BD]/5 via-transparent to-[#DC0078]/5 mix-blend-overlay"></div>
         </div>
 
@@ -325,12 +333,13 @@ const HirenumPage: React.FC = () => {
           <div className="space-y-8 max-w-2xl">
             
             
-            <h1 className="text-5xl md:text-6xl font-bold leading-[1.05] md:leading-[1.1]">
-              BECOME YOUR INDUSTRY&apos;S GO-TO{' '}
-              <span className="relative inline-block">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-bold leading-[1.1]">
+              <span className="block whitespace-nowrap">BECOME YOUR</span>
+              <span className="block whitespace-nowrap">INDUSTRY&apos;S GO-TO</span>
+              <span className="relative inline-block whitespace-nowrap">
                 THOUGHT LEADER
                 <svg 
-                  className="absolute -bottom-2 left-0 w-full" 
+                  className="absolute -bottom-2 sm:-bottom-2 left-0 w-full" 
                   viewBox="0 0 200 12" 
                   fill="none" 
                   xmlns="http://www.w3.org/2000/svg"
@@ -342,23 +351,10 @@ const HirenumPage: React.FC = () => {
                     strokeWidth="2" 
                     strokeLinecap="round"
                   />
-                  {/* <path 
-                    d="M5 10C30 6 70 4 100 7C150 10 185 5 195 6" 
-                    stroke="#DC0078" 
-                    strokeWidth="2" 
-                    strokeLinecap="round"
-                    opacity="0.7"
-                  /> */}
-                  {/* <path 
-                    d="M10 6C50 3 90 5 130 4C170 3 190 5 198 8" 
-                    stroke="#DC0078" 
-                    strokeWidth="1.5" 
-                    strokeLinecap="round"
-                    opacity="0.5"
-                  /> */}
                 </svg>
+                <span className="text-[#1BB8BD]">.</span>
               </span>
-              <span className="text-[#1BB8BD]">.</span>
+              
             </h1>
 
             <p className="text-l max-w-lg leading-relaxed text-gray-600 dark:text-gray-400">
