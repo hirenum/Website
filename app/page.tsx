@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useTheme } from 'next-themes';
 import { motion } from 'framer-motion';
 import { 
@@ -60,6 +60,7 @@ const HirenumPage: React.FC = () => {
   const [scrolled, setScrolled] = useState<boolean>(false);
   const [activeFaq, setActiveFaq] = useState<number | null>(null);
   const [mounted, setMounted] = useState<boolean>(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
   
   // Theme State
   const {  setTheme, resolvedTheme } = useTheme();
@@ -69,6 +70,13 @@ const HirenumPage: React.FC = () => {
   useEffect(() => {
     const timeoutId = setTimeout(() => setMounted(true), 0);
     return () => clearTimeout(timeoutId);
+  }, []);
+
+  // Set video playback speed to slow motion
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.playbackRate = 0.5; // 50% speed for slow motion
+    }
   }, []);
 
   const toggleTheme = () => {
@@ -300,18 +308,22 @@ const HirenumPage: React.FC = () => {
         {/* Video Background - Full Section */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           {/* Mobile: hidden or very subtle, Tablet: moderate, Desktop: full effect */}
+          {/* Mobile gradient - starts fade earlier */}
           <video 
+            ref={videoRef}
             autoPlay 
             loop 
             muted 
             playsInline
             className="absolute top-0 right-0 w-full h-full object-cover 
                        opacity-30 sm:opacity-40 md:opacity-50 lg:opacity-50 
-                       dark:opacity-60 dark:sm:opacity-70 dark:md:opacity-90 dark:lg:opacity-100"
-            style={{ 
-              maskImage: 'linear-gradient(to right, transparent 0%, transparent 20%, rgba(0,0,0,0.2) 40%, rgba(0,0,0,0.5) 60%, rgba(0,0,0,0.7) 80%, rgba(0,0,0,0.9) 100%)',
-              WebkitMaskImage: 'linear-gradient(to right, transparent 0%, transparent 20%, rgba(0,0,0,0.2) 40%, rgba(0,0,0,0.5) 60%, rgba(0,0,0,0.7) 80%, rgba(0,0,0,0.9) 100%)'
-            }}
+                       dark:opacity-60 dark:sm:opacity-70 dark:md:opacity-90 dark:lg:opacity-100
+                       brightness-75 saturate-50 contrast-90
+                       dark:brightness-[0.8] dark:saturate-75 dark:contrast-95
+                       [mask-image:linear-gradient(to_right,transparent_0%,transparent_10%,rgba(0,0,0,0.15)_30%,rgba(0,0,0,0.4)_50%,rgba(0,0,0,0.7)_70%,rgba(0,0,0,0.9)_100%)]
+                       sm:[mask-image:linear-gradient(to_right,transparent_0%,transparent_15%,rgba(0,0,0,0.2)_35%,rgba(0,0,0,0.5)_55%,rgba(0,0,0,0.75)_75%,rgba(0,0,0,0.9)_100%)]
+                       md:[mask-image:linear-gradient(to_right,transparent_0%,transparent_20%,rgba(0,0,0,0.25)_40%,rgba(0,0,0,0.55)_60%,rgba(0,0,0,0.8)_80%,rgba(0,0,0,0.95)_100%)]
+                       lg:[mask-image:linear-gradient(to_right,transparent_0%,transparent_25%,rgba(0,0,0,0.3)_45%,rgba(0,0,0,0.6)_65%,rgba(0,0,0,0.85)_85%,rgba(0,0,0,1)_100%)]"
           >
             <source src="/neon-tunnel.mp4" type="video/mp4" />
           </video>
