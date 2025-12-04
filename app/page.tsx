@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { useTheme } from 'next-themes';
 import { motion } from 'framer-motion';
 import { 
@@ -158,7 +158,9 @@ const HirenumPage: React.FC = () => {
   const [scrolled, setScrolled] = useState<boolean>(false);
   const [activeFaq, setActiveFaq] = useState<number | null>(null);
   const [mounted, setMounted] = useState<boolean>(false);
+  const [activeStep, setActiveStep] = useState<number | null>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
+  const stepRefs = useRef<(HTMLDivElement | null)[]>([]);
   
   // Theme State
   const {  setTheme, resolvedTheme } = useTheme();
@@ -189,6 +191,41 @@ const HirenumPage: React.FC = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  // --- Scroll-based step activation for Hirenum Method ---
+  const updateActiveStep = useCallback(() => {
+    const viewportCenter = window.innerHeight / 2;
+    let closestStep: number | null = null;
+    let closestDistance = Infinity;
+
+    stepRefs.current.forEach((ref, index) => {
+      if (ref) {
+        const rect = ref.getBoundingClientRect();
+        const elementCenter = rect.top + rect.height / 2;
+        const distance = Math.abs(elementCenter - viewportCenter);
+        
+        // Only consider steps that are somewhat visible
+        if (rect.top < window.innerHeight && rect.bottom > 0) {
+          if (distance < closestDistance) {
+            closestDistance = distance;
+            closestStep = index;
+          }
+        }
+      }
+    });
+
+    setActiveStep(closestStep);
+  }, []);
+
+  useEffect(() => {
+    window.addEventListener('scroll', updateActiveStep);
+    // Initial check with a small delay to avoid sync setState
+    const timeoutId = setTimeout(updateActiveStep, 100);
+    return () => {
+      window.removeEventListener('scroll', updateActiveStep);
+      clearTimeout(timeoutId);
+    };
+  }, [updateActiveStep]);
 
   const toggleFaq = (index: number) => {
     setActiveFaq(activeFaq === index ? null : index);
@@ -240,11 +277,12 @@ const HirenumPage: React.FC = () => {
   ];
 
   const faqs: FaqItem[] = [
-    { q: "What exactly is personal branding on LinkedIn?", a: "It's the intentional way you present your expertise. It's not about pretending; it's about clearly communicating the value you already bring." },
-    { q: "Do I really need a personal brand if my business is fine?", a: "A strong brand opens new doors: better clients, talent, and partnerships. It protects you long-term, carrying weight even if your role changes." },
-    { q: "I don't have time to post every day.", a: "You don't need to. We design a strategy that fits your schedule. Consistency beats frequency." },
-    { q: "Do I have to be on video?", a: "No. Video helps, but it's not mandatory. We build a plan that matches your strengths—text, carousels, or audio." },
-    { q: "Can you run everything for me?", a: "Yes, that is our Authority Package. We handle optimization, content, and outreach while aligning with your voice." }
+    { q: "What exactly is personal branding on LinkedIn?", a: "Personal branding on LinkedIn is the intentional way you present your expertise, experience and perspective so that the right people can easily understand who you are, what you do, and why it matters. It's not about pretending to be someone else — it's about clearly communicating the value you already bring." },
+    { q: "Do I really need a personal brand if my business is already doing fine?", a: "Many of our clients are already doing well when they come to us. A strong personal brand helps you open new doors: better clients, better talent, better partnerships and better opportunities. It also protects you long-term — your name continues to carry weight, even if your role or company changes." },
+    { q: "I don't have time to post every day. Can this still work for me?", a: "Yes. We design a strategy that fits your schedule and energy. You don't need to post daily to see results. You need consistent, intentional content that speaks to the right people. We'll help you find the rhythm that works for you." },
+    { q: "I've been posting on LinkedIn, but it's not leading to anything. Can you help?", a: "Absolutely. We'll review your profile, your content and your positioning to identify what's missing. Often, it's not effort that's missing — it's strategy, clarity and alignment with your goals. That's exactly what we fix." },
+    { q: "Do I have to be on video to build a personal brand?", a: "No. Video can help, but it's not mandatory. There are many ways to show up: text posts, carousels, articles, commenting, interviews and more. We'll build a plan that matches your strengths and comfort level." },
+    { q: "Can you run everything for me so I don't have to worry about it?", a: "That's what the Authority Package is for. We handle most of the heavy lifting — from optimization to content and outreach — while staying closely aligned with your voice and vision." }
   ];
 
   const blogPosts: BlogPost[] = [
@@ -1179,26 +1217,31 @@ const HirenumPage: React.FC = () => {
              <div className="absolute left-8 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-[#1BB8BD] via-[#DC0078] to-[#1BB8BD] opacity-30 md:-translate-x-1/2"></div>
              
              <div className="space-y-12">
-                {steps.map((step, i) => (
-                  <div key={i} className={`relative flex items-center ${i % 2 === 0 ? 'md:flex-row-reverse' : ''}`}>
+                {steps.map((step, i) => {
+                  const isActive = activeStep === i;
+                  return (
+                  <div 
+                    key={i} 
+                    ref={(el) => { stepRefs.current[i] = el; }}
+                    className={`relative flex items-center ${i % 2 === 0 ? 'md:flex-row-reverse' : ''}`}
+                  >
                      {/* Mobile spacing filler (Desktop Only) */}
                      <div className="hidden md:block w-1/2"></div>
                      
                      {/* Dot */}
-                     <div className="absolute left-8 md:left-1/2 -translate-x-1/2 w-4 h-4 rounded-full border-2 border-[#1BB8BD] z-10 shadow-[0_0_10px_#1BB8BD] bg-[var(--bg-primary)]">
-                        <div className="absolute inset-0 bg-[#1BB8BD] opacity-50 animate-ping rounded-full"></div>
+                     <div className={`absolute left-8 md:left-1/2 -translate-x-1/2 w-4 h-4 rounded-full border-2 border-[#1BB8BD] z-10 bg-[var(--bg-primary)] transition-all duration-500 ${isActive ? 'shadow-[0_0_20px_#1BB8BD,0_0_30px_#1BB8BD] scale-125' : ''}`}>
                      </div>
 
                      {/* Content Card */}
                      <div className="ml-20 md:ml-0 md:w-1/2 md:px-10 w-full">
-                        <div className="glass-card p-8 rounded-xl border transition-all duration-500 group relative overflow-hidden bg-white shadow-lg hover:shadow-2xl hover:shadow-[#1BB8BD]/20 hover:-translate-y-1 hover:border-[#DC0078]/50 border-black/5 dark:hover:border-[#DC0078]/50">
+                        <div className={`glass-card p-8 rounded-xl border transition-all duration-500 relative overflow-hidden bg-white dark:bg-zinc-900 ${isActive ? 'shadow-2xl shadow-[#1BB8BD]/30 -translate-y-2 border-[#DC0078]/50' : 'shadow-lg border-black/5 dark:border-white/10'}`}>
                            {/* Animated border gradient */}
-                           <div className="absolute inset-0 bg-gradient-to-r from-[#1BB8BD] to-[#DC0078] opacity-0 group-hover:opacity-10 transition-opacity duration-500"></div>
+                           <div className={`absolute inset-0 bg-gradient-to-r from-[#1BB8BD] to-[#DC0078] transition-opacity duration-500 ${isActive ? 'opacity-10' : 'opacity-0'}`}></div>
                            {/* Number Watermark */}
-                           <div className="absolute -top-4 -right-4 text-8xl font-black z-0 transition-colors text-black/5 group-hover:text-[#DC0078]/10 dark:text-white/5 dark:group-hover:text-[#DC0078]/10">0{i+1}</div>
+                           <div className={`absolute -top-4 -right-4 text-8xl font-black z-0 transition-colors duration-500 ${isActive ? 'text-[#DC0078]/15 dark:text-[#DC0078]/15' : 'text-black/5 dark:text-white/5'}`}>0{i+1}</div>
                            
                            <div className="relative z-10">
-                             <h3 className="text-2xl font-bold mb-3 group-hover:text-[#1BB8BD] transition-colors text-zinc-900 dark:text-white">{step.title}</h3>
+                             <h3 className={`text-2xl font-bold mb-3 transition-colors duration-500 ${isActive ? 'text-[#1BB8BD]' : 'text-zinc-900 dark:text-white'}`}>{step.title}</h3>
                              <p className="text-sm mb-4 leading-relaxed text-gray-600 dark:text-gray-400">{step.desc}</p>
                              <ul className="space-y-2 border-t pt-4 border-black/5 dark:border-white/5">
                                {step.details.map((detail, idx) => (
@@ -1211,7 +1254,8 @@ const HirenumPage: React.FC = () => {
                         </div>
                      </div>
                   </div>
-                ))}
+                  );
+                })}
              </div>
           </div>
         </div>
@@ -1222,50 +1266,63 @@ const HirenumPage: React.FC = () => {
         <div className="container mx-auto px-6">
           <h2 className="text-4xl md:text-5xl font-bold text-center mb-16">Packages</h2>
           
-          <div className="grid md:grid-cols-3 gap-8 items-start">
+          <div className="grid md:grid-cols-3 gap-8 items-stretch max-w-[1600px] mx-auto">
              {/* Advisory */}
-             <div className="border rounded-2xl p-8 transition-all duration-500 border-black/10 bg-white hover:border-[#1BB8BD]/50 shadow-lg hover:shadow-2xl hover:shadow-[#1BB8BD]/10 hover:-translate-y-2 dark:border-white/10 dark:bg-black dark:hover:border-[#1BB8BD]/50 group">
+             <div className="border rounded-2xl p-8 transition-all duration-500 border-black/10 bg-white hover:border-[#1BB8BD]/50 shadow-lg hover:shadow-2xl hover:shadow-[#1BB8BD]/10 hover:-translate-y-2 dark:border-white/10 dark:bg-black dark:hover:border-[#1BB8BD]/50 group flex flex-col">
                 <div className="mb-4">
                   <h3 className="text-2xl font-bold">Advisory</h3>
                   <p className="text-[#1BB8BD] text-sm font-bold mt-1">You execute. We guide.</p>
                 </div>
-                <p className="text-sm mb-8 min-h-[40px] text-gray-600 dark:text-gray-400">For those who want to stay hands-on but need a strategic expert.</p>
-                <button className="w-full py-3 border rounded-lg font-bold transition-all duration-300 mb-8 border-black hover:bg-black hover:text-white hover:scale-[1.02] hover:shadow-lg active:scale-95 dark:border-white dark:hover:bg-white dark:hover:text-black relative overflow-hidden group/btn font-btn"><span className="relative z-10">Select Advisory</span></button>
-                <ul className="space-y-3 text-sm text-gray-700 dark:text-gray-300">
-                  <li className="flex gap-2"><Check size={16} className="text-[#1BB8BD]" /> Weekly 1:1 sessions</li>
-                  <li className="flex gap-2"><Check size={16} className="text-[#1BB8BD]" /> Positioning consultation</li>
-                  <li className="flex gap-2"><Check size={16} className="text-[#1BB8BD]" /> Content strategy & feedback</li>
+                <p className="text-sm mb-6 text-gray-600 dark:text-gray-400">Best for founders and professionals who want to stay hands-on but need strategic direction and expert support.</p>
+                <button className="w-full py-3 border rounded-lg font-bold transition-all duration-300 mb-6 border-black hover:bg-black hover:text-white hover:scale-[1.02] hover:shadow-lg active:scale-95 dark:border-white dark:hover:bg-white dark:hover:text-black relative overflow-hidden group/btn font-btn"><span className="relative z-10">Select Advisory</span></button>
+                <p className="text-xs font-bold uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-3">What&apos;s included:</p>
+                <ul className="space-y-2.5 text-sm text-gray-700 dark:text-gray-300 flex-grow">
+                  <li className="flex gap-2"><Check size={16} className="text-[#1BB8BD] flex-shrink-0 mt-0.5" /> Weekly 1:1 advisory sessions</li>
+                  <li className="flex gap-2"><Check size={16} className="text-[#1BB8BD] flex-shrink-0 mt-0.5" /> Personal brand positioning consultation</li>
+                  <li className="flex gap-2"><Check size={16} className="text-[#1BB8BD] flex-shrink-0 mt-0.5" /> Step-by-step LinkedIn profile optimization guidance</li>
+                  <li className="flex gap-2"><Check size={16} className="text-[#1BB8BD] flex-shrink-0 mt-0.5" /> Content strategy, topic ideation and post feedback</li>
+                  <li className="flex gap-2"><Check size={16} className="text-[#1BB8BD] flex-shrink-0 mt-0.5" /> Analytics reviews and performance insights</li>
+                  <li className="flex gap-2"><Check size={16} className="text-[#1BB8BD] flex-shrink-0 mt-0.5" /> Coaching on networking, engagement and outreach</li>
                 </ul>
              </div>
 
              {/* Foundation - Highlighted */}
-             <div className="border-2 border-[#1BB8BD] rounded-2xl p-8 relative transform md:-translate-y-4 shadow-2xl shadow-[#1BB8BD]/20 bg-white dark:bg-black transition-all duration-500 hover:shadow-[0_0_40px_rgba(27,184,189,0.3)] hover:-translate-y-6 group">
+             <div className="border-2 border-[#1BB8BD] rounded-2xl p-8 relative transform md:-translate-y-4 shadow-2xl shadow-[#1BB8BD]/20 bg-white dark:bg-black transition-all duration-500 hover:shadow-[0_0_40px_rgba(27,184,189,0.3)] hover:-translate-y-6 group flex flex-col">
                 <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-[#1BB8BD] text-white text-xs font-bold px-4 py-1 rounded-full uppercase">Most Popular</div>
                 <div className="mb-4">
                   <h3 className="text-2xl font-bold">Foundation</h3>
-                  <p className="text-[#1BB8BD] text-sm font-bold mt-1">We build with you.</p>
+                  <p className="text-[#1BB8BD] text-sm font-bold mt-1">We build your presence with you.</p>
                 </div>
-                <p className="text-sm mb-8 min-h-[40px] text-gray-600 dark:text-gray-400">Structure, support and consistent visible progress.</p>
-                <button className="w-full py-3 bg-[#1BB8BD] text-white rounded-lg font-bold transition-all duration-300 mb-8 hover:bg-[#1fcfd4] hover:scale-[1.02] hover:shadow-[0_0_20px_rgba(27,184,189,0.5)] active:scale-95 relative overflow-hidden font-btn">Select Foundation</button>
-                <ul className="space-y-3 text-sm text-gray-700 dark:text-gray-300">
-                  <li className="flex gap-2"><Check size={16} className="text-[#1BB8BD]" /> <strong>All Advisory features</strong></li>
-                  <li className="flex gap-2"><Check size={16} className="text-[#1BB8BD]" /> Profile Optimization (Done For You)</li>
-                  <li className="flex gap-2"><Check size={16} className="text-[#1BB8BD]" /> Content Calendar</li>
+                <p className="text-sm mb-6 text-gray-600 dark:text-gray-400">Best for busy founders who want consistent LinkedIn growth with shared execution.</p>
+                <button className="w-full py-3 bg-[#1BB8BD] text-white rounded-lg font-bold transition-all duration-300 mb-6 hover:bg-[#1fcfd4] hover:scale-[1.02] hover:shadow-[0_0_20px_rgba(27,184,189,0.5)] active:scale-95 relative overflow-hidden font-btn">Select Foundation</button>
+                <p className="text-xs font-bold uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-3">What&apos;s included:</p>
+                <ul className="space-y-2.5 text-sm text-gray-700 dark:text-gray-300 flex-grow">
+                  <li className="flex gap-2"><Check size={16} className="text-[#1BB8BD] flex-shrink-0 mt-0.5" /> <strong>Everything in the Advisory Package</strong></li>
+                  <li className="flex gap-2"><Check size={16} className="text-[#1BB8BD] flex-shrink-0 mt-0.5" /> Full LinkedIn profile optimization done for you</li>
+                  <li className="flex gap-2"><Check size={16} className="text-[#1BB8BD] flex-shrink-0 mt-0.5" /> Content calendar and posting rhythm tailored to your schedule</li>
+                  <li className="flex gap-2"><Check size={16} className="text-[#1BB8BD] flex-shrink-0 mt-0.5" /> Co-created content: we draft, you approve/refine</li>
+                  <li className="flex gap-2"><Check size={16} className="text-[#1BB8BD] flex-shrink-0 mt-0.5" /> Weekly performance review with recommendations</li>
+                  <li className="flex gap-2"><Check size={16} className="text-[#1BB8BD] flex-shrink-0 mt-0.5" /> Guidance on strategic commenting, engagement and relationship-building</li>
+                  <li className="flex gap-2"><Check size={16} className="text-[#1BB8BD] flex-shrink-0 mt-0.5" /> Audience growth support focused on relevant, high-quality connections</li>
                 </ul>
              </div>
 
              {/* Authority */}
-             <div className="border rounded-2xl p-8 transition-all duration-500 border-black/10 bg-white hover:border-[#DC0078]/50 shadow-lg hover:shadow-2xl hover:shadow-[#DC0078]/10 hover:-translate-y-2 dark:border-white/10 dark:bg-black dark:hover:border-[#DC0078]/50 group">
+             <div className="border rounded-2xl p-8 transition-all duration-500 border-black/10 bg-white hover:border-[#DC0078]/50 shadow-lg hover:shadow-2xl hover:shadow-[#DC0078]/10 hover:-translate-y-2 dark:border-white/10 dark:bg-black dark:hover:border-[#DC0078]/50 group flex flex-col">
                 <div className="mb-4">
                   <h3 className="text-2xl font-bold">Authority</h3>
-                  <p className="text-[#DC0078] text-sm font-bold mt-1">We build for you.</p>
+                  <p className="text-[#DC0078] text-sm font-bold mt-1">We build your presence for you.</p>
                 </div>
-                <p className="text-sm mb-8 min-h-[40px] text-gray-600 dark:text-gray-400">A done-for-you thought leadership engine for busy leaders.</p>
-                <button className="w-full py-3 border rounded-lg font-bold transition-all duration-300 mb-8 border-black hover:bg-[#DC0078] hover:text-white hover:border-[#DC0078] hover:scale-[1.02] hover:shadow-lg active:scale-95 dark:border-white dark:hover:bg-[#DC0078] dark:hover:border-[#DC0078] relative overflow-hidden font-btn">Select Authority</button>
-                <ul className="space-y-3 text-sm text-gray-700 dark:text-gray-300">
-                  <li className="flex gap-2"><Check size={16} className="text-[#DC0078]" /> <strong>All Foundation features</strong></li>
-                  <li className="flex gap-2"><Check size={16} className="text-[#DC0078]" /> Outreach support</li>
-                  <li className="flex gap-2"><Check size={16} className="text-[#DC0078]" /> Heavy lifting on execution</li>
+                <p className="text-sm mb-6 text-gray-600 dark:text-gray-400">Best for founders, C-suites and leaders who want a high-touch, done-for-you thought-leadership engine.</p>
+                <button className="w-full py-3 border rounded-lg font-bold transition-all duration-300 mb-6 border-black hover:bg-[#DC0078] hover:text-white hover:border-[#DC0078] hover:scale-[1.02] hover:shadow-lg active:scale-95 dark:border-white dark:hover:bg-[#DC0078] dark:hover:border-[#DC0078] relative overflow-hidden font-btn">Select Authority</button>
+                <p className="text-xs font-bold uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-3">What&apos;s included:</p>
+                <ul className="space-y-2.5 text-sm text-gray-700 dark:text-gray-300 flex-grow">
+                  <li className="flex gap-2"><Check size={16} className="text-[#DC0078] flex-shrink-0 mt-0.5" /> <strong>Everything in the Foundation Package</strong></li>
+                  <li className="flex gap-2"><Check size={16} className="text-[#DC0078] flex-shrink-0 mt-0.5" /> Outreach and connection-building support</li>
+                  <li className="flex gap-2"><Check size={16} className="text-[#DC0078] flex-shrink-0 mt-0.5" /> Warm, human-first DM and message frameworks</li>
+                  <li className="flex gap-2"><Check size={16} className="text-[#DC0078] flex-shrink-0 mt-0.5" /> Strategic relationship building with key people in your ecosystem</li>
+                  <li className="flex gap-2"><Check size={16} className="text-[#DC0078] flex-shrink-0 mt-0.5" /> Higher-touch execution and communication</li>
+                  <li className="flex gap-2"><Check size={16} className="text-[#DC0078] flex-shrink-0 mt-0.5" /> Close collaboration on long-term authority positioning</li>
                 </ul>
              </div>
           </div>
