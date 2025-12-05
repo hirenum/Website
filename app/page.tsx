@@ -153,14 +153,191 @@ const CollaborationIllustration: React.FC = () => (
   </svg>
 );
 
+// Decorative Stars/Balls Background SVG Component - More scattered on left and right edges
+const DecorativeCircles: React.FC = () => (
+  <>
+    {/* Left Side Circles */}
+    <svg 
+      className="absolute left-0 top-0 hidden sm:block sm:w-24 md:w-32 lg:w-48 h-full pointer-events-none" 
+      viewBox="0 0 200 800" 
+      fill="none" 
+      xmlns="http://www.w3.org/2000/svg"
+      preserveAspectRatio="xMinYMid slice"
+    >
+      <defs>
+        <filter id="filter_glow_sm_l" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+          <feFlood floodOpacity="0" result="BackgroundImageFix"></feFlood>
+          <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"></feBlend>
+          <feGaussianBlur stdDeviation="2" result="effect1_foregroundBlur"></feGaussianBlur>
+        </filter>
+        <filter id="filter_glow_md_l" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+          <feFlood floodOpacity="0" result="BackgroundImageFix"></feFlood>
+          <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"></feBlend>
+          <feGaussianBlur stdDeviation="4" result="effect1_foregroundBlur"></feGaussianBlur>
+        </filter>
+        <filter id="filter_glow_lg_l" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+          <feFlood floodOpacity="0" result="BackgroundImageFix"></feFlood>
+          <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"></feBlend>
+          <feGaussianBlur stdDeviation="6" result="effect1_foregroundBlur"></feGaussianBlur>
+        </filter>
+      </defs>
+      
+      <style>
+        {`
+          @keyframes fade1 {
+            0%, 100% { opacity: 0.2; }
+            50% { opacity: 0.8; }
+          }
+          @keyframes fade2 {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 0.9; }
+          }
+          @keyframes fade3 {
+            0%, 100% { opacity: 0.1; }
+            50% { opacity: 0.7; }
+          }
+          .fade1 { animation: fade1 4s ease-in-out infinite; }
+          .fade2 { animation: fade2 5s ease-in-out infinite; }
+          .fade3 { animation: fade3 6s ease-in-out infinite; }
+        `}
+      </style>
+      
+      {/* Scattered left circles */}
+      <g filter="url(#filter_glow_md_l)" className="fade1">
+        <circle cx="25" cy="45" r="1.5" fill="#1BB8BD"></circle>
+      </g>
+      <circle cx="25" cy="45" r="1.5" fill="#1BB8BD" className="fade1"></circle>
+      
+      <circle cx="78" cy="142" r="1.5" fill="#1BB8BD" className="fade2"></circle>
+      
+      <g filter="url(#filter_glow_lg_l)" className="fade3">
+        <circle cx="12" cy="285" r="1.5" fill="#1BB8BD"></circle>
+      </g>
+      <circle cx="12" cy="285" r="1.5" fill="#1BB8BD" className="fade3"></circle>
+      
+      <circle cx="165" cy="198" r="1.5" fill="#1BB8BD" className="fade1"></circle>
+      
+      <g filter="url(#filter_glow_md_l)" className="fade2">
+        <circle cx="52" cy="390" r="1.5" fill="#1BB8BD"></circle>
+      </g>
+      <circle cx="52" cy="390" r="1.5" fill="#1BB8BD" className="fade2"></circle>
+      
+      <circle cx="135" cy="320" r="1.5" fill="#1BB8BD" className="fade3"></circle>
+      
+      <g filter="url(#filter_glow_md_l)" className="fade1">
+        <circle cx="88" cy="510" r="1.5" fill="#1BB8BD"></circle>
+      </g>
+      <circle cx="88" cy="510" r="1.5" fill="#1BB8BD" className="fade1"></circle>
+      
+      <circle cx="18" cy="455" r="1.5" fill="#1BB8BD" className="fade2"></circle>
+      
+      <g filter="url(#filter_glow_lg_l)" className="fade3">
+        <circle cx="42" cy="640" r="1.5" fill="#1BB8BD"></circle>
+      </g>
+      <circle cx="42" cy="640" r="1.5" fill="#1BB8BD" className="fade3"></circle>
+      
+      <circle cx="155" cy="575" r="1.5" fill="#1BB8BD" className="fade1"></circle>
+      
+      <circle cx="70" cy="735" r="1.5" fill="#1BB8BD" className="fade2"></circle>
+    </svg>
+    
+    {/* Right Side Circles */}
+    <svg 
+      className="absolute right-0 top-0 hidden sm:block sm:w-24 md:w-32 lg:w-48 h-full pointer-events-none" 
+      viewBox="0 0 200 800" 
+      fill="none" 
+      xmlns="http://www.w3.org/2000/svg"
+      preserveAspectRatio="xMaxYMid slice"
+    >
+      <defs>
+        <filter id="filter_glow_sm_r" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+          <feFlood floodOpacity="0" result="BackgroundImageFix"></feFlood>
+          <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"></feBlend>
+          <feGaussianBlur stdDeviation="2" result="effect1_foregroundBlur"></feGaussianBlur>
+        </filter>
+        <filter id="filter_glow_md_r" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+          <feFlood floodOpacity="0" result="BackgroundImageFix"></feFlood>
+          <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"></feBlend>
+          <feGaussianBlur stdDeviation="4" result="effect1_foregroundBlur"></feGaussianBlur>
+        </filter>
+        <filter id="filter_glow_lg_r" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+          <feFlood floodOpacity="0" result="BackgroundImageFix"></feFlood>
+          <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"></feBlend>
+          <feGaussianBlur stdDeviation="6" result="effect1_foregroundBlur"></feGaussianBlur>
+        </filter>
+      </defs>
+      
+      <style>
+        {`
+          @keyframes fade4 {
+            0%, 100% { opacity: 0.2; }
+            50% { opacity: 0.85; }
+          }
+          @keyframes fade5 {
+            0%, 100% { opacity: 0.15; }
+            50% { opacity: 0.75; }
+          }
+          @keyframes fade6 {
+            0%, 100% { opacity: 0.25; }
+            50% { opacity: 0.9; }
+          }
+          .fade4 { animation: fade4 5s ease-in-out infinite; }
+          .fade5 { animation: fade5 4s ease-in-out infinite; }
+          .fade6 { animation: fade6 6s ease-in-out infinite; }
+        `}
+      </style>
+      
+      {/* Scattered right circles */}
+      <g filter="url(#filter_glow_md_r)" className="fade4">
+        <circle cx="175" cy="72" r="1.5" fill="#1BB8BD"></circle>
+      </g>
+      <circle cx="175" cy="72" r="1.5" fill="#1BB8BD" className="fade4"></circle>
+      
+      <circle cx="45" cy="115" r="1.5" fill="#1BB8BD" className="fade5"></circle>
+      
+      <g filter="url(#filter_glow_lg_r)" className="fade6">
+        <circle cx="160" cy="248" r="1.5" fill="#1BB8BD"></circle>
+      </g>
+      <circle cx="160" cy="248" r="1.5" fill="#1BB8BD" className="fade6"></circle>
+      
+      <circle cx="35" cy="185" r="1.5" fill="#1BB8BD" className="fade4"></circle>
+      
+      <g filter="url(#filter_glow_md_r)" className="fade5">
+        <circle cx="125" cy="365" r="1.5" fill="#1BB8BD"></circle>
+      </g>
+      <circle cx="125" cy="365" r="1.5" fill="#1BB8BD" className="fade5"></circle>
+      
+      <circle cx="58" cy="305" r="1.5" fill="#1BB8BD" className="fade6"></circle>
+      
+      <g filter="url(#filter_glow_md_r)" className="fade4">
+        <circle cx="185" cy="478" r="1.5" fill="#1BB8BD"></circle>
+      </g>
+      <circle cx="185" cy="478" r="1.5" fill="#1BB8BD" className="fade4"></circle>
+      
+      <circle cx="72" cy="420" r="1.5" fill="#1BB8BD" className="fade5"></circle>
+      
+      <g filter="url(#filter_glow_lg_r)" className="fade6">
+        <circle cx="148" cy="615" r="1.5" fill="#1BB8BD"></circle>
+      </g>
+      <circle cx="148" cy="615" r="1.5" fill="#1BB8BD" className="fade6"></circle>
+      
+      <circle cx="28" cy="545" r="1.5" fill="#1BB8BD" className="fade4"></circle>
+      
+      <circle cx="165" cy="740" r="1.5" fill="#1BB8BD" className="fade5"></circle>
+    </svg>
+  </>
+);
+
 const HirenumPage: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
   const [scrolled, setScrolled] = useState<boolean>(false);
   const [activeFaq, setActiveFaq] = useState<number | null>(null);
   const [mounted, setMounted] = useState<boolean>(false);
   const [activeStep, setActiveStep] = useState<number | null>(null);
+  const [lineProgress, setLineProgress] = useState<number>(0);
   const videoRef = useRef<HTMLVideoElement>(null);
   const stepRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const timelineRef = useRef<HTMLDivElement>(null);
   
   // Theme State
   const {  setTheme, resolvedTheme } = useTheme();
@@ -215,6 +392,19 @@ const HirenumPage: React.FC = () => {
     });
 
     setActiveStep(closestStep);
+
+    // Calculate line progress based on scroll position
+    if (timelineRef.current) {
+      const rect = timelineRef.current.getBoundingClientRect();
+      const windowHeight = window.innerHeight;
+      const sectionTop = rect.top;
+      const sectionHeight = rect.height;
+      
+      // Start progress when section enters viewport, complete when it leaves
+      const startOffset = windowHeight * 0.6; // Start when 60% into viewport
+      const progress = Math.max(0, Math.min(1, (startOffset - sectionTop) / sectionHeight));
+      setLineProgress(progress);
+    }
   }, []);
 
   useEffect(() => {
@@ -365,8 +555,8 @@ const HirenumPage: React.FC = () => {
         className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${scrolled ? 'backdrop-blur-md py-4 border-b bg-[var(--nav-bg)] border-[var(--border-color)]' : 'bg-transparent py-6 border-transparent'}`}
       >
         <div className="w-full px-8 flex justify-between items-center">
-          <div className="text-3xl text-[#1BB8BD] font-bold tracking-tighter cursor-pointer font-logo" onClick={() => scrollToSection('start-here')}>
-            H<span className="relative">ı<span className="absolute top-[0.15em] left-1 -translate-x-1/2 w-[0.2em] h-[0.2em] bg-[#dc0078] rounded-full"></span></span>renum
+          <div className="text-2xl text-[#1BB8BD] font-bold tracking-tighter cursor-pointer font-logo" onClick={() => scrollToSection('start-here')}>
+            H<span className="relative">ı<span className="absolute top-[0.15em] left-1 -translate-x-1/2 w-[0.18em] h-[0.18em] bg-[#dc0078] rounded-full"></span></span>renum
           </div>
 
           {/* Desktop Nav */}
@@ -428,13 +618,13 @@ const HirenumPage: React.FC = () => {
       </nav>
 
       {/* --- FLOATING CTA --- */}
-      <div className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-40 animate-bounce-slow">
+      <div className="fixed bottom-3 right-3 sm:bottom-4 sm:right-4 md:bottom-6 md:right-6 z-40 animate-bounce-slow">
         <button 
           onClick={() => scrollToSection('linkedin-audit')}
-          className="bg-gradient-to-r from-[#A9318A] to-[#DC0078] dark:from-[#A9318A] dark:to-[#DC0078] text-white font-bold py-2.5 px-4 sm:py-3 sm:px-6 rounded-full shadow-lg shadow-[#A9318A]/40 dark:shadow-[#DC0078]/30 hover:shadow-[0_0_30px_rgba(169,49,138,0.6)] dark:hover:shadow-[0_0_30px_rgba(220,0,120,0.6)] transition-all duration-500 transform hover:-translate-y-2 hover:scale-110 flex items-center gap-1.5 sm:gap-2 group relative overflow-hidden font-btn text-xs sm:text-sm md:text-base"
+          className="bg-gradient-to-r from-[#A9318A] to-[#DC0078] dark:from-[#A9318A] dark:to-[#DC0078] text-white font-bold py-1.5 px-3 sm:py-2 sm:px-4 md:py-2.5 md:px-5 lg:py-3 lg:px-6 rounded-full shadow-lg shadow-[#A9318A]/40 dark:shadow-[#DC0078]/30 hover:shadow-[0_0_30px_rgba(169,49,138,0.6)] dark:hover:shadow-[0_0_30px_rgba(220,0,120,0.6)] transition-all duration-500 transform hover:-translate-y-2 hover:scale-110 flex items-center gap-1 sm:gap-1.5 md:gap-2 group relative overflow-hidden font-btn text-[10px] sm:text-xs md:text-sm lg:text-base"
         >
           <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-500"></div>
-          <Zap size={14} fill="currentColor" className="relative z-10 group-hover:rotate-12 transition-transform duration-300 sm:w-[18px] sm:h-[18px]" /> 
+          <Zap size={12} fill="currentColor" className="relative z-10 group-hover:rotate-12 transition-transform duration-300 sm:w-[14px] sm:h-[14px] md:w-[16px] md:h-[16px] lg:w-[18px] lg:h-[18px]" /> 
           <span className="relative z-10 whitespace-nowrap">Free LinkedIn Audit</span>
         </button>
       </div>
@@ -505,7 +695,7 @@ const HirenumPage: React.FC = () => {
               
             </h1>
 
-            <p className="text-sm min-[400px]:text-[0.9rem] min-[480px]:text-base sm:text-[1.05rem] lg:text-lg xl:text-xl max-w-lg leading-relaxed text-gray-600 dark:text-gray-400">
+            <p className="text-sm min-[400px]:text-[0.9rem] min-[480px]:text-base sm:text-[1.05rem] lg:text-lg xl:text-xl max-w-xl leading-relaxed text-gray-600 dark:text-gray-400">
               We help founders, entrepreneurs, C-suites and professionals build powerful <span className="text-[#1BB8BD] font-medium">LinkedIn personal brands</span> that turn visibility into authority, and authority into inbound opportunities.
             </p>
 
@@ -555,7 +745,7 @@ const HirenumPage: React.FC = () => {
       <section id="what-we-do" className="py-24 relative overflow-hidden theme-transition bg-[var(--bg-primary)]">
         <div className="container mx-auto px-6">
           <div className="text-center max-w-4xl mx-auto mb-20">
-            <h2 className="text-5xl md:text-5xl font-bold mb-6">Disclaimer: We are NOT a content & social media agency<span className="text-[#DC0078]">.</span></h2>
+            <h2 className="text-4xl md:text-4xl font-bold mb-6">Disclaimer: We are NOT a content & social media agency<span className="text-[#DC0078]">.</span></h2>
             <p className="text-lg text-gray-600 dark:text-gray-400">
                We build thought leadership with a clear strategy, strong positioning, and consistent execution.
             </p>
@@ -664,8 +854,11 @@ const HirenumPage: React.FC = () => {
 
       {/* --- WHY PEOPLE COME TO US SECTION --- */}
       <section id="why-people-come" className="py-24 relative overflow-hidden theme-transition bg-[var(--bg-primary)]">
-        {/* Match the final CTA gradient background */}
-        <div className="absolute inset-0 bg-gradient-brand opacity-10 blur-[100px] pointer-events-none"></div>
+        {/* Background gradients for light and dark mode */}
+        <div className="absolute inset-0 pointer-events-none">
+          {/* Center subtle blend - positioned behind the heading */}
+          <div className="hidden lg:block absolute top-[45%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-gradient-to-r from-[#DC0078]/10 to-[#1BB8BD]/10 dark:from-[#DC0078]/8 dark:to-[#1BB8BD]/8 rounded-full blur-[100px]"></div>
+        </div>
         
         <div className="container mx-auto px-6 relative z-10">
           {/* Section Header - Mobile Only */}
@@ -765,8 +958,8 @@ const HirenumPage: React.FC = () => {
                 viewport={{ once: true }}
               >
                 <div className={`
-                  relative p-4 lg:p-5 xl:p-6 rounded-2xl border backdrop-blur-md overflow-hidden group transition-all duration-300
-                  bg-white/80 dark:bg-zinc-900/80 border-white/20 dark:border-white/10 hover:border-[#DC0078]/30
+                  relative p-4 lg:p-5 xl:p-6 rounded-2xl border backdrop-blur-sm overflow-hidden group transition-all duration-300
+                  bg-transparent border-gray-300/50 dark:border-white/10
                 `}>
                   {/* Gradient Background for Card */}
                   <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-r from-[#DC0078]/5 to-[#1BB8BD]/5" />
@@ -774,7 +967,7 @@ const HirenumPage: React.FC = () => {
                   <div className="relative z-10 flex items-start gap-3 xl:gap-4">
                     <div className="
                       p-2 lg:p-2.5 xl:p-3 rounded-xl flex-shrink-0 transition-colors duration-300
-                      bg-gray-100 dark:bg-white/5 text-[#DC0078] group-hover:bg-[#DC0078] group-hover:text-white
+                      bg-gray-200/50 dark:bg-white/5 text-[#1BB8BD] group-hover:bg-[#1BB8BD] group-hover:text-white
                     ">
                       <node.icon className="w-5 h-5 lg:w-5 lg:h-5 xl:w-6 xl:h-6" />
                     </div>
@@ -791,7 +984,9 @@ const HirenumPage: React.FC = () => {
 
           {/* Mobile Layout - Vertical Stack */}
           <div className="lg:hidden space-y-6">
-             <div className="relative pl-8 border-l-2 border-[#DC0078]/30 ml-4">
+             <div className="relative pl-8 ml-4">
+              {/* Gradient Line */}
+              <div className="absolute left-0 top-0 bottom-0 w-[2px] bg-gradient-to-b from-[#1BB8BD] via-[#1BB8BD] via-40% to-[#DC0078]" />
               {mobilePainPointNodes.map((node, idx) => (
                 <motion.div
                   key={idx}
@@ -801,14 +996,14 @@ const HirenumPage: React.FC = () => {
                   viewport={{ once: true }}
                   className="mb-8 relative"
                 >
-                  {/* Dot on line */}
-                  <div className="absolute -left-[41px] top-1/2 -translate-y-1/2 w-4 h-4 rounded-full bg-[#DC0078] border-4 border-[var(--bg-secondary)]" />
+                  {/* Gradient Dot on line */}
+                  <div className="absolute -left-[41px] top-1/2 -translate-y-1/2 w-4 h-4 rounded-full bg-[#1BB8BD] border-4 border-[var(--bg-primary)]" style={{ backgroundColor: idx < 3 ? '#1BB8BD' : idx === 3 ? '#8B5F9E' : '#DC0078' }} />
                   
                   <div className="
                     flex items-center gap-4 p-4 rounded-xl border backdrop-blur-sm
-                    bg-white/50 dark:bg-zinc-900/50 border-gray-200 dark:border-white/10
+                    bg-transparent border-gray-300/50 dark:border-white/10
                   ">
-                    <div className="p-2 rounded-lg bg-gray-100 dark:bg-white/5 text-[#DC0078]">
+                    <div className="p-2 rounded-lg bg-gray-200/50 dark:bg-white/5 text-[#1BB8BD]">
                       <node.icon size={20} />
                     </div>
                     <span className="font-medium text-gray-700 dark:text-gray-300">
@@ -829,20 +1024,24 @@ const HirenumPage: React.FC = () => {
             viewport={{ once: true }}
           >
             <p className="text-gray-600 dark:text-gray-400 mb-4 text-lg">Sound like you?</p>
-            <motion.button 
+            <button 
               onClick={() => scrollToSection('who-we-work-with')} 
-              className="bg-gradient-brand text-white px-8 py-4 rounded-full font-bold hover:opacity-90 transition-all inline-flex items-center gap-2 shadow-lg shadow-[#DC0078]/20 font-btn"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.98 }}
+              className="bg-[#1BB8BD] text-white text-lg px-8 py-4 rounded-full font-bold transition-all duration-500 inline-flex items-center gap-2 group relative overflow-hidden hover:shadow-[0_10px_30px_rgba(27,184,189,0.25)] hover:scale-105 active:scale-95 font-btn"
             >
-              See who we work with <ArrowRight size={18} />
-            </motion.button>
+              <span className="relative z-10">See who we work with</span>
+              <ArrowRight size={18} className="relative z-10 group-hover:translate-x-2 transition-transform duration-300" />
+              <div className="absolute inset-0 bg-gradient-to-r from-[#DC0078] to-[#1BB8BD] translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-500"></div>
+            </button>
           </motion.div>
         </div>
       </section>
 
       {/* --- WHY IT WORKS SECTION --- */}
       <section id="why-it-works" className="py-24 relative overflow-hidden theme-transition bg-[var(--bg-primary)]">
+        {/* Decorative Circles Background */}
+        <div className="absolute inset-0 opacity-70 dark:opacity-80">
+          <DecorativeCircles />
+        </div>
         <div className="container mx-auto px-6 relative z-10">
           {/* Main Heading */}
           <div className="text-center mb-8">
@@ -989,9 +1188,9 @@ const HirenumPage: React.FC = () => {
 
       {/* --- WHO WE WORK WITH SECTION --- */}
       <section id="who-we-work-with" className="py-24 relative overflow-hidden theme-transition bg-[var(--bg-primary)]">
-        {/* Background gradient glow */}
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-gradient-to-r from-[#DC0078]/10 to-[#1BB8BD]/10 rounded-full blur-[120px]"></div>
+        {/* Decorative Circles Background */}
+        <div className="absolute inset-0 opacity-70 dark:opacity-80">
+          <DecorativeCircles />
         </div>
 
         <div className="container mx-auto px-6 relative z-10">
@@ -1008,8 +1207,8 @@ const HirenumPage: React.FC = () => {
             </motion.h2>
           </div>
 
-          {/* Service Cards Grid - Top Row */}
-          <div className="flex flex-wrap justify-center gap-6 mb-6 max-w-5xl mx-auto">
+          {/* Service Cards Grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 max-w-[1000px] mx-auto">
             {[
               {
                 title: "Founders & Entrepreneurs",
@@ -1023,7 +1222,8 @@ const HirenumPage: React.FC = () => {
                     <circle cx="24" cy="8" r="3" className="fill-[#DC0078]/50 group-hover:fill-[#1BB8BD]/50 transition-colors duration-300"/>
                     <path d="M10 40H38" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
                   </svg>
-                )
+                ),
+                hoverColor: 'DC0078'
               },
               {
                 title: "C-Suite & Corporate Leaders",
@@ -1039,7 +1239,8 @@ const HirenumPage: React.FC = () => {
                     <path d="M40 40V38C40 36.3431 38.6569 35 37 35H35" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
                     <circle cx="24" cy="12" r="2" className="fill-[#DC0078]/50 group-hover:fill-[#1BB8BD]/50 transition-colors duration-300"/>
                   </svg>
-                )
+                ),
+                hoverColor: 'DC0078'
               },
               {
                 title: "Ambitious Professionals",
@@ -1054,34 +1255,9 @@ const HirenumPage: React.FC = () => {
                     <path d="M20 32H28" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
                     <path d="M19 36H29" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
                   </svg>
-                )
-              }
-            ].map((item, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: i * 0.1 }}
-                viewport={{ once: true }}
-                className="group"
-              >
-                <div className="w-[280px] h-[200px] p-4 rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-zinc-950 hover:border-[#DC0078]/50 dark:hover:border-[#DC0078]/50 transition-all duration-500 hover:shadow-xl hover:shadow-[#DC0078]/10 hover:-translate-y-2 flex flex-col items-center text-center relative overflow-hidden">
-                  {/* Glow effect on hover */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-[#DC0078]/5 to-[#1BB8BD]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                  
-                  <div className="relative z-10 text-gray-600 dark:text-gray-400 group-hover:text-[#DC0078] transition-colors duration-300 mb-2 mt-2">
-                    {item.icon}
-                  </div>
-                  <h3 className="relative z-10 font-bold text-base mb-1 text-center">{item.title}</h3>
-                  <p className="relative z-10 text-[11px] text-gray-500 dark:text-gray-400 leading-relaxed flex-1">{item.desc}</p>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-
-          {/* Service Cards Grid - Bottom Row */}
-          <div className="flex flex-wrap justify-center gap-6 max-w-5xl mx-auto">
-            {[
+                ),
+                hoverColor: 'DC0078'
+              },
               {
                 title: "Creators & Coaches",
                 desc: "Creating or wanting to create content, and need clarity, strategy, and a consistent, professional LinkedIn presence that converts.",
@@ -1094,7 +1270,8 @@ const HirenumPage: React.FC = () => {
                     <circle cx="24" cy="38" r="2" fill="currentColor"/>
                     <circle cx="34" cy="38" r="2" fill="currentColor"/>
                   </svg>
-                )
+                ),
+                hoverColor: '1BB8BD'
               },
               {
                 title: "Traditional Industry Experts",
@@ -1109,7 +1286,8 @@ const HirenumPage: React.FC = () => {
                     <circle cx="24" cy="10" r="3" fill="#DC0078" fillOpacity="0.5"/>
                     <path d="M6 44H42" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
                   </svg>
-                )
+                ),
+                hoverColor: '1BB8BD'
               },
               {
                 title: "And You",
@@ -1123,26 +1301,26 @@ const HirenumPage: React.FC = () => {
                     <path d="M18 38L24 32L30 38" stroke="#DC0078" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
                 ),
-                highlight: true
+                highlight: true,
+                hoverColor: '1BB8BD'
               }
             ].map((item, i) => (
               <motion.div
                 key={i}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.2 + i * 0.1 }}
+                transition={{ duration: 0.5, delay: i * 0.1 }}
                 viewport={{ once: true }}
                 className="group"
               >
-                <div className={`w-[280px] h-[200px] p-4 rounded-2xl border bg-white dark:bg-zinc-950 transition-all duration-500 hover:shadow-xl hover:shadow-[#1BB8BD]/10 hover:-translate-y-2 flex flex-col items-center text-center relative overflow-hidden ${item.highlight ? 'border-[#1BB8BD]/50 dark:border-[#1BB8BD]/50 shadow-lg shadow-[#1BB8BD]/10' : 'border-gray-200 dark:border-gray-800 hover:border-[#1BB8BD]/50 dark:hover:border-[#1BB8BD]/50'}`}>
-                  {/* Glow effect on hover */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-[#1BB8BD]/5 to-[#DC0078]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div className={`w-full h-[240px] p-6 rounded-none border bg-[linear-gradient(135deg,rgba(240,240,240,0.9)_0%,rgba(245,245,245,0.7)_70%,rgba(250,250,250,0.4)_100%)] dark:bg-[linear-gradient(135deg,var(--bg-primary)_0%,var(--bg-primary)_70%,rgba(63,63,70,0.5)_100%)] backdrop-blur-sm transition-all duration-500 hover:shadow-md flex flex-col items-center text-center relative overflow-hidden shadow-[0_2px_15px_rgba(0,0,0,0.02)] dark:shadow-[0_4px_30px_rgba(0,0,0,0.05)] ${item.highlight ? 'border-[#1BB8BD]/30 hover:shadow-[#1BB8BD]/5' : `border-white/40 dark:border-zinc-800/50 hover:border-[#${item.hoverColor}]/30 hover:shadow-[#${item.hoverColor}]/5`}`}>
+                  <div className="absolute inset-0 bg-gradient-to-br from-gray-200/30 dark:from-zinc-700/20 via-transparent to-gray-100/20 dark:to-zinc-800/30"></div>
                   
-                  <div className="relative z-10 text-gray-600 dark:text-gray-400 group-hover:text-[#1BB8BD] transition-colors duration-300 mb-2 mt-2">
+                  <div className={`relative z-10 text-gray-600 dark:text-gray-300 group-hover:text-[#${item.hoverColor}] transition-colors duration-300 mb-4 mt-2`}>
                     {item.icon}
                   </div>
-                  <h3 className="relative z-10 font-bold text-base mb-1 text-center">{item.title}</h3>
-                  <p className="relative z-10 text-[11px] text-gray-500 dark:text-gray-400 leading-relaxed flex-1">{item.desc}</p>
+                  <h3 className="relative z-10 font-bold text-lg mb-3 text-center text-gray-900 dark:text-white">{item.title}</h3>
+                  <p className="relative z-10 text-sm text-gray-500 dark:text-gray-400 leading-relaxed flex-1">{item.desc}</p>
                 </div>
               </motion.div>
             ))}
@@ -1159,9 +1337,11 @@ const HirenumPage: React.FC = () => {
             <p className="text-xl md:text-2xl font-semibold text-gray-700 dark:text-gray-300 mb-8">Yes, this is for you<span className="text-[#DC0078]">.</span></p>
             <button 
               onClick={() => window.open('https://calendly.com', '_blank')}
-              className="bg-[#1BB8BD] text-white px-8 py-4 rounded-full font-bold hover:bg-[#1fcfd4] transition-all duration-300 inline-flex items-center gap-2 shadow-lg shadow-[#1BB8BD]/20 hover:shadow-[0_0_30px_rgba(27,184,189,0.4)] hover:scale-105 font-btn"
+              className="bg-[#1BB8BD] text-white text-lg px-8 py-4 rounded-full font-bold transition-all duration-500 inline-flex items-center gap-2 group relative overflow-hidden hover:shadow-[0_10px_30px_rgba(27,184,189,0.25)] hover:scale-105 active:scale-95 font-btn"
             >
-              <span className="mr-2">🚀</span> Let{"'"}s Talk
+              <span className="relative z-10">Let{"'"}s Talk</span>
+              <ArrowRight size={18} className="relative z-10 group-hover:translate-x-2 transition-transform duration-300" />
+              <div className="absolute inset-0 bg-gradient-to-r from-[#DC0078] to-[#1BB8BD] translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-500"></div>
             </button>
           </motion.div>
         </div>
@@ -1212,9 +1392,18 @@ const HirenumPage: React.FC = () => {
              </p>
           </div>
 
-          <div className="relative max-w-5xl mx-auto">
-             {/* Vertical Line */}
-             <div className="absolute left-8 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-[#1BB8BD] via-[#DC0078] to-[#1BB8BD] opacity-30 md:-translate-x-1/2"></div>
+          <div ref={timelineRef} className="relative max-w-5xl mx-auto">
+             {/* Vertical Line - Background */}
+             <div className="absolute left-8 md:left-1/2 top-0 bottom-0 w-px bg-gray-300 dark:bg-zinc-700 md:-translate-x-1/2"></div>
+             {/* Vertical Line - Animated Progress */}
+             <div 
+               className="absolute left-8 md:left-1/2 top-0 w-px md:-translate-x-1/2 transition-all duration-300"
+               style={{ 
+                 height: `${lineProgress * 100}%`, 
+                 opacity: lineProgress > 0 ? 0.65 : 0,
+                 background: 'linear-gradient(to bottom, #1BB8BD 0%, #1BB8BD 40%, #DC0078 100%)'
+               }}
+             ></div>
              
              <div className="space-y-12">
                 {steps.map((step, i) => {
@@ -1229,16 +1418,18 @@ const HirenumPage: React.FC = () => {
                      <div className="hidden md:block w-1/2"></div>
                      
                      {/* Dot */}
-                     <div className={`absolute left-8 md:left-1/2 -translate-x-1/2 w-4 h-4 rounded-full border-2 border-[#1BB8BD] z-10 bg-[var(--bg-primary)] transition-all duration-500 ${isActive ? 'shadow-[0_0_20px_#1BB8BD,0_0_30px_#1BB8BD] scale-125' : ''}`}>
+                     <div className={`absolute left-8 md:left-1/2 -translate-x-1/2 w-4 h-4 rounded-full border-2 border-[#1BB8BD] z-10 bg-[var(--bg-primary)] transition-all duration-500 ${isActive ? 'shadow-[0_0_8px_rgba(27,184,189,0.4)] scale-125' : ''}`}>
                      </div>
 
                      {/* Content Card */}
                      <div className="ml-20 md:ml-0 md:w-1/2 md:px-10 w-full">
-                        <div className={`glass-card p-8 rounded-xl border transition-all duration-500 relative overflow-hidden bg-white dark:bg-zinc-900 ${isActive ? 'shadow-2xl shadow-[#1BB8BD]/30 -translate-y-2 border-[#DC0078]/50' : 'shadow-lg border-black/5 dark:border-white/10'}`}>
+                        <div className={`p-8 rounded-xl border border-white/40 dark:border-zinc-800/50 transition-all duration-500 relative overflow-hidden backdrop-blur-sm bg-[linear-gradient(135deg,rgba(240,240,240,0.9)_0%,rgba(245,245,245,0.7)_70%,rgba(250,250,250,0.4)_100%)] dark:bg-[linear-gradient(135deg,var(--bg-primary)_0%,var(--bg-primary)_70%,rgba(63,63,70,0.5)_100%)] shadow-[0_2px_15px_rgba(0,0,0,0.02)] dark:shadow-[0_4px_30px_rgba(0,0,0,0.05)] ${isActive ? 'shadow-md shadow-[#1BB8BD]/5 -translate-y-2' : ''}`}>
+                           {/* Inner gradient overlay */}
+                           <div className="absolute inset-0 bg-gradient-to-br from-gray-200/10 dark:from-zinc-700/10 via-transparent to-gray-100/10 dark:to-zinc-800/10"></div>
                            {/* Animated border gradient */}
-                           <div className={`absolute inset-0 bg-gradient-to-r from-[#1BB8BD] to-[#DC0078] transition-opacity duration-500 ${isActive ? 'opacity-10' : 'opacity-0'}`}></div>
+                           <div className={`absolute inset-0 bg-gradient-to-r from-[#1BB8BD] to-[#DC0078] transition-opacity duration-500 ${isActive ? 'opacity-5' : 'opacity-0'}`}></div>
                            {/* Number Watermark */}
-                           <div className={`absolute -top-4 -right-4 text-8xl font-black z-0 transition-colors duration-500 ${isActive ? 'text-[#DC0078]/15 dark:text-[#DC0078]/15' : 'text-black/5 dark:text-white/5'}`}>0{i+1}</div>
+                           <div className={`absolute -top-4 -right-4 text-8xl font-black z-0 transition-colors duration-500 ${isActive ? 'text-[#DC0078]/15 dark:text-[#DC0078]/15' : 'text-black/5 dark:text-zinc-600/30'}`}>0{i+1}</div>
                            
                            <div className="relative z-10">
                              <h3 className={`text-2xl font-bold mb-3 transition-colors duration-500 ${isActive ? 'text-[#1BB8BD]' : 'text-zinc-900 dark:text-white'}`}>{step.title}</h3>
@@ -1262,74 +1453,156 @@ const HirenumPage: React.FC = () => {
       </section>
 
       {/* --- SECTION 6: PACKAGES --- */}
-      <section id="packages" className="py-24 theme-transition bg-[var(--bg-secondary)]">
-        <div className="container mx-auto px-6">
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-16">Packages</h2>
-          
-          <div className="grid md:grid-cols-3 gap-8 items-stretch max-w-[1600px] mx-auto">
-             {/* Advisory */}
-             <div className="border rounded-2xl p-8 transition-all duration-500 border-black/10 bg-white hover:border-[#1BB8BD]/50 shadow-lg hover:shadow-2xl hover:shadow-[#1BB8BD]/10 hover:-translate-y-2 dark:border-white/10 dark:bg-black dark:hover:border-[#1BB8BD]/50 group flex flex-col">
-                <div className="mb-4">
-                  <h3 className="text-2xl font-bold">Advisory</h3>
-                  <p className="text-[#1BB8BD] text-sm font-bold mt-1">You execute. We guide.</p>
-                </div>
-                <p className="text-sm mb-6 text-gray-600 dark:text-gray-400">Best for founders and professionals who want to stay hands-on but need strategic direction and expert support.</p>
-                <button className="w-full py-3 border rounded-lg font-bold transition-all duration-300 mb-6 border-black hover:bg-black hover:text-white hover:scale-[1.02] hover:shadow-lg active:scale-95 dark:border-white dark:hover:bg-white dark:hover:text-black relative overflow-hidden group/btn font-btn"><span className="relative z-10">Select Advisory</span></button>
-                <p className="text-xs font-bold uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-3">What&apos;s included:</p>
-                <ul className="space-y-2.5 text-sm text-gray-700 dark:text-gray-300 flex-grow">
-                  <li className="flex gap-2"><Check size={16} className="text-[#1BB8BD] flex-shrink-0 mt-0.5" /> Weekly 1:1 advisory sessions</li>
-                  <li className="flex gap-2"><Check size={16} className="text-[#1BB8BD] flex-shrink-0 mt-0.5" /> Personal brand positioning consultation</li>
-                  <li className="flex gap-2"><Check size={16} className="text-[#1BB8BD] flex-shrink-0 mt-0.5" /> Step-by-step LinkedIn profile optimization guidance</li>
-                  <li className="flex gap-2"><Check size={16} className="text-[#1BB8BD] flex-shrink-0 mt-0.5" /> Content strategy, topic ideation and post feedback</li>
-                  <li className="flex gap-2"><Check size={16} className="text-[#1BB8BD] flex-shrink-0 mt-0.5" /> Analytics reviews and performance insights</li>
-                  <li className="flex gap-2"><Check size={16} className="text-[#1BB8BD] flex-shrink-0 mt-0.5" /> Coaching on networking, engagement and outreach</li>
-                </ul>
-             </div>
-
-             {/* Foundation - Highlighted */}
-             <div className="border-2 border-[#1BB8BD] rounded-2xl p-8 relative transform md:-translate-y-4 shadow-2xl shadow-[#1BB8BD]/20 bg-white dark:bg-black transition-all duration-500 hover:shadow-[0_0_40px_rgba(27,184,189,0.3)] hover:-translate-y-6 group flex flex-col">
-                <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-[#1BB8BD] text-white text-xs font-bold px-4 py-1 rounded-full uppercase">Most Popular</div>
-                <div className="mb-4">
-                  <h3 className="text-2xl font-bold">Foundation</h3>
-                  <p className="text-[#1BB8BD] text-sm font-bold mt-1">We build your presence with you.</p>
-                </div>
-                <p className="text-sm mb-6 text-gray-600 dark:text-gray-400">Best for busy founders who want consistent LinkedIn growth with shared execution.</p>
-                <button className="w-full py-3 bg-[#1BB8BD] text-white rounded-lg font-bold transition-all duration-300 mb-6 hover:bg-[#1fcfd4] hover:scale-[1.02] hover:shadow-[0_0_20px_rgba(27,184,189,0.5)] active:scale-95 relative overflow-hidden font-btn">Select Foundation</button>
-                <p className="text-xs font-bold uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-3">What&apos;s included:</p>
-                <ul className="space-y-2.5 text-sm text-gray-700 dark:text-gray-300 flex-grow">
-                  <li className="flex gap-2"><Check size={16} className="text-[#1BB8BD] flex-shrink-0 mt-0.5" /> <strong>Everything in the Advisory Package</strong></li>
-                  <li className="flex gap-2"><Check size={16} className="text-[#1BB8BD] flex-shrink-0 mt-0.5" /> Full LinkedIn profile optimization done for you</li>
-                  <li className="flex gap-2"><Check size={16} className="text-[#1BB8BD] flex-shrink-0 mt-0.5" /> Content calendar and posting rhythm tailored to your schedule</li>
-                  <li className="flex gap-2"><Check size={16} className="text-[#1BB8BD] flex-shrink-0 mt-0.5" /> Co-created content: we draft, you approve/refine</li>
-                  <li className="flex gap-2"><Check size={16} className="text-[#1BB8BD] flex-shrink-0 mt-0.5" /> Weekly performance review with recommendations</li>
-                  <li className="flex gap-2"><Check size={16} className="text-[#1BB8BD] flex-shrink-0 mt-0.5" /> Guidance on strategic commenting, engagement and relationship-building</li>
-                  <li className="flex gap-2"><Check size={16} className="text-[#1BB8BD] flex-shrink-0 mt-0.5" /> Audience growth support focused on relevant, high-quality connections</li>
-                </ul>
-             </div>
-
-             {/* Authority */}
-             <div className="border rounded-2xl p-8 transition-all duration-500 border-black/10 bg-white hover:border-[#DC0078]/50 shadow-lg hover:shadow-2xl hover:shadow-[#DC0078]/10 hover:-translate-y-2 dark:border-white/10 dark:bg-black dark:hover:border-[#DC0078]/50 group flex flex-col">
-                <div className="mb-4">
-                  <h3 className="text-2xl font-bold">Authority</h3>
-                  <p className="text-[#DC0078] text-sm font-bold mt-1">We build your presence for you.</p>
-                </div>
-                <p className="text-sm mb-6 text-gray-600 dark:text-gray-400">Best for founders, C-suites and leaders who want a high-touch, done-for-you thought-leadership engine.</p>
-                <button className="w-full py-3 border rounded-lg font-bold transition-all duration-300 mb-6 border-black hover:bg-[#DC0078] hover:text-white hover:border-[#DC0078] hover:scale-[1.02] hover:shadow-lg active:scale-95 dark:border-white dark:hover:bg-[#DC0078] dark:hover:border-[#DC0078] relative overflow-hidden font-btn">Select Authority</button>
-                <p className="text-xs font-bold uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-3">What&apos;s included:</p>
-                <ul className="space-y-2.5 text-sm text-gray-700 dark:text-gray-300 flex-grow">
-                  <li className="flex gap-2"><Check size={16} className="text-[#DC0078] flex-shrink-0 mt-0.5" /> <strong>Everything in the Foundation Package</strong></li>
-                  <li className="flex gap-2"><Check size={16} className="text-[#DC0078] flex-shrink-0 mt-0.5" /> Outreach and connection-building support</li>
-                  <li className="flex gap-2"><Check size={16} className="text-[#DC0078] flex-shrink-0 mt-0.5" /> Warm, human-first DM and message frameworks</li>
-                  <li className="flex gap-2"><Check size={16} className="text-[#DC0078] flex-shrink-0 mt-0.5" /> Strategic relationship building with key people in your ecosystem</li>
-                  <li className="flex gap-2"><Check size={16} className="text-[#DC0078] flex-shrink-0 mt-0.5" /> Higher-touch execution and communication</li>
-                  <li className="flex gap-2"><Check size={16} className="text-[#DC0078] flex-shrink-0 mt-0.5" /> Close collaboration on long-term authority positioning</li>
-                </ul>
-             </div>
+      <section id="packages" className="py-24 px-6 relative theme-transition bg-[var(--bg-primary)]">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-20">
+            <h2 className="text-4xl md:text-6xl font-bold mb-6">
+              Choose the Right <br />
+              <span>Plan for You</span>
+            </h2>
+            <p className="text-gray-600 dark:text-gray-400 text-lg max-w-2xl mx-auto">
+              We simplify thought leadership into clear, actionable packages.
+            </p>
           </div>
-          
-          <div className="mt-12 text-center">
-             <p className="text-gray-600 dark:text-gray-400 mb-4">Not sure which one fits?</p>
-             <button onClick={() => window.open('https://calendly.com', '_blank')} className="text-gradient underline decoration-[#DC0078] underline-offset-4 hover:decoration-[#1BB8BD] transition-all duration-300 hover:scale-105 inline-block font-btn">Book a Discovery Call</button>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
+            {/* Advisory */}
+            <motion.div 
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0, duration: 0.5 }}
+              className="relative p-8 rounded-3xl border flex flex-col h-full bg-white dark:bg-black border-gray-200 dark:border-white/10 hover:border-[#1BB8BD]/50 dark:hover:border-[#1BB8BD]/50 hover:shadow-lg hover:shadow-[#1BB8BD]/10 hover:-translate-y-2 transition-all duration-300 group"
+            >
+              <div className="mb-8">
+                <h3 className="text-2xl font-bold mb-2">Advisory</h3>
+                <p className="text-sm text-gray-600 dark:text-gray-400">You execute. We guide.</p>
+                <div className="w-12 h-1 bg-gradient-to-r from-[#1BB8BD] to-[#1BB8BD]/50 rounded-full mt-4" />
+              </div>
+
+              <div className="flex-grow space-y-4 mb-8">
+                {[
+                  "Weekly 1:1 advisory sessions",
+                  "Personal brand positioning consultation",
+                  "Step-by-step LinkedIn profile optimization guidance",
+                  "Content strategy, topic ideation and post feedback",
+                  "Analytics reviews and performance insights",
+                  "Coaching on networking, engagement and outreach"
+                ].map((item, i) => (
+                  <div key={i} className="flex items-start gap-3">
+                    <div className="mt-0.5 p-0.5 rounded-full bg-gray-200 dark:bg-gray-800 text-gray-500 dark:text-gray-400 group-hover:bg-[#1BB8BD] group-hover:text-white transition-colors">
+                      <Check size={12} strokeWidth={4} />
+                    </div>
+                    <span className="text-sm text-gray-600 dark:text-gray-300 font-medium leading-snug">{item}</span>
+                  </div>
+                ))}
+              </div>
+
+              <a 
+                href="#contact"
+                onClick={(e) => { e.preventDefault(); window.open('https://calendly.com', '_blank'); }}
+                className="w-full py-4 rounded-full font-bold text-center transition-all duration-300 bg-gray-100 dark:bg-white/5 text-gray-800 dark:text-white border border-gray-200 dark:border-white/10 hover:bg-[#1BB8BD] hover:text-white hover:border-[#1BB8BD] font-btn block relative overflow-hidden group/btn"
+              >
+                <div className="absolute inset-0 bg-white/20 translate-y-full group-hover/btn:translate-y-0 transition-transform duration-500"></div>
+                <span className="relative z-10">Book a call</span>
+              </a>
+            </motion.div>
+
+            {/* Foundation - Most Popular */}
+            <motion.div 
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1, duration: 0.5 }}
+              className="relative p-8 rounded-3xl flex flex-col h-full bg-gradient-to-b from-white/10 dark:from-white/10 to-transparent shadow-[0_0_20px_rgba(27,184,189,0.15),0_0_40px_rgba(220,0,120,0.1)] transition-all duration-300 group"
+              style={{
+                border: '1px solid transparent',
+                backgroundImage: 'linear-gradient(to bottom, var(--bg-primary), var(--bg-primary)), linear-gradient(to right, #1BB8BD, #DC0078)',
+                backgroundOrigin: 'border-box',
+                backgroundClip: 'padding-box, border-box'
+              }}
+            >
+              {/* Most Popular Badge */}
+              <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-gradient-to-r from-[#1BB8BD] to-[#DC0078] text-white text-xs font-bold uppercase tracking-widest py-1 px-4 rounded-full shadow-lg">
+                Most Popular
+              </div>
+
+              <div className="mb-8">
+                <h3 className="text-2xl font-bold mb-2">Foundation</h3>
+                <p className="text-sm text-gray-600 dark:text-gray-400">We build your presence with you.</p>
+                <div className="w-12 h-1 bg-gradient-to-r from-[#1BB8BD] to-[#DC0078] rounded-full mt-4" />
+              </div>
+
+              <div className="flex-grow space-y-4 mb-8">
+                {[
+                  "Everything in the Advisory Package",
+                  "Full LinkedIn profile optimization done for you",
+                  "Content calendar and posting rhythm tailored to your schedule",
+                  "Co-created content: we draft, you approve/refine",
+                  "Weekly performance review with recommendations",
+                  "Guidance on strategic commenting, engagement and relationship-building",
+                  "Audience growth support focused on relevant, high-quality connections"
+                ].map((item, i) => (
+                  <div key={i} className="flex items-start gap-3">
+                    <div className="mt-0.5 p-0.5 rounded-full bg-gradient-to-r from-[#1BB8BD] to-[#DC0078] text-white transition-colors">
+                      <Check size={12} strokeWidth={4} />
+                    </div>
+                    <span className="text-sm text-gray-600 dark:text-gray-300 font-medium leading-snug">{item}</span>
+                  </div>
+                ))}
+              </div>
+
+              <a 
+                href="#contact"
+                onClick={(e) => { e.preventDefault(); window.open('https://calendly.com', '_blank'); }}
+                className="w-full py-4 rounded-full font-bold text-center transition-all duration-300 bg-gradient-to-r from-[#1BB8BD] to-[#DC0078] text-white hover:opacity-90 font-btn block relative overflow-hidden group/btn"
+              >
+                <div className="absolute inset-0 bg-white/20 translate-y-full group-hover/btn:translate-y-0 transition-transform duration-500"></div>
+                <span className="relative z-10">Book a call</span>
+              </a>
+            </motion.div>
+
+            {/* Authority */}
+            <motion.div 
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2, duration: 0.5 }}
+              className="relative p-8 rounded-3xl border flex flex-col h-full bg-white dark:bg-black border-gray-200 dark:border-white/10 hover:border-[#DC0078]/50 dark:hover:border-[#DC0078]/50 hover:shadow-lg hover:shadow-[#DC0078]/10 hover:-translate-y-2 transition-all duration-300 group"
+            >
+              <div className="mb-8">
+                <h3 className="text-2xl font-bold mb-2">Authority</h3>
+                <p className="text-sm text-gray-600 dark:text-gray-400">We build your presence for you.</p>
+                <div className="w-12 h-1 bg-gradient-to-r from-[#DC0078] to-[#DC0078]/50 rounded-full mt-4" />
+              </div>
+
+              <div className="flex-grow space-y-4 mb-8">
+                {[
+                  "Everything in the Foundation Package",
+                  "Outreach and connection-building support",
+                  "Warm, human-first DM and message frameworks",
+                  "Strategic relationship building with key people in your ecosystem",
+                  "Higher-touch execution and communication",
+                  "Close collaboration on long-term authority positioning"
+                ].map((item, i) => (
+                  <div key={i} className="flex items-start gap-3">
+                    <div className="mt-0.5 p-0.5 rounded-full bg-gray-200 dark:bg-gray-800 text-gray-500 dark:text-gray-400 group-hover:bg-[#DC0078] group-hover:text-white transition-colors">
+                      <Check size={12} strokeWidth={4} />
+                    </div>
+                    <span className="text-sm text-gray-600 dark:text-gray-300 font-medium leading-snug">{item}</span>
+                  </div>
+                ))}
+              </div>
+
+              <a 
+                href="#contact"
+                onClick={(e) => { e.preventDefault(); window.open('https://calendly.com', '_blank'); }}
+                className="w-full py-4 rounded-full font-bold text-center transition-all duration-300 bg-gray-100 dark:bg-white/5 text-gray-800 dark:text-white border border-gray-200 dark:border-white/10 hover:bg-[#DC0078] hover:text-white hover:border-[#DC0078] font-btn block relative overflow-hidden group/btn"
+              >
+                <div className="absolute inset-0 bg-white/20 translate-y-full group-hover/btn:translate-y-0 transition-transform duration-500"></div>
+                <span className="relative z-10">Book a call</span>
+              </a>
+            </motion.div>
           </div>
         </div>
       </section>
@@ -1403,7 +1676,7 @@ const HirenumPage: React.FC = () => {
       </section>
 
       {/* --- SECTION 10: FAQ --- */}
-      <section id="faqs" className="py-24 theme-transition border-t bg-[var(--bg-secondary)] border-[var(--border-color)]">
+      <section id="faqs" className="py-24 theme-transition bg-[var(--bg-primary)]">
         <div className="container mx-auto px-6 max-w-4xl">
           <h2 className="text-4xl font-bold text-center mb-12">FAQs</h2>
           <div className="space-y-4">

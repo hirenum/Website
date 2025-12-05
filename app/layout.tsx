@@ -18,12 +18,37 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
-  title: "Hirenum | Personal Branding for Founders & Leaders",
-  description: "We help founders, entrepreneurs, and C-suites build powerful LinkedIn personal brands that turn visibility into authority.",
-  keywords: ["Personal Branding", "LinkedIn", "Thought Leadership", "Executive Branding", "Hirenum", "Marketing Agency"],
+  title: "Hirenum — LinkedIn Personal Branding for Founders & Leaders",
+  description: "We help founders, entrepreneurs, and C-suites build strategic LinkedIn personal brands that turn them into their industry's go-to thought leaders.",
+  keywords: [
+    "LinkedIn Personal Branding",
+    "Founder Branding",
+    "Executive Branding",
+    "C-Suite Personal Brand",
+    "Thought Leadership",
+    "LinkedIn Marketing",
+    "Personal Brand Strategy",
+    "Entrepreneur Branding",
+    "LinkedIn Growth",
+    "Hirenum",
+  ],
+  authors: [{ name: "Hirenum" }],
+  creator: "Hirenum",
+  publisher: "Hirenum",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
   openGraph: {
-    title: "Hirenum | Personal Branding for Founders & Leaders",
-    description: "We help founders, entrepreneurs, and C-suites build powerful LinkedIn personal brands that turn visibility into authority.",
+    title: "Hirenum — LinkedIn Personal Branding for Founders & Leaders",
+    description: "We help founders, entrepreneurs, and C-suites build strategic LinkedIn personal brands that turn them into their industry's go-to thought leaders.",
     url: "https://hirenum.com",
     siteName: "Hirenum",
     locale: "en_US",
@@ -31,8 +56,12 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Hirenum | Personal Branding for Founders & Leaders",
-    description: "We help founders, entrepreneurs, and C-suites build powerful LinkedIn personal brands that turn visibility into authority.",
+    title: "Hirenum — LinkedIn Personal Branding for Founders & Leaders",
+    description: "We help founders, entrepreneurs, and C-suites build strategic LinkedIn personal brands that turn them into their industry's go-to thought leaders.",
+    creator: "@hirenum",
+  },
+  alternates: {
+    canonical: "https://hirenum.com",
   },
 };
 
