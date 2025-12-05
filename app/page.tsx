@@ -5,8 +5,7 @@ import { useTheme } from 'next-themes';
 import { motion } from 'framer-motion';
 import { 
   Menu, X, ArrowRight, Check, ChevronDown, 
-  Linkedin, Instagram, Mail, Globe, User, 
-  Users, Zap, Sun, Moon,
+  User, Users, Zap, Sun, Moon,
   FileText, Megaphone, Clock, Target
 } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
@@ -481,7 +480,7 @@ const HirenumPage: React.FC = () => {
     { title: "How to Write an About Section That Actually Sounds Like You", cat: "Branding" }
   ];
 
-  const brands: string[] = ["FORBES", "ENTREPRENEUR", "TECHCRUNCH", "BUSINESS INSIDER", "LINKEDIN NEWS", "THE VERGE", "BLOOMBERG"];
+  const brands: string[] = ["TRUSTED BY FOUNDERS", "POWERED BY STRATEGY", "FOCUSED ON AUTHORITY", "BUILT FOR INFLUENCE", "DESIGNED FOR LINKEDIN GROWTH"];
 
   const painPointNodes: PainPointNode[] = [
     { 
@@ -667,17 +666,17 @@ const HirenumPage: React.FC = () => {
         <div className="glow-orb top-0 right-[-200px] animate-pulse hidden sm:block"></div>
         <div className="glow-orb bottom-[-200px] left-[-200px] opacity-50 hidden sm:block"></div>
 
-        <div className="container mx-auto grid md:grid-cols-2 gap-6 sm:gap-8 md:gap-10 lg:gap-12 items-center relative z-10">
-          <div className="space-y-3 sm:space-y-4 md:space-y-5 lg:space-y-6 max-w-2xl">
+        <div className="container mx-auto grid lg:grid-cols-2 gap-6 sm:gap-8 md:gap-10 lg:gap-12 items-center relative z-10">
+          <div className="space-y-4 sm:space-y-5 md:space-y-6 lg:space-y-7 max-w-2xl mx-auto lg:mx-0 text-center lg:text-left">
             
             
-            <h1 className="text-2xl min-[360px]:text-[1.7rem] min-[400px]:text-[1.9rem] min-[480px]:text-[2.2rem] sm:text-[2.5rem] md:text-[2.75rem] lg:text-[3.25rem] xl:text-[3.75rem] 2xl:text-[4.5rem] font-bold leading-[1.05] tracking-tight">
+            <h1 className="text-[2rem] min-[360px]:text-[2.25rem] min-[400px]:text-[2.5rem] min-[480px]:text-[2.85rem] sm:text-[3.15rem] md:text-[3.65rem] lg:text-[3.25rem] xl:text-[4rem] 2xl:text-[4.75rem] font-bold leading-[1.08] tracking-tight">
               <span className="block">BECOME YOUR</span>
               <span className="block">INDUSTRY&apos;S GO-TO</span>
               <span className="relative inline-block">
                 THOUGHT LEADER
                 <svg
-                  className="absolute bottom-0 min-[480px]:-bottom-0.5 sm:-bottom-1 md:-bottom-1 lg:-bottom-2 left-0 w-full h-2 sm:h-3 md:h-4"
+                  className="absolute bottom-0 min-[480px]:-bottom-0.5 sm:-bottom-1 md:-bottom-1.5 lg:-bottom-1 xl:-bottom-2 left-0 w-full h-2 sm:h-3 md:h-4"
                   viewBox="0 0 200 12"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
@@ -695,12 +694,12 @@ const HirenumPage: React.FC = () => {
               
             </h1>
 
-            <p className="text-sm min-[400px]:text-[0.9rem] min-[480px]:text-base sm:text-[1.05rem] lg:text-lg xl:text-xl max-w-xl leading-relaxed text-gray-600 dark:text-gray-400">
+            <p className="text-[0.9rem] min-[400px]:text-[0.95rem] min-[480px]:text-base sm:text-[1.05rem] md:text-lg lg:text-base xl:text-lg 2xl:text-xl max-w-xl mx-auto lg:mx-0 leading-relaxed text-gray-600 dark:text-gray-400">
               We help founders, entrepreneurs, C-suites and professionals build powerful <span className="text-[#1BB8BD] font-medium">LinkedIn personal brands</span> that turn visibility into authority, and authority into inbound opportunities.
             </p>
 
-            <div className="flex flex-col min-[480px]:flex-row gap-3 sm:gap-4 pt-2 sm:pt-3 md:pt-4">
-              <button onClick={() => window.open('https://calendly.com', '_blank')} className="bg-[#1BB8BD] text-white text-sm min-[480px]:text-base lg:text-lg font-bold px-5 min-[480px]:px-6 sm:px-8 py-3 sm:py-4 rounded-full transition-all duration-500 flex items-center justify-center gap-2 group relative overflow-hidden hover:shadow-[0_10px_40px_rgba(27,184,189,0.4)] hover:scale-105 active:scale-95 font-btn w-full min-[480px]:w-auto">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-2 sm:pt-3 md:pt-4 justify-center lg:justify-start">
+              <button onClick={() => window.open('https://calendly.com', '_blank')} className="bg-[#1BB8BD] text-white text-sm sm:text-base lg:text-base xl:text-lg font-bold px-5 sm:px-6 md:px-8 py-3 sm:py-3.5 md:py-4 rounded-full transition-all duration-500 flex items-center justify-center gap-2 group relative overflow-hidden hover:shadow-[0_10px_40px_rgba(27,184,189,0.4)] hover:scale-105 active:scale-95 font-btn w-full sm:w-auto">
                 <span className="relative z-10 whitespace-nowrap">BOOK A DISCOVERY CALL</span>
                 <ArrowRight className="relative z-10 group-hover:translate-x-2 transition-transform duration-300 w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" />
                 <div className="absolute inset-0 bg-gradient-to-r from-[#DC0078] to-[#1BB8BD] translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-500"></div>
@@ -726,34 +725,34 @@ const HirenumPage: React.FC = () => {
       <div 
         className="border-y py-8 overflow-hidden theme-transition bg-[var(--bg-primary)] border-[var(--border-color)]"
       >
-        <div className="container mx-auto px-6 text-center mb-6">
+        {/* <div className="container mx-auto px-6 text-center mb-6">
            <span className="text-xs text-gray-500 uppercase tracking-[0.2em]">As featured in & Trusted by</span>
-        </div>
+        </div> */}
         <div className="relative flex overflow-x-hidden group">
           <div className="animate-marquee whitespace-nowrap flex gap-16 items-center transition-opacity duration-500 opacity-60 hover:opacity-100 dark:opacity-40 dark:hover:opacity-100">
              {brands.map((brand, i) => (
-                <span key={i} className="text-2xl font-bold mx-4 text-zinc-800 dark:text-white">{brand}</span>
+                <span key={i} className="text-xl font-bold mx-4 text-gray-500 dark:text-gray-400">{brand}</span>
              ))}
              {brands.map((brand, i) => (
-                <span key={`dup-${i}`} className="text-2xl font-bold mx-4 text-zinc-800 dark:text-white">{brand}</span>
+                <span key={`dup-${i}`} className="text-xl font-bold font-md mx-4 text-gray-500 dark:text-gray-400">{brand}</span>
              ))}
           </div>
         </div>
-      </div>
+      </div> 
 
       {/* --- SECTION 1: WHAT WE DO (SERVICES) --- */}
-      <section id="what-we-do" className="py-24 relative overflow-hidden theme-transition bg-[var(--bg-primary)]">
-        <div className="container mx-auto px-6">
-          <div className="text-center max-w-4xl mx-auto mb-20">
-            <h2 className="text-4xl md:text-4xl font-bold mb-6">Disclaimer: We are NOT a content & social media agency<span className="text-[#DC0078]">.</span></h2>
-            <p className="text-lg text-gray-600 dark:text-gray-400">
+      <section id="what-we-do" className="py-12 sm:py-16 md:py-20 lg:py-24 relative overflow-hidden theme-transition bg-[var(--bg-primary)]">
+        <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-6">
+          <div className="text-center max-w-4xl mx-auto mb-10 sm:mb-14 md:mb-16 lg:mb-20">
+            <h2 className="text-2xl min-[400px]:text-[1.65rem] sm:text-3xl md:text-[2rem] lg:text-4xl font-bold mb-4 sm:mb-5 md:mb-6 leading-tight px-2">Disclaimer: We are NOT a content & social media agency<span className="text-[#DC0078]">.</span></h2>
+            <p className="text-sm sm:text-base md:text-lg text-gray-600 dark:text-gray-400 px-2">
                We build thought leadership with a clear strategy, strong positioning, and consistent execution.
             </p>
           </div>
 
 
           {/* Service Cards - 3 Column Layout */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 lg:gap-6 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 md:gap-6 lg:gap-8 xl:gap-10 max-w-sm sm:max-w-xl md:max-w-4xl lg:max-w-6xl mx-auto">
             
             {/* Card 1: Architect Your Brand */}
             <motion.div 
@@ -761,7 +760,7 @@ const HirenumPage: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0 }}
               viewport={{ once: true }}
-              className="flex flex-col items-start text-left space-y-4 sm:space-y-5 lg:space-y-6 group px-2 py-4 sm:px-3 sm:py-4"
+              className="flex flex-col items-center space-y-3 sm:space-y-4 md:space-y-5 lg:space-y-6 group px-4 sm:px-6 md:px-4 lg:px-2 py-6 sm:py-8 md:py-6 lg:py-4 rounded-2xl md:rounded-none hover:bg-gray-50/50 dark:hover:bg-white/[0.02] md:hover:bg-transparent transition-colors duration-300"
             >
               {/* Illustration */}
               <div className="w-full flex justify-center group-hover:scale-105 transition-transform duration-300">
@@ -769,12 +768,12 @@ const HirenumPage: React.FC = () => {
               </div>
               
               {/* Heading */}
-              <h3 className="text-lg sm:text-xl lg:text-2xl font-bold w-full text-center">
+              <h3 className="text-lg min-[400px]:text-xl sm:text-xl md:text-lg lg:text-xl xl:text-2xl font-bold w-full text-center">
                 Architect Your <span className="text-[#1BB8BD]">Brand</span>
               </h3>
               
               {/* Body */}
-              <p className="text-sm sm:text-base font-medium w-full text-center">We help you uncover and define:</p>
+              <p className="text-sm sm:text-base md:text-sm lg:text-base font-medium w-full text-center text-[var(--text-secondary)]">We help you uncover and define:</p>
               
               {/* Points */}
               <div className="w-full flex justify-center">
@@ -792,7 +791,7 @@ const HirenumPage: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
               viewport={{ once: true }}
-              className="flex flex-col items-start text-left space-y-4 sm:space-y-5 lg:space-y-6 group px-2 py-4 sm:px-3 sm:py-4"
+              className="flex flex-col items-center space-y-3 sm:space-y-4 md:space-y-5 lg:space-y-6 group px-4 sm:px-6 md:px-4 lg:px-2 py-6 sm:py-8 md:py-6 lg:py-4 rounded-2xl md:rounded-none hover:bg-gray-50/50 dark:hover:bg-white/[0.02] md:hover:bg-transparent transition-colors duration-300"
             >
               {/* Illustration */}
               <div className="w-full flex justify-center group-hover:scale-105 transition-transform duration-300">
@@ -800,12 +799,12 @@ const HirenumPage: React.FC = () => {
               </div>
               
               {/* Heading */}
-              <h3 className="text-lg sm:text-xl lg:text-2xl font-bold w-full text-center">
+              <h3 className="text-lg min-[400px]:text-xl sm:text-xl md:text-lg lg:text-xl xl:text-2xl font-bold w-full text-center">
                 Build a Scaling <span className="text-[#1BB8BD]">Strategy</span>
               </h3>
               
               {/* Body */}
-              <p className="text-sm sm:text-base font-medium w-full text-center">Once brand is clear, we map its growth:</p>
+              <p className="text-sm sm:text-base md:text-sm lg:text-base font-medium w-full text-center text-[var(--text-secondary)]">Once brand is clear, we map its growth:</p>
               
               {/* Points */}
               <div className="w-full flex justify-center">
@@ -823,7 +822,7 @@ const HirenumPage: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
               viewport={{ once: true }}
-              className="flex flex-col items-start text-left space-y-4 sm:space-y-5 lg:space-y-6 group px-2 py-4 sm:px-3 sm:py-4"
+              className="flex flex-col items-center space-y-3 sm:space-y-4 md:space-y-5 lg:space-y-6 group px-4 sm:px-6 md:px-4 lg:px-2 py-6 sm:py-8 md:py-6 lg:py-4 rounded-2xl md:rounded-none hover:bg-gray-50/50 dark:hover:bg-white/[0.02] md:hover:bg-transparent transition-colors duration-300 md:col-span-2 lg:col-span-1 md:max-w-md md:mx-auto lg:max-w-none"
             >
               {/* Illustration */}
               <div className="w-full flex justify-center group-hover:scale-105 transition-transform duration-300">
@@ -831,12 +830,12 @@ const HirenumPage: React.FC = () => {
               </div>
               
               {/* Heading */}
-              <h3 className="text-lg sm:text-xl lg:text-2xl font-bold w-full text-center">
+              <h3 className="text-lg min-[400px]:text-xl sm:text-xl md:text-lg lg:text-xl xl:text-2xl font-bold w-full text-center">
                 Co-Create and  <span className="text-[#1BB8BD]">Execute</span>
               </h3>
               
               {/* Body */}
-              <p className="text-sm sm:text-base font-medium w-full text-center">Depending on your package, we:</p>
+              <p className="text-sm sm:text-base md:text-sm lg:text-base font-medium w-full text-center text-[var(--text-secondary)]">Depending on your package, we:</p>
               
               {/* Points */}
               <div className="w-full flex justify-center">
@@ -1072,7 +1071,7 @@ const HirenumPage: React.FC = () => {
 
           {/* Value Propositions Grid - Top Row (3 columns) */}
           <div className="relative max-w-5xl mx-auto">
-            <div className="grid md:grid-cols-3 gap-x-0 gap-y-4">
+            <div className="grid md:grid-cols-3 gap-x-0 gap-y-0">
               {[
                 {
                   title: "Earn trust faster",
@@ -1107,7 +1106,7 @@ const HirenumPage: React.FC = () => {
                     </svg>
                   )
                 }
-              ].map((item, i) => (
+              ].map((item, i, arr) => (
                 <motion.div
                   key={i}
                   initial={{ opacity: 0, y: 20 }}
@@ -1121,23 +1120,27 @@ const HirenumPage: React.FC = () => {
                   </div>
                   <h3 className="text-base font-bold mb-3">{item.title}</h3>
                   <p className="text-sm text-gray-500 dark:text-gray-400 leading-relaxed">{item.desc}</p>
+                  {/* Mobile horizontal divider after each card except last in top row */}
+                  {i < arr.length - 1 && (
+                    <div className="md:hidden absolute -bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#1BB8BD]/70 to-transparent"></div>
+                  )}
                 </motion.div>
               ))}
             </div>
             
-            {/* Vertical gradient divider lines - Top Row */}
-            <div className="hidden md:block absolute left-1/3 top-8 bottom-8 w-[2px] bg-gradient-to-b from-transparent via-[#1BB8BD]/40 to-transparent"></div>
-            <div className="hidden md:block absolute left-2/3 top-8 bottom-8 w-[2px] bg-gradient-to-b from-transparent via-[#1BB8BD]/40 to-transparent"></div>
+            {/* Vertical gradient divider lines - Top Row (Desktop only) */}
+            <div className="hidden md:block absolute left-1/3 top-8 bottom-8 w-[2px] bg-gradient-to-b from-transparent via-[#1BB8BD]/70 to-transparent"></div>
+            <div className="hidden md:block absolute left-2/3 top-8 bottom-8 w-[2px] bg-gradient-to-b from-transparent via-[#1BB8BD]/70 to-transparent"></div>
           </div>
 
-          {/* Horizontal gradient divider */}
+          {/* Horizontal gradient divider between top and bottom rows */}
           <div className="relative max-w-5xl mx-auto my-2">
-            <div className="h-[2px] w-full bg-gradient-to-r from-transparent via-[#1BB8BD]/40 to-transparent"></div>
+            <div className="h-[2px] w-full bg-gradient-to-r from-transparent via-[#1BB8BD]/70 to-transparent"></div>
           </div>
 
           {/* Value Propositions - Bottom Row (2 columns centered) */}
           <div className="relative max-w-3xl mx-auto">
-            <div className="grid md:grid-cols-2 gap-x-0 gap-y-4">
+            <div className="grid md:grid-cols-2 gap-x-0 gap-y-0">
               {[
                 {
                   title: "Attract aligned opportunities",
@@ -1162,7 +1165,7 @@ const HirenumPage: React.FC = () => {
                     </svg>
                   )
                 }
-              ].map((item, i) => (
+              ].map((item, i, arr) => (
                 <motion.div
                   key={i}
                   initial={{ opacity: 0, y: 20 }}
@@ -1176,12 +1179,16 @@ const HirenumPage: React.FC = () => {
                   </div>
                   <h3 className="text-base font-bold mb-3">{item.title}</h3>
                   <p className="text-sm text-gray-500 dark:text-gray-400 leading-relaxed">{item.desc}</p>
+                  {/* Mobile horizontal divider after first card in bottom row */}
+                  {i < arr.length - 1 && (
+                    <div className="md:hidden absolute -bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#1BB8BD]/70 to-transparent"></div>
+                  )}
                 </motion.div>
               ))}
             </div>
             
-            {/* Vertical gradient divider line - Bottom Row */}
-            <div className="hidden md:block absolute left-1/2 top-8 bottom-8 w-[2px] bg-gradient-to-b from-transparent via-[#1BB8BD]/40 to-transparent"></div>
+            {/* Vertical gradient divider line - Bottom Row (Desktop only) */}
+            <div className="hidden md:block absolute left-1/2 top-8 bottom-8 w-[2px] bg-gradient-to-b from-transparent via-[#1BB8BD]/70 to-transparent"></div>
           </div>
         </div>
       </section>
@@ -1313,10 +1320,10 @@ const HirenumPage: React.FC = () => {
                 viewport={{ once: true }}
                 className="group"
               >
-                <div className={`w-full h-[240px] p-6 rounded-none border bg-[linear-gradient(135deg,rgba(240,240,240,0.9)_0%,rgba(245,245,245,0.7)_70%,rgba(250,250,250,0.4)_100%)] dark:bg-[linear-gradient(135deg,var(--bg-primary)_0%,var(--bg-primary)_70%,rgba(63,63,70,0.5)_100%)] backdrop-blur-sm transition-all duration-500 hover:shadow-md flex flex-col items-center text-center relative overflow-hidden shadow-[0_2px_15px_rgba(0,0,0,0.02)] dark:shadow-[0_4px_30px_rgba(0,0,0,0.05)] ${item.highlight ? 'border-[#1BB8BD]/30 hover:shadow-[#1BB8BD]/5' : `border-white/40 dark:border-zinc-800/50 hover:border-[#${item.hoverColor}]/30 hover:shadow-[#${item.hoverColor}]/5`}`}>
-                  <div className="absolute inset-0 bg-gradient-to-br from-gray-200/30 dark:from-zinc-700/20 via-transparent to-gray-100/20 dark:to-zinc-800/30"></div>
+                <div className={`w-full h-[240px] p-6 rounded-none border bg-[linear-gradient(135deg,rgba(250,250,250,0.3)_0%,rgba(252,252,252,0.2)_70%,rgba(254,254,254,0.1)_100%)] dark:bg-[linear-gradient(135deg,var(--bg-primary)_0%,var(--bg-primary)_80%,rgba(63,63,70,0.1)_100%)] backdrop-blur-sm transition-all duration-500 hover:shadow-md flex flex-col items-center text-center relative overflow-hidden shadow-none dark:shadow-none ${item.highlight ? 'border-[#1BB8BD]/20 hover:shadow-[#1BB8BD]/5' : 'border-gray-200/30 dark:border-zinc-800/30'} ${item.hoverColor === 'DC0078' ? 'hover:border-[#DC0078]/30 hover:shadow-[#DC0078]/5' : 'hover:border-[#1BB8BD]/30 hover:shadow-[#1BB8BD]/5'}`}>
+                  <div className="absolute inset-0 bg-gradient-to-br from-gray-200/5 dark:from-zinc-700/5 via-transparent to-gray-100/5 dark:to-zinc-800/5"></div>
                   
-                  <div className={`relative z-10 text-gray-600 dark:text-gray-300 group-hover:text-[#${item.hoverColor}] transition-colors duration-300 mb-4 mt-2`}>
+                  <div className={`relative z-10 text-gray-600 dark:text-gray-300 transition-colors duration-300 mb-4 mt-2 ${item.hoverColor === 'DC0078' ? 'group-hover:text-[#DC0078]' : 'group-hover:text-[#1BB8BD]'}`}>
                     {item.icon}
                   </div>
                   <h3 className="relative z-10 font-bold text-lg mb-3 text-center text-gray-900 dark:text-white">{item.title}</h3>
@@ -1715,46 +1722,54 @@ const HirenumPage: React.FC = () => {
       </section>
 
       {/* --- FOOTER --- */}
-      <footer className="pt-20 pb-10 border-t theme-transition bg-[var(--bg-secondary)] border-[var(--border-color)]">
-         <div className="container mx-auto px-6 grid md:grid-cols-4 gap-12 mb-16">
-            <div className="col-span-1 md:col-span-2">
-               <h2 className="text-3xl font-bold mb-6 font-logo">HIRENUM<span className="text-[#1BB8BD]">.</span></h2>
-               <p className="max-w-sm mb-8 text-gray-600 dark:text-gray-500">Helping founders, entrepreneurs, and C-suites build powerful LinkedIn personal brands that turn visibility into authority.</p>
-               <div className="flex space-x-4">
-                 {[Linkedin, Instagram, Mail].map((Icon, i) => (
-                    <div key={i} className="p-2 rounded-full transition-all duration-300 cursor-pointer bg-black/5 hover:bg-[#1BB8BD] hover:text-white hover:scale-110 hover:shadow-[0_0_15px_rgba(27,184,189,0.5)] hover:-translate-y-1 dark:bg-white/5 dark:hover:bg-[#1BB8BD] dark:hover:text-white active:scale-95">
-                       <Icon size={20} />
-                    </div>
-                 ))}
-               </div>
+      <footer className="bg-[var(--bg-primary)] pt-16 sm:pt-20 pb-6 px-6 sm:px-10 md:px-16 lg:px-24 overflow-hidden border-t border-[var(--border-color)]">
+        <div className="max-w-7xl mx-auto">
+          
+          {/* Grid Links */}
+          <div className="flex justify-center mb-16 sm:mb-20">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-10 sm:gap-x-12 md:gap-x-16 lg:gap-x-20">
+              <div>
+                <h4 className="font-bold mb-4 sm:mb-6 uppercase tracking-wider text-xs sm:text-sm">Services</h4>
+                <ul className="space-y-3 sm:space-y-4 text-xs sm:text-sm text-gray-500 dark:text-gray-500">
+                  <li><button onClick={() => scrollToSection('what-we-do')} className="hover:text-[#1BB8BD] transition-colors">What We Do</button></li>
+                  <li><button onClick={() => scrollToSection('who-we-work-with')} className="hover:text-[#1BB8BD] transition-colors">Who We Work With</button></li>
+                  <li><button onClick={() => scrollToSection('how-it-works')} className="hover:text-[#1BB8BD] transition-colors">How It Works</button></li>
+                </ul>
+              </div>
+              <div>
+                <h4 className="font-bold mb-4 sm:mb-6 uppercase tracking-wider text-xs sm:text-sm">Resources</h4>
+                <ul className="space-y-3 sm:space-y-4 text-xs sm:text-sm text-gray-500 dark:text-gray-500">
+                  <li><button onClick={() => scrollToSection('packages')} className="hover:text-[#1BB8BD] transition-colors">Packages</button></li>
+                  <li><button onClick={() => scrollToSection('learn-for-free')} className="hover:text-[#1BB8BD] transition-colors">Learn for Free</button></li>
+                  <li><button onClick={() => scrollToSection('faqs')} className="hover:text-[#1BB8BD] transition-colors">FAQs</button></li>
+                </ul>
+              </div>
+              <div>
+                <h4 className="font-bold mb-4 sm:mb-6 uppercase tracking-wider text-xs sm:text-sm">Socials</h4>
+                <ul className="space-y-3 sm:space-y-4 text-xs sm:text-sm text-gray-500 dark:text-gray-500">
+                  <li><a href="https://www.linkedin.com/company/hirenum/" target="_blank" rel="noopener noreferrer" className="hover:text-[#1BB8BD] transition-colors">LinkedIn</a></li>
+                  <li><a href="https://wa.me/" target="_blank" rel="noopener noreferrer" className="hover:text-[#1BB8BD] transition-colors">WhatsApp</a></li>
+                  <li><a href="mailto:hello@hirenum.com" className="hover:text-[#1BB8BD] transition-colors">Email</a></li>
+                </ul>
+              </div>
+              <div>
+                <h4 className="font-bold mb-4 sm:mb-6  uppercase tracking-wider text-xs sm:text-sm">HELLO@HIRENUM.COM</h4>
+                <div className="text-xs sm:text-sm text-gray-500 dark:text-gray-500 space-y-2">
+                  <p className="hover:text-[#1BB8BD] cursor-pointer transition-colors">Privacy Policy</p>
+                  <p>©2025 All Rights Reserved</p>
+                  <p>by Hirenum</p>
+                </div>
+              </div>
             </div>
+          </div>
 
-            <div>
-               <h3 className="text-sm font-bold uppercase tracking-widest mb-6 text-gray-400 dark:text-gray-500">Navigate</h3>
-               <ul className="space-y-4 text-lg font-medium">
-                  {['Home', 'Services', 'Packages', 'Blog'].map((item, i) => (
-                     <li key={i}><button className="hover:text-[#1BB8BD] transition-all duration-300 hover:translate-x-2 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 hover:after:w-full after:h-[1px] after:bg-[#1BB8BD] after:transition-all after:duration-300">{item}</button></li>
-                  ))}
-               </ul>
-            </div>
-
-            <div>
-               <h3 className="text-sm font-bold uppercase tracking-widest mb-6 text-gray-400 dark:text-gray-500">Locations</h3>
-               <ul className="space-y-4 text-gray-600 dark:text-gray-400">
-                  <li className="flex items-center gap-2"><Globe size={16} /> London, UK</li>
-                  <li className="flex items-center gap-2"><Globe size={16} /> Surrey, UK</li>
-                  <li className="pt-4 text-[#1BB8BD] font-bold">hello@hirenum.com</li>
-               </ul>
-            </div>
-         </div>
-
-         <div className="container mx-auto px-6 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between text-xs text-gray-500">
-            <p>&copy; 2024 Hirenum. All rights reserved.</p>
-            <div className="flex gap-6 mt-4 md:mt-0">
-               <span className="cursor-pointer hover:text-[#1BB8BD] transition-colors duration-300">Privacy Policy</span>
-               <span className="cursor-pointer hover:text-[#1BB8BD] transition-colors duration-300">Terms & Conditions</span>
-            </div>
-         </div>
+          {/* Big Logo */}
+          <div className="border-t border-black/10 dark:border-white/10 pt-8 sm:pt-12 pb-4 sm:pb-8 flex justify-center">
+            <h1 className="text-[15vw] sm:text-[12vw] leading-none font-bold text-transparent bg-clip-text bg-gradient-to-b from-gray-200 to-[#1BB8BD]/20 dark:from-gray-400 dark:to-[#1BB8BD]/20 tracking-tighter opacity-80 font-logo">
+              HIRENUM
+            </h1>
+          </div>
+        </div>
       </footer>
     </div>
   );
