@@ -20,7 +20,7 @@ const FreeAudit: React.FC = memo(() => {
         </div>
 
         <div className="md:w-1/2 w-full">
-          <div className="p-8 rounded-2xl shadow-2xl backdrop-blur-sm border bg-white/90 border-white/40 dark:bg-black/90 dark:border-white/20">
+          <div className="p-8 rounded-2xl shadow-2xl border bg-white/95 border-white/40 dark:bg-black/95 dark:border-white/20">
             <form className="space-y-4">
               <div className="group">
                 <label className="block text-xs font-bold uppercase mb-1 text-gray-600 dark:text-gray-400 transition-colors duration-300 group-focus-within:text-[#17A8AD] dark:group-focus-within:text-[#1BB8BD]">Full Name</label>

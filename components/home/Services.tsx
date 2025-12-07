@@ -38,10 +38,10 @@ const Services: React.FC = memo(() => {
             
             {/* Card 1 */}
             <motion.div 
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0 }}
-              viewport={{ once: true }}
+              transition={{ duration: 0.4, ease: "easeOut" }}
+              viewport={{ once: true, margin: "-50px" }}
               className="flex flex-col items-center space-y-3 sm:space-y-4 md:space-y-5 lg:space-y-6 group px-4 sm:px-6 md:px-4 lg:px-2 py-6 sm:py-8 md:py-6 lg:py-4 rounded-2xl md:rounded-none hover:bg-gray-50/50 dark:hover:bg-white/[0.02] md:hover:bg-transparent transition-colors duration-300"
             >
               <div className="w-full flex justify-center group-hover:scale-105 transition-transform duration-300">
@@ -62,10 +62,10 @@ const Services: React.FC = memo(() => {
 
             {/* Card 2 */}
             <motion.div 
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              viewport={{ once: true }}
+              transition={{ duration: 0.4, delay: 0.05, ease: "easeOut" }}
+              viewport={{ once: true, margin: "-50px" }}
               className="flex flex-col items-center space-y-3 sm:space-y-4 md:space-y-5 lg:space-y-6 group px-4 sm:px-6 md:px-4 lg:px-2 py-6 sm:py-8 md:py-6 lg:py-4 rounded-2xl md:rounded-none hover:bg-gray-50/50 dark:hover:bg-white/[0.02] md:hover:bg-transparent transition-colors duration-300"
             >
               <div className="w-full flex justify-center group-hover:scale-105 transition-transform duration-300">
@@ -86,10 +86,10 @@ const Services: React.FC = memo(() => {
 
             {/* Card 3 */}
             <motion.div 
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              viewport={{ once: true }}
+              transition={{ duration: 0.4, delay: 0.1, ease: "easeOut" }}
+              viewport={{ once: true, margin: "-50px" }}
               className="flex flex-col items-center space-y-3 sm:space-y-4 md:space-y-5 lg:space-y-6 group px-4 sm:px-6 md:px-4 lg:px-2 py-6 sm:py-8 md:py-6 lg:py-4 rounded-2xl md:rounded-none hover:bg-gray-50/50 dark:hover:bg-white/[0.02] md:hover:bg-transparent transition-colors duration-300 md:col-span-2 lg:col-span-1 md:max-w-md md:mx-auto lg:max-w-none"
             >
               <div className="w-full flex justify-center group-hover:scale-105 transition-transform duration-300">

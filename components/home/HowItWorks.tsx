@@ -122,7 +122,7 @@ const HowItWorks: React.FC = memo(() => {
                   </div>
 
                   <div className="ml-20 md:ml-0 md:w-1/2 md:px-10 w-full">
-                    <div className={`p-8 rounded-xl border border-white/40 dark:border-zinc-800/50 transition-all duration-500 relative overflow-hidden backdrop-blur-sm bg-[linear-gradient(135deg,rgba(240,240,240,0.9)_0%,rgba(245,245,245,0.7)_70%,rgba(250,250,250,0.4)_100%)] dark:bg-[linear-gradient(135deg,var(--bg-primary)_0%,var(--bg-primary)_70%,rgba(63,63,70,0.5)_100%)] shadow-[0_2px_15px_rgba(0,0,0,0.02)] dark:shadow-[0_4px_30px_rgba(0,0,0,0.05)] ${isActive ? 'shadow-md shadow-[#1BB8BD]/5 -translate-y-2' : ''}`}>
+                    <div className={`p-8 rounded-xl border border-white/40 dark:border-zinc-800/50 transition-all duration-300 relative overflow-hidden bg-[linear-gradient(135deg,rgba(240,240,240,0.95)_0%,rgba(245,245,245,0.9)_70%,rgba(250,250,250,0.85)_100%)] dark:bg-[linear-gradient(135deg,var(--bg-primary)_0%,var(--bg-primary)_70%,rgba(63,63,70,0.5)_100%)] shadow-[0_2px_15px_rgba(0,0,0,0.02)] dark:shadow-[0_4px_30px_rgba(0,0,0,0.05)] ${isActive ? 'shadow-md shadow-[#1BB8BD]/5 -translate-y-1' : ''}`}>
                       <div className="absolute inset-0 bg-gradient-to-br from-gray-200/10 dark:from-zinc-700/10 via-transparent to-gray-100/10 dark:to-zinc-800/10"></div>
                       <div className={`absolute inset-0 bg-gradient-to-r from-[#1BB8BD] to-[#DC0078] transition-opacity duration-500 ${isActive ? 'opacity-5' : 'opacity-0'}`}></div>
                       <div className={`absolute -top-4 -right-4 text-8xl font-black z-0 transition-colors duration-500 ${isActive ? 'text-[#DC0078]/15 dark:text-[#DC0078]/15' : 'text-black/5 dark:text-zinc-600/30'}`}>0{i+1}</div>

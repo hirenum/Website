@@ -75,20 +75,20 @@ const WhyItWorks: React.FC = memo(() => {
       <div className="container mx-auto px-6 relative z-10">
         <div className="text-center mb-8">
           <motion.h2 
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
+            transition={{ duration: 0.4, ease: "easeOut" }}
+            viewport={{ once: true, margin: "-50px" }}
             className="text-4xl md:text-6xl font-bold mb-8"
           >
             Why Thought Leadership Works?
           </motion.h2>
           
           <motion.p 
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            viewport={{ once: true }}
+            transition={{ duration: 0.4, delay: 0.1, ease: "easeOut" }}
+            viewport={{ once: true, margin: "-50px" }}
             className="text-base md:text-lg text-gray-500 dark:text-gray-400 max-w-2xl mx-auto leading-relaxed"
           >
             People don{"'"}t just buy products, services or roles.
@@ -104,10 +104,10 @@ const WhyItWorks: React.FC = memo(() => {
             {topRowItems.map((item, i, arr) => (
               <motion.div
                 key={i}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 15 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: i * 0.1 }}
-                viewport={{ once: true }}
+                transition={{ duration: 0.35, delay: i * 0.05, ease: "easeOut" }}
+                viewport={{ once: true, margin: "-30px" }}
                 className="text-center group py-8 px-6 relative"
               >
                 <div className="flex justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
@@ -136,10 +136,10 @@ const WhyItWorks: React.FC = memo(() => {
             {bottomRowItems.map((item, i, arr) => (
               <motion.div
                 key={i}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 15 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.3 + i * 0.1 }}
-                viewport={{ once: true }}
+                transition={{ duration: 0.35, delay: 0.1 + i * 0.05, ease: "easeOut" }}
+                viewport={{ once: true, margin: "-30px" }}
                 className="text-center group py-8 px-6 relative"
               >
                 <div className="flex justify-center mb-4 group-hover:scale-110 transition-transform duration-300">

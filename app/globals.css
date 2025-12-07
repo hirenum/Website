@@ -228,16 +228,16 @@ button[class*="bg-[#DC0078]"],
   position: absolute;
   width: 600px;
   height: 600px;
-  background: radial-gradient(circle, rgba(27,184,189,0.2) 0%, rgba(220,0,120,0.1) 40%, rgba(0,0,0,0) 70%);
+  background: radial-gradient(circle, rgba(27,184,189,0.15) 0%, rgba(220,0,120,0.08) 40%, rgba(0,0,0,0) 70%);
   border-radius: 50%;
-  filter: blur(60px);
+  filter: blur(40px);
   z-index: 0;
   pointer-events: none;
-  opacity: 0.6;
+  opacity: 0.5;
 }
 
 .dark .glow-orb {
-  opacity: 1;
+  opacity: 0.8;
 }
 
 .animate-marquee {

@@ -9,46 +9,44 @@ const containerVariants: Variants = {
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.2,
-      delayChildren: 0.1,
+      staggerChildren: 0.08,
+      delayChildren: 0.05,
     },
   },
 };
 
 const cardVariants: Variants = {
-  hidden: { opacity: 0, y: 60, scale: 0.95 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    scale: 1,
-    transition: {
-      type: 'spring',
-      stiffness: 100,
-      damping: 15,
-    },
-  },
-};
-
-const headerVariants: Variants = {
   hidden: { opacity: 0, y: 30 },
   visible: {
     opacity: 1,
     y: 0,
     transition: {
-      duration: 0.6,
+      duration: 0.4,
+      ease: [0.25, 0.46, 0.45, 0.94],
+    },
+  },
+};
+
+const headerVariants: Variants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.4,
       ease: [0.25, 0.46, 0.45, 0.94],
     },
   },
 };
 
 const checkItemVariants: Variants = {
-  hidden: { opacity: 0, x: -15 },
+  hidden: { opacity: 0, x: -10 },
   visible: {
     opacity: 1,
     x: 0,
     transition: {
-      duration: 0.3,
-      ease: [0.25, 0.46, 0.45, 0.94],
+      duration: 0.2,
+      ease: "easeOut",
     },
   },
 };
@@ -58,8 +56,8 @@ const checkContainerVariants: Variants = {
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.06,
-      delayChildren: 0.2,
+      staggerChildren: 0.03,
+      delayChildren: 0.1,
     },
   },
 };
@@ -109,20 +107,20 @@ const Packages: React.FC = memo(() => {
             Choose the Right <br />
             <motion.span
               className="inline-block"
-              initial={{ opacity: 0, scale: 0.9, y: 20 }}
-              whileInView={{ opacity: 1, scale: 1, y: 0 }}
+              initial={{ opacity: 0, y: 15 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: 0.3, duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94] }}
+              transition={{ delay: 0.15, duration: 0.4, ease: "easeOut" }}
             >
               Plan for You
             </motion.span>
           </motion.h2>
           <motion.p 
             className="text-gray-600 dark:text-gray-400 text-lg max-w-2xl mx-auto"
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: 0.4, duration: 0.5 }}
+            transition={{ delay: 0.2, duration: 0.4 }}
           >
             We simplify thought leadership into clear, actionable packages.
           </motion.p>
@@ -133,24 +131,20 @@ const Packages: React.FC = memo(() => {
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, margin: "-50px" }}
+          viewport={{ once: true, margin: "-80px" }}
         >
           {/* Advisory */}
           <motion.div 
             variants={cardVariants}
-            whileHover={{ 
-              y: -8, 
-              scale: 1.02,
-              transition: { duration: 0.3, ease: [0.25, 0.46, 0.45, 0.94] }
-            }}
-            className="relative p-8 rounded-3xl border border-[#1BB8BD]/15 flex flex-col h-full backdrop-blur-sm bg-[linear-gradient(45deg,rgba(240,240,240,0.9)_0%,rgba(245,245,245,0.7)_70%,rgba(250,250,250,0.4)_100%)] dark:bg-[linear-gradient(45deg,var(--bg-primary)_0%,var(--bg-primary)_70%,rgba(63,63,70,0.5)_100%)] shadow-[0_2px_15px_rgba(0,0,0,0.02)] dark:shadow-[0_4px_30px_rgba(0,0,0,0.05)] hover:shadow-[0_10px_25px_rgba(27,184,189,0.08)] dark:hover:shadow-[0_10px_25px_rgba(27,184,189,0.05)] transition-shadow duration-300 group"
+            whileHover={{ y: -4, transition: { duration: 0.2 } }}
+            className="relative p-8 rounded-3xl border border-[#1BB8BD]/15 flex flex-col h-full bg-[linear-gradient(45deg,rgba(240,240,240,0.95)_0%,rgba(245,245,245,0.9)_70%,rgba(250,250,250,0.85)_100%)] dark:bg-[linear-gradient(45deg,var(--bg-primary)_0%,var(--bg-primary)_70%,rgba(63,63,70,0.5)_100%)] shadow-[0_2px_15px_rgba(0,0,0,0.02)] dark:shadow-[0_4px_30px_rgba(0,0,0,0.05)] hover:shadow-[0_10px_25px_rgba(27,184,189,0.08)] dark:hover:shadow-[0_10px_25px_rgba(27,184,189,0.05)] transition-shadow duration-300 group"
           >
             <motion.div 
               className="mb-8"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
-              transition={{ delay: 0.3 }}
+              transition={{ delay: 0.1 }}
             >
               <h3 className="text-2xl font-bold mb-2">Advisory</h3>
               <p className="text-sm text-gray-600 dark:text-gray-400">You execute. We guide.</p>
@@ -159,7 +153,7 @@ const Packages: React.FC = memo(() => {
                 initial={{ width: 0 }}
                 whileInView={{ width: 48 }}
                 viewport={{ once: true }}
-                transition={{ delay: 0.5, duration: 0.4 }}
+                transition={{ delay: 0.2, duration: 0.3 }}
               />
             </motion.div>
 
@@ -173,15 +167,9 @@ const Packages: React.FC = memo(() => {
               {advisoryItems.map((item, i, arr) => (
                 <motion.div key={i} variants={checkItemVariants}>
                   <div className="flex items-start gap-3">
-                    <motion.div 
-                      className="mt-0.5 p-0.5 rounded-full border border-zinc-900 dark:border-white text-zinc-900 dark:text-white"
-                      initial={{ scale: 0, rotate: -180 }}
-                      whileInView={{ scale: 1, rotate: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ delay: 0.4 + i * 0.08, type: 'spring', stiffness: 200 }}
-                    >
+                    <div className="mt-0.5 p-0.5 rounded-full border border-zinc-900 dark:border-white text-zinc-900 dark:text-white">
                       <Check size={12} strokeWidth={4} />
-                    </motion.div>
+                    </div>
                     <span className="text-sm text-gray-600 dark:text-gray-300 font-medium leading-snug">{item}</span>
                   </div>
                   {i < arr.length - 1 && <div className="h-px bg-[#1BB8BD]/15 mt-4" />}
@@ -192,11 +180,9 @@ const Packages: React.FC = memo(() => {
             <motion.a 
               href="#contact"
               onClick={(e) => { e.preventDefault(); window.open('https://calendly.com', '_blank'); }}
-              className="self-start py-3 px-8 rounded-full font-bold text-center transition-all duration-300 bg-zinc-900 dark:bg-white text-white dark:text-zinc-900 hover:bg-gradient-to-r hover:from-[#1BB8BD] hover:to-[#DC0078] hover:text-white font-btn relative overflow-hidden group/btn"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.98 }}
+              className="self-start py-3 px-8 rounded-full font-bold text-center transition-all duration-300 bg-zinc-900 dark:bg-white text-white dark:text-zinc-900 hover:bg-gradient-to-r hover:from-[#1BB8BD] hover:to-[#DC0078] hover:text-white font-btn relative overflow-hidden group/btn hover:scale-105 active:scale-95"
             >
-              <div className="absolute inset-0 bg-white/20 translate-y-full group-hover/btn:translate-y-0 transition-transform duration-500"></div>
+              <div className="absolute inset-0 bg-white/20 translate-y-full group-hover/btn:translate-y-0 transition-transform duration-300"></div>
               <span className="relative z-10">Book a call</span>
             </motion.a>
           </motion.div>
@@ -204,31 +190,21 @@ const Packages: React.FC = memo(() => {
           {/* Foundation */}
           <motion.div 
             variants={cardVariants}
-            whileHover={{ 
-              y: -8, 
-              scale: 1.02,
-              transition: { duration: 0.3, ease: [0.25, 0.46, 0.45, 0.94] }
-            }}
-            className="relative p-8 rounded-3xl border border-[#1BB8BD]/15 flex flex-col h-full backdrop-blur-sm bg-[linear-gradient(45deg,rgba(240,240,240,0.9)_0%,rgba(245,245,245,0.7)_70%,rgba(250,250,250,0.4)_100%)] dark:bg-[linear-gradient(45deg,var(--bg-primary)_0%,var(--bg-primary)_70%,rgba(63,63,70,0.5)_100%)] shadow-[0_2px_15px_rgba(0,0,0,0.02)] dark:shadow-[0_4px_30px_rgba(0,0,0,0.05)] hover:shadow-[0_10px_25px_rgba(27,184,189,0.08)] dark:hover:shadow-[0_10px_25px_rgba(27,184,189,0.05)] transition-shadow duration-300 group"
+            whileHover={{ y: -4, transition: { duration: 0.2 } }}
+            className="relative p-8 rounded-3xl border border-[#1BB8BD]/15 flex flex-col h-full bg-[linear-gradient(45deg,rgba(240,240,240,0.95)_0%,rgba(245,245,245,0.9)_70%,rgba(250,250,250,0.85)_100%)] dark:bg-[linear-gradient(45deg,var(--bg-primary)_0%,var(--bg-primary)_70%,rgba(63,63,70,0.5)_100%)] shadow-[0_2px_15px_rgba(0,0,0,0.02)] dark:shadow-[0_4px_30px_rgba(0,0,0,0.05)] hover:shadow-[0_10px_25px_rgba(27,184,189,0.08)] dark:hover:shadow-[0_10px_25px_rgba(27,184,189,0.05)] transition-shadow duration-300 group"
           >
             <motion.div 
               className="mb-8"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
-              transition={{ delay: 0.4 }}
+              transition={{ delay: 0.15 }}
             >
               <div className="flex items-center gap-3 mb-2">
                 <h3 className="text-2xl font-bold">Foundation</h3>
-                <motion.span 
-                  className="px-3 py-1 text-xs font-medium rounded-full border border-[#17A8AD] dark:border-[#1BB8BD] text-[#17A8AD] dark:text-[#1BB8BD]"
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.5, type: 'spring', stiffness: 200 }}
-                >
+                <span className="px-3 py-1 text-xs font-medium rounded-full border border-[#17A8AD] dark:border-[#1BB8BD] text-[#17A8AD] dark:text-[#1BB8BD]">
                   Popular
-                </motion.span>
+                </span>
               </div>
               <p className="text-sm text-gray-600 dark:text-gray-400">We build your presence with you.</p>
               <motion.div 
@@ -236,7 +212,7 @@ const Packages: React.FC = memo(() => {
                 initial={{ width: 0 }}
                 whileInView={{ width: 48 }}
                 viewport={{ once: true }}
-                transition={{ delay: 0.6, duration: 0.4 }}
+                transition={{ delay: 0.25, duration: 0.3 }}
               />
             </motion.div>
 
@@ -250,15 +226,9 @@ const Packages: React.FC = memo(() => {
               {foundationItems.map((item, i, arr) => (
                 <motion.div key={i} variants={checkItemVariants}>
                   <div className="flex items-start gap-3">
-                    <motion.div 
-                      className="mt-0.5 p-0.5 rounded-full border border-zinc-900 dark:border-white text-zinc-900 dark:text-white"
-                      initial={{ scale: 0, rotate: -180 }}
-                      whileInView={{ scale: 1, rotate: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ delay: 0.5 + i * 0.08, type: 'spring', stiffness: 200 }}
-                    >
+                    <div className="mt-0.5 p-0.5 rounded-full border border-zinc-900 dark:border-white text-zinc-900 dark:text-white">
                       <Check size={12} strokeWidth={4} />
-                    </motion.div>
+                    </div>
                     <span className="text-sm text-gray-600 dark:text-gray-300 font-medium leading-snug">{item}</span>
                   </div>
                   {i < arr.length - 1 && <div className="h-px bg-[#1BB8BD]/15 mt-4" />}
@@ -269,11 +239,9 @@ const Packages: React.FC = memo(() => {
             <motion.a 
               href="#contact"
               onClick={(e) => { e.preventDefault(); window.open('https://calendly.com', '_blank'); }}
-              className="self-start py-3 px-8 rounded-full font-bold text-center transition-all duration-300 bg-zinc-900 dark:bg-white text-white dark:text-zinc-900 hover:bg-gradient-to-r hover:from-[#1BB8BD] hover:to-[#DC0078] hover:text-white font-btn relative overflow-hidden group/btn"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.98 }}
+              className="self-start py-3 px-8 rounded-full font-bold text-center transition-all duration-300 bg-zinc-900 dark:bg-white text-white dark:text-zinc-900 hover:bg-gradient-to-r hover:from-[#1BB8BD] hover:to-[#DC0078] hover:text-white font-btn relative overflow-hidden group/btn hover:scale-105 active:scale-95"
             >
-              <div className="absolute inset-0 bg-white/20 translate-y-full group-hover/btn:translate-y-0 transition-transform duration-500"></div>
+              <div className="absolute inset-0 bg-white/20 translate-y-full group-hover/btn:translate-y-0 transition-transform duration-300"></div>
               <span className="relative z-10">Book a call</span>
             </motion.a>
           </motion.div>
@@ -281,19 +249,15 @@ const Packages: React.FC = memo(() => {
           {/* Authority */}
           <motion.div 
             variants={cardVariants}
-            whileHover={{ 
-              y: -8, 
-              scale: 1.02,
-              transition: { duration: 0.3, ease: [0.25, 0.46, 0.45, 0.94] }
-            }}
-            className="relative p-8 rounded-3xl border border-[#1BB8BD]/15 flex flex-col h-full backdrop-blur-sm bg-[linear-gradient(45deg,rgba(240,240,240,0.9)_0%,rgba(245,245,245,0.7)_70%,rgba(250,250,250,0.4)_100%)] dark:bg-[linear-gradient(45deg,var(--bg-primary)_0%,var(--bg-primary)_70%,rgba(63,63,70,0.5)_100%)] shadow-[0_2px_15px_rgba(0,0,0,0.02)] dark:shadow-[0_4px_30px_rgba(0,0,0,0.05)] hover:shadow-[0_10px_25px_rgba(27,184,189,0.08)] dark:hover:shadow-[0_10px_25px_rgba(27,184,189,0.05)] transition-shadow duration-300 group"
+            whileHover={{ y: -4, transition: { duration: 0.2 } }}
+            className="relative p-8 rounded-3xl border border-[#1BB8BD]/15 flex flex-col h-full bg-[linear-gradient(45deg,rgba(240,240,240,0.95)_0%,rgba(245,245,245,0.9)_70%,rgba(250,250,250,0.85)_100%)] dark:bg-[linear-gradient(45deg,var(--bg-primary)_0%,var(--bg-primary)_70%,rgba(63,63,70,0.5)_100%)] shadow-[0_2px_15px_rgba(0,0,0,0.02)] dark:shadow-[0_4px_30px_rgba(0,0,0,0.05)] hover:shadow-[0_10px_25px_rgba(27,184,189,0.08)] dark:hover:shadow-[0_10px_25px_rgba(27,184,189,0.05)] transition-shadow duration-300 group"
           >
             <motion.div 
               className="mb-8"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
-              transition={{ delay: 0.5 }}
+              transition={{ delay: 0.2 }}
             >
               <h3 className="text-2xl font-bold mb-2">Authority</h3>
               <p className="text-sm text-gray-600 dark:text-gray-400">We build your presence for you.</p>
@@ -302,7 +266,7 @@ const Packages: React.FC = memo(() => {
                 initial={{ width: 0 }}
                 whileInView={{ width: 48 }}
                 viewport={{ once: true }}
-                transition={{ delay: 0.7, duration: 0.4 }}
+                transition={{ delay: 0.3, duration: 0.3 }}
               />
             </motion.div>
 
@@ -316,15 +280,9 @@ const Packages: React.FC = memo(() => {
               {authorityItems.map((item, i, arr) => (
                 <motion.div key={i} variants={checkItemVariants}>
                   <div className="flex items-start gap-3">
-                    <motion.div 
-                      className="mt-0.5 p-0.5 rounded-full border border-zinc-900 dark:border-white text-zinc-900 dark:text-white"
-                      initial={{ scale: 0, rotate: -180 }}
-                      whileInView={{ scale: 1, rotate: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ delay: 0.6 + i * 0.08, type: 'spring', stiffness: 200 }}
-                    >
+                    <div className="mt-0.5 p-0.5 rounded-full border border-zinc-900 dark:border-white text-zinc-900 dark:text-white">
                       <Check size={12} strokeWidth={4} />
-                    </motion.div>
+                    </div>
                     <span className="text-sm text-gray-600 dark:text-gray-300 font-medium leading-snug">{item}</span>
                   </div>
                   {i < arr.length - 1 && <div className="h-px bg-[#1BB8BD]/15 mt-4" />}
@@ -335,11 +293,9 @@ const Packages: React.FC = memo(() => {
             <motion.a 
               href="#contact"
               onClick={(e) => { e.preventDefault(); window.open('https://calendly.com', '_blank'); }}
-              className="self-start py-3 px-8 rounded-full font-bold text-center transition-all duration-300 bg-zinc-900 dark:bg-white text-white dark:text-zinc-900 hover:bg-gradient-to-r hover:from-[#1BB8BD] hover:to-[#DC0078] hover:text-white font-btn relative overflow-hidden group/btn"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.98 }}
+              className="self-start py-3 px-8 rounded-full font-bold text-center transition-all duration-300 bg-zinc-900 dark:bg-white text-white dark:text-zinc-900 hover:bg-gradient-to-r hover:from-[#1BB8BD] hover:to-[#DC0078] hover:text-white font-btn relative overflow-hidden group/btn hover:scale-105 active:scale-95"
             >
-              <div className="absolute inset-0 bg-white/20 translate-y-full group-hover/btn:translate-y-0 transition-transform duration-500"></div>
+              <div className="absolute inset-0 bg-white/20 translate-y-full group-hover/btn:translate-y-0 transition-transform duration-300"></div>
               <span className="relative z-10">Book a call</span>
             </motion.a>
           </motion.div>
