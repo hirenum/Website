@@ -119,7 +119,7 @@ const WhyPeopleCome: React.FC<WhyPeopleComeProps> = memo(({ scrollToSection }) =
               <div className="relative p-4 lg:p-5 xl:p-6 rounded-2xl border backdrop-blur-sm overflow-hidden group transition-all duration-300 bg-transparent border-gray-300/50 dark:border-white/10">
                 <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-r from-[#DC0078]/5 to-[#1BB8BD]/5" />
                 <div className="relative z-10 flex items-start gap-3 xl:gap-4">
-                  <div className="p-2 lg:p-2.5 xl:p-3 rounded-xl flex-shrink-0 transition-colors duration-300 bg-gray-200/50 dark:bg-white/5 text-[#1BB8BD] group-hover:bg-[#1BB8BD] group-hover:text-white">
+                  <div className="p-2 lg:p-2.5 xl:p-3 rounded-xl flex-shrink-0 transition-colors duration-300 bg-gray-200/50 dark:bg-white/5 text-[#17A8AD] dark:text-[#1BB8BD] group-hover:bg-[#1BB8BD] group-hover:text-white">
                     <node.icon className="w-5 h-5 lg:w-5 lg:h-5 xl:w-6 xl:h-6" />
                   </div>
                   <p className="text-sm lg:text-sm xl:text-base font-medium leading-relaxed text-gray-700 dark:text-gray-200">
@@ -146,7 +146,7 @@ const WhyPeopleCome: React.FC<WhyPeopleComeProps> = memo(({ scrollToSection }) =
               >
                 <div className="absolute -left-[41px] top-1/2 -translate-y-1/2 w-4 h-4 rounded-full bg-[#1BB8BD] border-4 border-[var(--bg-primary)]" style={{ backgroundColor: idx < 3 ? '#1BB8BD' : idx === 3 ? '#8B5F9E' : '#DC0078' }} />
                 <div className="flex items-center gap-4 p-4 rounded-xl border backdrop-blur-sm bg-transparent border-gray-300/50 dark:border-white/10">
-                  <div className="p-2 rounded-lg bg-gray-200/50 dark:bg-white/5 text-[#1BB8BD]">
+                  <div className="p-2 rounded-lg bg-gray-200/50 dark:bg-white/5 text-[#17A8AD] dark:text-[#1BB8BD]">
                     <node.icon size={20} />
                   </div>
                   <span className="font-medium text-gray-700 dark:text-gray-300">{node.text}</span>

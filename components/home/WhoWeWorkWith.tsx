@@ -135,7 +135,7 @@ const WhoWeWorkWith: React.FC = memo(() => {
               <div className={`w-full h-[240px] p-6 rounded-none border bg-[linear-gradient(135deg,rgba(245,245,245,0.9)_0%,rgba(250,250,250,0.7)_50%,rgba(255,255,255,0.5)_100%)] dark:bg-[linear-gradient(135deg,var(--bg-primary)_0%,var(--bg-primary)_80%,rgba(63,63,70,0.1)_100%)] backdrop-blur-sm transition-all duration-500 hover:shadow-md flex flex-col items-center text-center relative overflow-hidden shadow-none dark:shadow-none ${item.highlight ? 'border-[#1BB8BD]/20 hover:shadow-[#1BB8BD]/5' : 'border-gray-200/50 dark:border-zinc-800/30'} ${item.hoverColor === 'DC0078' ? 'hover:border-[#DC0078]/30 hover:shadow-[#DC0078]/5' : 'hover:border-[#1BB8BD]/30 hover:shadow-[#1BB8BD]/5'}`}>
                 <div className="absolute inset-0 bg-gradient-to-br from-gray-100/30 dark:from-zinc-700/5 via-transparent to-gray-50/20 dark:to-zinc-800/5"></div>
                 
-                <div className={`relative z-10 text-gray-600 dark:text-gray-300 transition-colors duration-300 mb-4 mt-2 ${item.hoverColor === 'DC0078' ? 'group-hover:text-[#DC0078]' : 'group-hover:text-[#1BB8BD]'}`}>
+                <div className={`relative z-10 text-gray-600 dark:text-gray-300 transition-colors duration-300 mb-4 mt-2 ${item.hoverColor === 'DC0078' ? 'group-hover:text-[#DC0078]' : 'group-hover:text-[#17A8AD] dark:group-hover:text-[#1BB8BD]'}`}>
                   {item.icon}
                 </div>
                 <h3 className="relative z-10 font-bold text-lg mb-3 text-center text-gray-900 dark:text-white">{item.title}</h3>

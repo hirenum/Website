@@ -23,15 +23,15 @@ const FreeAudit: React.FC = memo(() => {
           <div className="p-8 rounded-2xl shadow-2xl backdrop-blur-sm border bg-white/90 border-white/40 dark:bg-black/90 dark:border-white/20">
             <form className="space-y-4">
               <div className="group">
-                <label className="block text-xs font-bold uppercase mb-1 text-gray-600 dark:text-gray-400 transition-colors duration-300 group-focus-within:text-[#1BB8BD]">Full Name</label>
+                <label className="block text-xs font-bold uppercase mb-1 text-gray-600 dark:text-gray-400 transition-colors duration-300 group-focus-within:text-[#17A8AD] dark:group-focus-within:text-[#1BB8BD]">Full Name</label>
                 <input type="text" className="w-full border rounded-lg p-3 focus:outline-none focus:border-[#1BB8BD] focus:ring-2 focus:ring-[#1BB8BD]/20 bg-white border-gray-300 text-black dark:bg-white/10 dark:border-white/20 dark:text-white transition-all duration-300 hover:border-[#1BB8BD]/50" placeholder="John Doe" />
               </div>
               <div className="group">
-                <label className="block text-xs font-bold uppercase mb-1 text-gray-600 dark:text-gray-400 transition-colors duration-300 group-focus-within:text-[#1BB8BD]">Email Address</label>
+                <label className="block text-xs font-bold uppercase mb-1 text-gray-600 dark:text-gray-400 transition-colors duration-300 group-focus-within:text-[#17A8AD] dark:group-focus-within:text-[#1BB8BD]">Email Address</label>
                 <input type="email" className="w-full border rounded-lg p-3 focus:outline-none focus:border-[#1BB8BD] focus:ring-2 focus:ring-[#1BB8BD]/20 bg-white border-gray-300 text-black dark:bg-white/10 dark:border-white/20 dark:text-white transition-all duration-300 hover:border-[#1BB8BD]/50" placeholder="john@company.com" />
               </div>
               <div className="group">
-                <label className="block text-xs font-bold uppercase mb-1 text-gray-600 dark:text-gray-400 transition-colors duration-300 group-focus-within:text-[#1BB8BD]">LinkedIn URL</label>
+                <label className="block text-xs font-bold uppercase mb-1 text-gray-600 dark:text-gray-400 transition-colors duration-300 group-focus-within:text-[#17A8AD] dark:group-focus-within:text-[#1BB8BD]">LinkedIn URL</label>
                 <input type="text" className="w-full border rounded-lg p-3 focus:outline-none focus:border-[#1BB8BD] focus:ring-2 focus:ring-[#1BB8BD]/20 bg-white border-gray-300 text-black dark:bg-white/10 dark:border-white/20 dark:text-white transition-all duration-300 hover:border-[#1BB8BD]/50" placeholder="linkedin.com/in/johndoe" />
               </div>
               <button type="button" className="w-full bg-[#DC0078] text-white font-bold py-4 rounded-lg mt-4 transition-all duration-300 hover:bg-[#e6007f] hover:scale-[1.02] hover:shadow-[0_0_30px_rgba(220,0,120,0.5)] active:scale-95 relative overflow-hidden group font-btn">

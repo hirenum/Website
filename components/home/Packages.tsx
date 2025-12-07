@@ -221,7 +221,7 @@ const Packages: React.FC = memo(() => {
               <div className="flex items-center gap-3 mb-2">
                 <h3 className="text-2xl font-bold">Foundation</h3>
                 <motion.span 
-                  className="px-3 py-1 text-xs font-medium rounded-full border border-[#1BB8BD]/40 text-[#1BB8BD]/40"
+                  className="px-3 py-1 text-xs font-medium rounded-full border border-[#17A8AD] dark:border-[#1BB8BD] text-[#17A8AD] dark:text-[#1BB8BD]"
                   initial={{ opacity: 0, scale: 0.8 }}
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}

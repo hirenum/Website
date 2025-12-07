@@ -94,7 +94,7 @@ const WhyItWorks: React.FC = memo(() => {
             People don{"'"}t just buy products, services or roles.
             They buy into people,<br></br> their judgment, their track record, their ideas.
             <br />
-            <span className="text-[#1BB8BD]">A strong personal brand on LinkedIn helps you:</span>
+            <span className="text-[#17A8AD] dark:text-[#1BB8BD]">A strong personal brand on LinkedIn helps you:</span>
           </motion.p>
         </div>
 

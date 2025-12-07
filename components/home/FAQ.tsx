@@ -28,12 +28,12 @@ const FAQ: React.FC = memo(() => {
           {faqs.map((item, index) => (
             <div key={index} className="border-b pb-4 border-[var(--border-color)] group">
               <button 
-                className="w-full flex justify-between items-center text-left py-4 hover:text-[#1BB8BD] transition-all duration-300 hover:pl-2"
+                className="w-full flex justify-between items-center text-left py-4 hover:text-[#17A8AD] dark:hover:text-[#1BB8BD] transition-all duration-300 hover:pl-2"
                 onClick={() => toggleFaq(index)}
               >
                 <span className="text-lg font-medium">{item.q}</span>
                 <span className={`transition-transform duration-300 ${activeFaq === index ? 'rotate-180' : ''}`}>
-                  <ChevronDown className="group-hover:text-[#1BB8BD] transition-colors duration-300" />
+                  <ChevronDown className="group-hover:text-[#17A8AD] dark:group-hover:text-[#1BB8BD] transition-colors duration-300" />
                 </span>
               </button>
               <div className={`overflow-hidden transition-all duration-500 ${activeFaq === index ? 'max-h-48 opacity-100' : 'max-h-0 opacity-0'}`}>

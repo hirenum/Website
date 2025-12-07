@@ -19,7 +19,7 @@ const Blog: React.FC = memo(() => {
             <h2 className="text-3xl font-bold mb-2">Learn for free</h2>
             <p className="text-sm text-gray-600 dark:text-gray-400">Practical guides to improve your presence today.</p>
           </div>
-          <button className="text-[#1BB8BD] hover:text-[#DC0078] transition-all duration-300 text-sm font-bold flex items-center gap-2 group">
+          <button className="text-[#17A8AD] dark:text-[#1BB8BD] hover:text-[#DC0078] transition-all duration-300 text-sm font-bold flex items-center gap-2 group">
             Read Blog <ArrowRight size={16} className="group-hover:translate-x-2 transition-transform duration-300" />
           </button>
         </div>
@@ -32,7 +32,7 @@ const Blog: React.FC = memo(() => {
                 <div className="w-full h-full group-hover:scale-110 transition-transform duration-700 bg-gradient-to-tr from-gray-300 to-gray-200 dark:from-zinc-800 dark:to-zinc-700"></div>
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               </div>
-              <h3 className="text-lg font-bold group-hover:text-[#1BB8BD] transition-colors duration-300">{post.title}</h3>
+              <h3 className="text-lg font-bold group-hover:text-[#17A8AD] dark:group-hover:text-[#1BB8BD] transition-colors duration-300">{post.title}</h3>
             </div>
           ))}
         </div>

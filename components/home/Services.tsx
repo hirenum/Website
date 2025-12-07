@@ -48,7 +48,7 @@ const Services: React.FC = memo(() => {
                 <BrandIllustration />
               </div>
               <h3 className="text-lg min-[400px]:text-xl sm:text-xl md:text-lg lg:text-xl xl:text-2xl font-bold w-full text-center">
-                Architect Your <span className="text-[#1BB8BD]">Brand</span>
+                Architect Your <span className="text-[#17A8AD] dark:text-[#1BB8BD]">Brand</span>
               </h3>
               <p className="text-sm sm:text-base md:text-sm lg:text-base font-medium w-full text-center text-[var(--text-secondary)]">We help you uncover and define:</p>
               <div className="w-full flex justify-center">
@@ -72,7 +72,7 @@ const Services: React.FC = memo(() => {
                 <StrategyIllustration />
               </div>
               <h3 className="text-lg min-[400px]:text-xl sm:text-xl md:text-lg lg:text-xl xl:text-2xl font-bold w-full text-center">
-                Build a Scaling <span className="text-[#1BB8BD]">Strategy</span>
+                Build a Scaling <span className="text-[#17A8AD] dark:text-[#1BB8BD]">Strategy</span>
               </h3>
               <p className="text-sm sm:text-base md:text-sm lg:text-base font-medium w-full text-center text-[var(--text-secondary)]">Once brand is clear, we map its growth:</p>
               <div className="w-full flex justify-center">
@@ -96,7 +96,7 @@ const Services: React.FC = memo(() => {
                 <CollaborationIllustration />
               </div>
               <h3 className="text-lg min-[400px]:text-xl sm:text-xl md:text-lg lg:text-xl xl:text-2xl font-bold w-full text-center">
-                Co-Create and  <span className="text-[#1BB8BD]">Execute</span>
+                Co-Create and  <span className="text-[#17A8AD] dark:text-[#1BB8BD]">Execute</span>
               </h3>
               <p className="text-sm sm:text-base md:text-sm lg:text-base font-medium w-full text-center text-[var(--text-secondary)]">Depending on your package, we:</p>
               <div className="w-full flex justify-center">

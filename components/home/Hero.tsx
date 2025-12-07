@@ -97,7 +97,7 @@ const Hero: React.FC = memo(() => {
           </h1>
 
           <p className="text-[0.9rem] min-[400px]:text-[0.95rem] min-[480px]:text-base sm:text-[1.05rem] md:text-lg lg:text-base xl:text-lg 2xl:text-xl max-w-xl mx-auto lg:mx-0 leading-relaxed text-gray-600 dark:text-gray-400">
-            We help founders, entrepreneurs, C-suites and professionals build powerful <span className="text-[#1BB8BD] font-medium">LinkedIn personal brands</span> that turn visibility into authority, and authority into inbound opportunities.
+            We help founders, entrepreneurs, C-suites and professionals build powerful <span className="text-[#17A8AD] dark:text-[#1BB8BD] font-medium">LinkedIn personal brands</span> that turn visibility into authority, and authority into inbound opportunities.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-2 sm:pt-3 md:pt-4 justify-center lg:justify-start">

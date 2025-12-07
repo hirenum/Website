@@ -128,7 +128,7 @@ const HowItWorks: React.FC = memo(() => {
                       <div className={`absolute -top-4 -right-4 text-8xl font-black z-0 transition-colors duration-500 ${isActive ? 'text-[#DC0078]/15 dark:text-[#DC0078]/15' : 'text-black/5 dark:text-zinc-600/30'}`}>0{i+1}</div>
                       
                       <div className="relative z-10">
-                        <h3 className={`text-2xl font-bold mb-3 transition-colors duration-500 ${isActive ? 'text-[#1BB8BD]' : 'text-zinc-900 dark:text-white'}`}>{step.title}</h3>
+                        <h3 className={`text-2xl font-bold mb-3 transition-colors duration-500 ${isActive ? 'text-[#17A8AD] dark:text-[#1BB8BD]' : 'text-zinc-900 dark:text-white'}`}>{step.title}</h3>
                         <p className="text-sm mb-4 leading-relaxed text-gray-600 dark:text-gray-400">{step.desc}</p>
                         <ul className="space-y-2 border-t pt-4 border-black/5 dark:border-white/5">
                           {step.details.map((detail, idx) => (
