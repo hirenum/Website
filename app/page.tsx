@@ -139,9 +139,6 @@ const HirenumPage: React.FC = () => {
       {/* Packages Section - Dynamic import */}
       <Packages />
 
-      {/* Free Audit Section - Dynamic import */}
-      <FreeAudit />
-
       {/* Blog Section - Dynamic import */}
       <Blog />
 
@@ -150,6 +147,9 @@ const HirenumPage: React.FC = () => {
 
       {/* Final CTA Section - Dynamic import */}
       <FinalCTA />
+
+      {/* Free Audit Section - Dynamic import */}
+      <FreeAudit />
 
       {/* Footer - Dynamic import */}
       <Footer scrollToSection={scrollToSection} />
