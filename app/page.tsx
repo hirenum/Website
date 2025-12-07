@@ -118,38 +118,41 @@ const HirenumPage: React.FC = () => {
       {/* Floating CTA - Above the fold, eagerly loaded */}
       <FloatingCTA scrollToSection={scrollToSection} />
 
-      {/* Hero Section - Above the fold, eagerly loaded */}
-      <Hero />
+      {/* Main content landmark for accessibility */}
+      <main>
+        {/* Hero Section - Above the fold, eagerly loaded */}
+        <Hero />
 
-      {/* Services Section - Dynamic import */}
-      <Services />
+        {/* Services Section - Dynamic import */}
+        <Services />
 
-      {/* Why People Come Section - Dynamic import */}
-      <WhyPeopleCome scrollToSection={scrollToSection} />
+        {/* Why People Come Section - Dynamic import */}
+        <WhyPeopleCome scrollToSection={scrollToSection} />
 
-      {/* Why It Works Section - Dynamic import */}
-      <WhyItWorks />
+        {/* Why It Works Section - Dynamic import */}
+        <WhyItWorks />
 
-      {/* Who We Work With Section - Dynamic import */}
-      <WhoWeWorkWith />
+        {/* Who We Work With Section - Dynamic import */}
+        <WhoWeWorkWith />
 
-      {/* How It Works Section - Dynamic import */}
-      <HowItWorks />
+        {/* How It Works Section - Dynamic import */}
+        <HowItWorks />
 
-      {/* Packages Section - Dynamic import */}
-      <Packages />
+        {/* Packages Section - Dynamic import */}
+        <Packages />
 
-      {/* Blog Section - Dynamic import */}
-      <Blog />
+        {/* Blog Section - Dynamic import */}
+        <Blog />
 
-      {/* FAQ Section - Dynamic import */}
-      <FAQ />
+        {/* FAQ Section - Dynamic import */}
+        <FAQ />
 
-      {/* Final CTA Section - Dynamic import */}
-      <FinalCTA />
+        {/* Final CTA Section - Dynamic import */}
+        <FinalCTA />
 
-      {/* Free Audit Section - Dynamic import */}
-      <FreeAudit />
+        {/* Free Audit Section - Dynamic import */}
+        <FreeAudit />
+      </main>
 
       {/* Footer - Dynamic import */}
       <Footer scrollToSection={scrollToSection} />

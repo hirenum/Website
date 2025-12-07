@@ -43,6 +43,7 @@ const Hero: React.FC = memo(() => {
           preload="auto"
           disablePictureInPicture
           disableRemotePlayback
+          aria-hidden="true"
           className={`absolute top-0 right-0 w-full h-full object-cover will-change-auto
                      opacity-20 sm:opacity-30 md:opacity-40 lg:opacity-50 
                      dark:opacity-40 dark:sm:opacity-60 dark:md:opacity-80 dark:lg:opacity-100
@@ -56,6 +57,8 @@ const Hero: React.FC = memo(() => {
           style={{ transform: 'translateZ(0)' }}
         >
           <source src="/neon-tunnel.mp4" type="video/mp4" />
+          {/* Empty captions track for accessibility compliance - video is decorative with no audio content */}
+          <track kind="captions" src="" label="No captions needed - decorative video" default />
         </video>
         <div className="absolute inset-0 bg-gradient-to-t from-[var(--bg-primary)] via-transparent to-[var(--bg-primary)] 
                         opacity-90 sm:opacity-80 md:opacity-70 lg:opacity-60
