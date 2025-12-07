@@ -51,9 +51,9 @@ const Footer: React.FC<FooterProps> = memo(({ scrollToSection }) => {
 
         {/* Big Logo */}
         <div className="border-t border-black/10 dark:border-white/10 pt-8 sm:pt-12 pb-4 sm:pb-8 flex justify-center">
-          <h1 className="text-[15vw] sm:text-[12vw] leading-none font-bold text-transparent bg-clip-text bg-gradient-to-b from-gray-200 to-[#1BB8BD]/20 dark:from-gray-400 dark:to-[#1BB8BD]/20 tracking-tighter opacity-80 font-logo">
+          <span className="text-[15vw] sm:text-[12vw] leading-none font-bold text-transparent bg-clip-text bg-gradient-to-b from-gray-200 to-[#1BB8BD]/20 dark:from-gray-400 dark:to-[#1BB8BD]/20 tracking-tighter opacity-80 font-logo" aria-hidden="true">
             HIRENUM
-          </h1>
+          </span>
         </div>
       </div>
     </footer>

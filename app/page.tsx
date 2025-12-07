@@ -108,10 +108,7 @@ const HirenumPage: React.FC = () => {
   }), [scrolled, isMenuOpen, mounted, scrollToSection]);
 
   return (
-    <div 
-      className="min-h-screen selection:bg-[#DC0078] selection:text-white overflow-x-hidden theme-transition bg-[var(--bg-primary)] text-[var(--text-primary)]" 
-      style={{ fontFamily: 'var(--font-roboto), Roboto, sans-serif' }}
-    >
+    <>
       {/* Navigation - Above the fold, eagerly loaded */}
       <Navigation {...navigationProps} />
 
@@ -119,7 +116,11 @@ const HirenumPage: React.FC = () => {
       <FloatingCTA scrollToSection={scrollToSection} />
 
       {/* Main content landmark for accessibility */}
-      <main>
+      <main 
+        id="main-content"
+        className="min-h-screen selection:bg-[#DC0078] selection:text-white overflow-x-hidden theme-transition bg-[var(--bg-primary)] text-[var(--text-primary)]" 
+        style={{ fontFamily: 'var(--font-roboto), Roboto, sans-serif' }}
+      >
         {/* Hero Section - Above the fold, eagerly loaded */}
         <Hero />
 
@@ -156,7 +157,7 @@ const HirenumPage: React.FC = () => {
 
       {/* Footer - Dynamic import */}
       <Footer scrollToSection={scrollToSection} />
-    </div>
+    </>
   );
 };
 

@@ -57,8 +57,6 @@ const Hero: React.FC = memo(() => {
           style={{ transform: 'translateZ(0)' }}
         >
           <source src="/neon-tunnel.mp4" type="video/mp4" />
-          {/* Empty captions track for accessibility compliance - video is decorative with no audio content */}
-          <track kind="captions" src="" label="No captions needed - decorative video" default />
         </video>
         <div className="absolute inset-0 bg-gradient-to-t from-[var(--bg-primary)] via-transparent to-[var(--bg-primary)] 
                         opacity-90 sm:opacity-80 md:opacity-70 lg:opacity-60
