@@ -1,16 +1,33 @@
 'use client';
 
-import React, { memo, useRef, useEffect } from 'react';
+import React, { memo, useRef, useEffect, useState } from 'react';
 import { ArrowRight } from 'lucide-react';
 
 const Hero: React.FC = memo(() => {
   const videoRef = useRef<HTMLVideoElement>(null);
+  const [isVideoLoaded, setIsVideoLoaded] = useState(false);
 
-  // Set video playback speed
+  // Optimize video playback
   useEffect(() => {
-    if (videoRef.current) {
-      videoRef.current.playbackRate = 0.65;
+    const video = videoRef.current;
+    if (!video) return;
+
+    // Set playback rate once video is ready
+    const handleCanPlay = () => {
+      video.playbackRate = 0.65;
+      setIsVideoLoaded(true);
+    };
+
+    video.addEventListener('canplay', handleCanPlay);
+    
+    // If video is already loaded
+    if (video.readyState >= 3) {
+      handleCanPlay();
     }
+
+    return () => {
+      video.removeEventListener('canplay', handleCanPlay);
+    };
   }, []);
 
   return (
@@ -23,7 +40,10 @@ const Hero: React.FC = memo(() => {
           loop 
           muted 
           playsInline
-          className="absolute top-0 right-0 w-full h-full object-cover 
+          preload="auto"
+          disablePictureInPicture
+          disableRemotePlayback
+          className={`absolute top-0 right-0 w-full h-full object-cover will-change-auto
                      opacity-20 sm:opacity-30 md:opacity-40 lg:opacity-50 
                      dark:opacity-40 dark:sm:opacity-60 dark:md:opacity-80 dark:lg:opacity-100
                      brightness-110 saturate-75 contrast-75
@@ -31,7 +51,9 @@ const Hero: React.FC = memo(() => {
                      [mask-image:linear-gradient(to_bottom,transparent_0%,rgba(0,0,0,0.3)_20%,rgba(0,0,0,0.5)_50%,rgba(0,0,0,0.3)_80%,transparent_100%)]
                      sm:[mask-image:linear-gradient(to_right,transparent_0%,transparent_10%,rgba(0,0,0,0.15)_30%,rgba(0,0,0,0.4)_50%,rgba(0,0,0,0.7)_70%,rgba(0,0,0,0.9)_100%)]
                      md:[mask-image:linear-gradient(to_right,transparent_0%,transparent_15%,rgba(0,0,0,0.2)_35%,rgba(0,0,0,0.5)_55%,rgba(0,0,0,0.75)_75%,rgba(0,0,0,0.9)_100%)]
-                     lg:[mask-image:linear-gradient(to_right,transparent_0%,transparent_25%,rgba(0,0,0,0.3)_45%,rgba(0,0,0,0.6)_65%,rgba(0,0,0,0.85)_85%,rgba(0,0,0,1)_100%)]"
+                     lg:[mask-image:linear-gradient(to_right,transparent_0%,transparent_25%,rgba(0,0,0,0.3)_45%,rgba(0,0,0,0.6)_65%,rgba(0,0,0,0.85)_85%,rgba(0,0,0,1)_100%)]
+                     transition-opacity duration-500 ${isVideoLoaded ? '' : 'opacity-0'}`}
+          style={{ transform: 'translateZ(0)' }}
         >
           <source src="/neon-tunnel.mp4" type="video/mp4" />
         </video>
