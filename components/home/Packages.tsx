@@ -104,7 +104,7 @@ const Packages: React.FC = memo(() => {
             className="text-4xl md:text-6xl font-bold mb-6"
             variants={headerVariants}
           >
-            Choose the Right <br />
+            Choose the Right <br className="hidden md:block" />
             <motion.span
               className="inline-block"
               initial={{ opacity: 0, y: 15 }}
@@ -112,7 +112,7 @@ const Packages: React.FC = memo(() => {
               viewport={{ once: true }}
               transition={{ delay: 0.15, duration: 0.4, ease: "easeOut" }}
             >
-              Plan for You
+              Plan for You<span className="text-[#DC0078]">.</span>
             </motion.span>
           </motion.h2>
           <motion.p 
@@ -149,7 +149,7 @@ const Packages: React.FC = memo(() => {
               <h3 className="text-2xl font-bold mb-2">Advisory</h3>
               <p className="text-sm text-gray-600 dark:text-gray-400">You execute. We guide.</p>
               <motion.div 
-                className="h-1 bg-gradient-to-r from-[#1BB8BD] to-[#1BB8BD]/50 rounded-full mt-4"
+                className="h-1 bg-gradient-to-r from-[#DC0078] to-[#DC0078]/50 rounded-full mt-4"
                 initial={{ width: 0 }}
                 whileInView={{ width: 48 }}
                 viewport={{ once: true }}
@@ -208,7 +208,7 @@ const Packages: React.FC = memo(() => {
               </div>
               <p className="text-sm text-gray-600 dark:text-gray-400">We build your presence with you.</p>
               <motion.div 
-                className="h-1 bg-gradient-to-r from-[#1BB8BD] to-[#1BB8BD]/50 rounded-full mt-4"
+                className="h-1 bg-gradient-to-r from-[#DC0078] to-[#DC0078]/50 rounded-full mt-4"
                 initial={{ width: 0 }}
                 whileInView={{ width: 48 }}
                 viewport={{ once: true }}
@@ -262,7 +262,7 @@ const Packages: React.FC = memo(() => {
               <h3 className="text-2xl font-bold mb-2">Authority</h3>
               <p className="text-sm text-gray-600 dark:text-gray-400">We build your presence for you.</p>
               <motion.div 
-                className="h-1 bg-gradient-to-r from-[#1BB8BD] to-[#1BB8BD]/50 rounded-full mt-4"
+                className="h-1 bg-gradient-to-r from-[#DC0078] to-[#DC0078]/50 rounded-full mt-4"
                 initial={{ width: 0 }}
                 whileInView={{ width: 48 }}
                 viewport={{ once: true }}

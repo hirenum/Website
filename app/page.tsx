@@ -139,7 +139,7 @@ const HirenumPage: React.FC = () => {
         <Packages />
 
         {/* Blog Section - Dynamic import */}
-        <Blog />
+        {/* <Blog /> */}
 
         {/* FAQ Section - Dynamic import */}
         <FAQ />

@@ -65,7 +65,7 @@ const WhyPeopleCome: React.FC<WhyPeopleComeProps> = memo(({ scrollToSection }) =
           </div>
 
           {/* SVG Tree Branches with animated balls */}
-          <svg className="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 100 100" preserveAspectRatio="none">
+          <svg className="absolute inset-0 w-full h-full pointer-events-none z-0" viewBox="0 0 100 100" preserveAspectRatio="none">
             <defs>
               <linearGradient id="branchGradient" x1="0%" y1="0%" x2="100%" y2="0%">
                 <stop offset="0%" stopColor="#DC0078" stopOpacity="0.6" />
@@ -103,14 +103,14 @@ const WhyPeopleCome: React.FC<WhyPeopleComeProps> = memo(({ scrollToSection }) =
           {painPointNodes.map((node, idx) => (
             <motion.div
               key={idx}
-              className="absolute w-[220px] lg:w-[250px] xl:w-[300px] will-change-transform"
+              className="absolute w-[220px] lg:w-[250px] xl:w-[300px] will-change-transform z-10"
               style={{ top: node.top, left: node.left, right: node.right, transform: 'translateY(-50%)' }}
               initial={{ opacity: 0, x: node.align === 'left' ? -20 : 20 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.4, delay: node.delay, ease: "easeOut" }}
               viewport={{ once: true, margin: "-50px" }}
             >
-              <div className="relative p-4 lg:p-5 xl:p-6 rounded-2xl border overflow-hidden group transition-colors duration-300 bg-transparent border-gray-300/50 dark:border-white/10 hover:bg-gradient-to-r hover:from-[#DC0078]/5 hover:to-[#1BB8BD]/5">
+              <div className="relative p-4 lg:p-5 xl:p-6 rounded-2xl border overflow-hidden group transition-colors duration-300 backdrop-blur-xl bg-white/30 dark:bg-black/30 border-gray-300/50 dark:border-white/10 hover:bg-gradient-to-r hover:from-[#DC0078]/5 hover:to-[#1BB8BD]/5">
                 <div className="relative z-10 flex items-start gap-3 xl:gap-4">
                   <div className="p-2 lg:p-2.5 xl:p-3 rounded-xl flex-shrink-0 transition-colors duration-300 bg-gray-200/50 dark:bg-white/5 text-[#17A8AD] dark:text-[#1BB8BD] group-hover:bg-[#1BB8BD] group-hover:text-white">
                     <node.icon className="w-5 h-5 lg:w-5 lg:h-5 xl:w-6 xl:h-6" />

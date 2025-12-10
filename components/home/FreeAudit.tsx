@@ -26,11 +26,11 @@ const FreeAudit: React.FC = memo(() => {
   };
 
   return (
-    <section className="py-12 sm:py-16 md:py-24 lg:py-32 relative overflow-hidden theme-transition">
+    <section id="linkedin-audit" className="py-12 sm:py-16 md:py-24 lg:py-32 relative overflow-hidden theme-transition">
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 md:px-12 lg:px-16 xl:px-8 2xl:px-6">
         {/* Centered Heading */}
         <h2 className="text-4xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-[var(--text-primary)] leading-tight text-center mb-8 sm:mb-12 md:mb-16">
-          Get Your Free <br/>LinkedIn Audit
+          Get Your Free <br/>LinkedIn Audit<span className="text-[#DC0078]">.</span>
         </h2>
         
         {/* Two Column Grid */}
