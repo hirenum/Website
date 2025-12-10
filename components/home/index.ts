@@ -11,7 +11,6 @@ export { default as Packages } from './Packages';
 export { default as FreeAudit } from './FreeAudit';
 export { default as Blog } from './Blog';
 export { default as FAQ } from './FAQ';
-export { default as FinalCTA } from './FinalCTA';
 export { default as Footer } from './Footer';
 export { default as DecorativeCircles } from './DecorativeCircles';
 export * from './Illustrations';

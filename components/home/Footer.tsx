@@ -8,11 +8,14 @@ interface FooterProps {
 
 const Footer: React.FC<FooterProps> = memo(({ scrollToSection }) => {
   return (
-    <footer className="bg-[var(--bg-primary)] pt-16 sm:pt-20 pb-6 px-6 sm:px-10 md:px-16 lg:px-24 overflow-hidden border-t border-[var(--border-color)]">
+    <footer className="bg-[var(--bg-primary)] pt-16 sm:pt-20 pb-6 px-6 sm:px-10 md:px-16 lg:px-24 overflow-hidden">
       <div className="max-w-7xl mx-auto">
         
+        {/* Divider Line */}
+        <div className="h-[1px] mb-12 sm:mb-16 bg-gradient-to-r from-transparent via-[#1BB8BD]/40 to-transparent dark:via-[#1BB8BD]/60"></div>
+        
         {/* Grid Links */}
-        <div className="flex justify-center mb-16 sm:mb-20">
+        <div className="flex justify-center mb-6 sm:mb-10">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-10 sm:gap-x-12 md:gap-x-16 lg:gap-x-20">
             <div>
               <p className="font-bold mb-4 sm:mb-6 uppercase tracking-wider text-xs sm:text-sm">Services</p>
@@ -50,7 +53,7 @@ const Footer: React.FC<FooterProps> = memo(({ scrollToSection }) => {
         </div>
 
         {/* Big Logo */}
-        <div className="border-t border-black/10 dark:border-white/10 pt-8 sm:pt-12 pb-4 sm:pb-8 flex justify-center">
+        <div className="pt-4 sm:pt-6 pb-4 sm:pb-8 flex justify-center">
           <span className="text-[15vw] sm:text-[12vw] leading-none font-bold text-transparent bg-clip-text bg-gradient-to-b from-gray-200 to-[#1BB8BD]/20 dark:from-gray-400 dark:to-[#1BB8BD]/20 tracking-tighter opacity-80 font-logo" aria-hidden="true">
             HIRENUM
           </span>

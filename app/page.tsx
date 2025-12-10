@@ -46,10 +46,6 @@ const FAQ = dynamic(() => import('@/components/home/FAQ'), {
   loading: () => <div className="min-h-[400px]" />
 });
 
-const FinalCTA = dynamic(() => import('@/components/home/FinalCTA'), {
-  loading: () => <div className="min-h-[300px]" />
-});
-
 const Footer = dynamic(() => import('@/components/home/Footer'), {
   loading: () => <div className="min-h-[300px]" />
 });
@@ -147,9 +143,6 @@ const HirenumPage: React.FC = () => {
 
         {/* FAQ Section - Dynamic import */}
         <FAQ />
-
-        {/* Final CTA Section - Dynamic import */}
-        <FinalCTA />
 
         {/* Free Audit Section - Dynamic import */}
         <FreeAudit />
