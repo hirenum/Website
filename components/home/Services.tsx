@@ -27,7 +27,7 @@ const Services: React.FC = memo(() => {
       <section id="what-we-do" className="py-12 sm:py-16 md:py-20 lg:py-24 relative overflow-hidden theme-transition bg-[var(--bg-primary)]">
         <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-6">
           <div className="text-center max-w-4xl mx-auto mb-10 sm:mb-14 md:mb-16 lg:mb-20">
-            <h2 className="text-2xl min-[400px]:text-[1.65rem] sm:text-3xl md:text-[2rem] lg:text-4xl font-bold mb-4 sm:mb-5 md:mb-6 leading-tight px-2">Disclaimer: We are NOT a content & social media agency<span className="text-[#DC0078]">.</span></h2>
+            <h2 className="text-3xl min-[400px]:text-[1.85rem] sm:text-4xl md:text-[2.2rem] lg:text-5xl font-bold mb-4 sm:mb-5 md:mb-6 leading-tight px-2">Disclaimer: We are NOT a content & social media agency<span className="text-[#DC0078]">.</span></h2>
             <p className="text-sm sm:text-base md:text-lg text-gray-600 dark:text-gray-400 px-2">
               We build thought leadership with a clear strategy, strong positioning, and consistent execution.
             </p>

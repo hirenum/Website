@@ -97,9 +97,9 @@ const HowItWorks: React.FC = memo(() => {
         </div>
 
         <div ref={timelineRef} className="relative max-w-5xl mx-auto">
-          <div className="absolute left-8 md:left-1/2 top-0 bottom-0 w-px bg-gray-300 dark:bg-zinc-700 md:-translate-x-1/2"></div>
+          <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-px bg-gray-300 dark:bg-zinc-700 md:-translate-x-1/2"></div>
           <div 
-            className="absolute left-8 md:left-1/2 top-0 w-px md:-translate-x-1/2 transition-all duration-300"
+            className="absolute left-4 md:left-1/2 top-0 w-px md:-translate-x-1/2 transition-all duration-300"
             style={{ 
               height: `${lineProgress * 100}%`, 
               opacity: lineProgress > 0 ? 0.65 : 0,
@@ -118,10 +118,10 @@ const HowItWorks: React.FC = memo(() => {
                 >
                   <div className="hidden md:block w-1/2"></div>
                   
-                  <div className={`absolute left-8 md:left-1/2 -translate-x-1/2 w-4 h-4 rounded-full border-2 border-[#1BB8BD] z-10 bg-[var(--bg-primary)] transition-all duration-500 ${isActive ? 'shadow-[0_0_8px_rgba(27,184,189,0.4)] scale-125' : ''}`}>
+                  <div className={`absolute left-4 md:left-1/2 -translate-x-1/2 w-4 h-4 rounded-full border-2 border-[#1BB8BD] z-10 bg-[var(--bg-primary)] transition-all duration-500 ${isActive ? 'shadow-[0_0_8px_rgba(27,184,189,0.4)] scale-125' : ''}`}>
                   </div>
 
-                  <div className="ml-20 md:ml-0 md:w-1/2 md:px-10 w-full">
+                  <div className="ml-12 md:ml-0 md:w-1/2 md:px-10 w-full">
                     <div className={`p-8 rounded-xl border border-white/40 dark:border-zinc-800/50 transition-all duration-300 relative overflow-hidden bg-[linear-gradient(135deg,rgba(240,240,240,0.95)_0%,rgba(245,245,245,0.9)_70%,rgba(250,250,250,0.85)_100%)] dark:bg-[linear-gradient(135deg,var(--bg-primary)_0%,var(--bg-primary)_70%,rgba(63,63,70,0.5)_100%)] shadow-[0_2px_15px_rgba(0,0,0,0.02)] dark:shadow-[0_4px_30px_rgba(0,0,0,0.05)] ${isActive ? 'shadow-md shadow-[#1BB8BD]/5 -translate-y-1' : ''}`}>
                       <div className="absolute inset-0 bg-gradient-to-br from-gray-200/10 dark:from-zinc-700/10 via-transparent to-gray-100/10 dark:to-zinc-800/10"></div>
                       <div className={`absolute inset-0 bg-gradient-to-r from-[#1BB8BD] to-[#DC0078] transition-opacity duration-500 ${isActive ? 'opacity-5' : 'opacity-0'}`}></div>
