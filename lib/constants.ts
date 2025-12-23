@@ -5,7 +5,7 @@ export const SITE_EMAIL = 'info@hirenum.com';
 
 // Calendly URL - Replace with your actual Calendly link
 // Example: https://calendly.com/hirenum/discovery-call
-export const CALENDLY_URL = 'https://calendly.com/hirenum';
+export const CALENDLY_URL = 'https://calendly.com/noorulainjaved1104/linkedin-personal-branding-with-hirenum';
 
 // Form submission API endpoint
 // After deploying the Cloudflare Worker, update this URL
