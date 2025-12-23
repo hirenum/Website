@@ -3,6 +3,7 @@
 import React, { memo } from 'react';
 import { motion, type Variants } from 'framer-motion';
 import { Check } from 'lucide-react';
+import { CALENDLY_URL } from '@/lib/constants';
 
 const containerVariants: Variants = {
   hidden: { opacity: 0 },
@@ -179,7 +180,7 @@ const Packages: React.FC = memo(() => {
 
             <motion.a 
               href="#contact"
-              onClick={(e) => { e.preventDefault(); window.open('https://calendly.com', '_blank'); }}
+              onClick={(e) => { e.preventDefault(); window.open(CALENDLY_URL, '_blank'); }}
               className="self-start py-3 px-8 rounded-full font-bold text-center transition-all duration-300 bg-zinc-900 dark:bg-white text-white dark:text-zinc-900 hover:bg-gradient-to-r hover:from-[#1BB8BD] hover:to-[#DC0078] hover:text-white font-btn relative overflow-hidden group/btn hover:scale-105 active:scale-95"
             >
               <div className="absolute inset-0 bg-white/20 translate-y-full group-hover/btn:translate-y-0 transition-transform duration-300"></div>
@@ -238,7 +239,7 @@ const Packages: React.FC = memo(() => {
 
             <motion.a 
               href="#contact"
-              onClick={(e) => { e.preventDefault(); window.open('https://calendly.com', '_blank'); }}
+              onClick={(e) => { e.preventDefault(); window.open(CALENDLY_URL, '_blank'); }}
               className="self-start py-3 px-8 rounded-full font-bold text-center transition-all duration-300 bg-zinc-900 dark:bg-white text-white dark:text-zinc-900 hover:bg-gradient-to-r hover:from-[#1BB8BD] hover:to-[#DC0078] hover:text-white font-btn relative overflow-hidden group/btn hover:scale-105 active:scale-95"
             >
               <div className="absolute inset-0 bg-white/20 translate-y-full group-hover/btn:translate-y-0 transition-transform duration-300"></div>
@@ -292,7 +293,7 @@ const Packages: React.FC = memo(() => {
 
             <motion.a 
               href="#contact"
-              onClick={(e) => { e.preventDefault(); window.open('https://calendly.com', '_blank'); }}
+              onClick={(e) => { e.preventDefault(); window.open(CALENDLY_URL, '_blank'); }}
               className="self-start py-3 px-8 rounded-full font-bold text-center transition-all duration-300 bg-zinc-900 dark:bg-white text-white dark:text-zinc-900 hover:bg-gradient-to-r hover:from-[#1BB8BD] hover:to-[#DC0078] hover:text-white font-btn relative overflow-hidden group/btn hover:scale-105 active:scale-95"
             >
               <div className="absolute inset-0 bg-white/20 translate-y-full group-hover/btn:translate-y-0 transition-transform duration-300"></div>

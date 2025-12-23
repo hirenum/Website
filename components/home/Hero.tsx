@@ -2,6 +2,7 @@
 
 import React, { memo, useRef, useEffect, useState } from 'react';
 import { ArrowRight } from 'lucide-react';
+import { CALENDLY_URL } from '@/lib/constants';
 
 const Hero: React.FC = memo(() => {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -102,7 +103,7 @@ const Hero: React.FC = memo(() => {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-2 sm:pt-3 md:pt-4 justify-center lg:justify-start">
-            <button onClick={() => window.open('https://calendly.com', '_blank')} className="bg-[#1BB8BD] text-white text-sm sm:text-base lg:text-base xl:text-lg font-bold px-5 sm:px-6 md:px-8 py-3 sm:py-3.5 md:py-4 rounded-full transition-all duration-500 flex items-center justify-center gap-2 group relative overflow-hidden hover:shadow-[0_10px_40px_rgba(27,184,189,0.4)] hover:scale-105 active:scale-95 font-btn w-full sm:w-auto">
+            <button onClick={() => window.open(CALENDLY_URL, '_blank')} className="bg-[#1BB8BD] text-white text-sm sm:text-base lg:text-base xl:text-lg font-bold px-5 sm:px-6 md:px-8 py-3 sm:py-3.5 md:py-4 rounded-full transition-all duration-500 flex items-center justify-center gap-2 group relative overflow-hidden hover:shadow-[0_10px_40px_rgba(27,184,189,0.4)] hover:scale-105 active:scale-95 font-btn w-full sm:w-auto">
               <span className="relative z-10 whitespace-nowrap">BOOK A DISCOVERY CALL</span>
               <ArrowRight className="relative z-10 group-hover:translate-x-2 transition-transform duration-300 w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" />
               <div className="absolute inset-0 bg-gradient-to-r from-[#DC0078] to-[#1BB8BD] translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-500"></div>

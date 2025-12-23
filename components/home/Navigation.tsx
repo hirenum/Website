@@ -3,6 +3,7 @@
 import React, { memo } from 'react';
 import { Menu, X, Sun, Moon } from 'lucide-react';
 import { useTheme } from 'next-themes';
+import { CALENDLY_URL } from '@/lib/constants';
 
 interface NavigationProps {
   scrolled: boolean;
@@ -53,7 +54,7 @@ const Navigation: React.FC<NavigationProps> = memo(({
           </button>
 
           <button 
-            onClick={() => window.open('https://calendly.com', '_blank')}
+            onClick={() => window.open(CALENDLY_URL, '_blank')}
             className="bg-[#1BB8BD] text-white px-5 py-2 rounded-full font-bold transition-all duration-300 transform hover:scale-105 hover:shadow-[0_0_20px_rgba(27,184,189,0.5)] hover:bg-[#1fcfd4] relative overflow-hidden group font-btn"
           >
             <span className="relative z-10 font-btn">Book a Call</span>
@@ -92,7 +93,7 @@ const Navigation: React.FC<NavigationProps> = memo(({
           <button onClick={() => scrollToSection('packages')} className="text-lg hover:text-[#17A8AD] dark:hover:text-[#1BB8BD] transition-all duration-300 hover:translate-x-2">Packages</button>
           <button onClick={() => scrollToSection('learn-for-free')} className="text-lg hover:text-[#17A8AD] dark:hover:text-[#1BB8BD] transition-all duration-300 hover:translate-x-2">Learn for Free</button>
           <button 
-            onClick={() => { setIsMenuOpen(false); window.open('https://calendly.com', '_blank'); }}
+            onClick={() => { setIsMenuOpen(false); window.open(CALENDLY_URL, '_blank'); }}
             className="bg-[#1BB8BD] text-white px-5 py-3 rounded-full font-bold text-center transition-all duration-300 hover:bg-[#1fcfd4]"
           >
             Book a Call

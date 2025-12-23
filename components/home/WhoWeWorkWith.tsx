@@ -4,6 +4,7 @@ import React, { memo } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 import DecorativeCircles from './DecorativeCircles';
+import { CALENDLY_URL } from '@/lib/constants';
 
 const WhoWeWorkWith: React.FC = memo(() => {
   const cards = [
@@ -154,7 +155,7 @@ const WhoWeWorkWith: React.FC = memo(() => {
         >
           <p className="text-xl md:text-2xl font-semibold text-gray-700 dark:text-gray-300 mb-8">Yes, this is for you<span className="text-[#DC0078]">.</span></p>
           <button 
-            onClick={() => window.open('https://calendly.com', '_blank')}
+            onClick={() => window.open(CALENDLY_URL, '_blank')}
             className="bg-[#1BB8BD] text-white text-lg px-8 py-4 rounded-full font-bold transition-all duration-500 inline-flex items-center gap-2 group relative overflow-hidden hover:shadow-[0_10px_30px_rgba(27,184,189,0.25)] hover:scale-105 active:scale-95 font-btn"
           >
             <span className="relative z-10">Let{"'"}s Talk</span>

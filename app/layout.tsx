@@ -142,7 +142,7 @@ const jsonLd = {
       contactPoint: {
         "@type": "ContactPoint",
         contactType: "customer service",
-        email: "hello@hirenum.com",
+        email: "info@hirenum.com",
       },
     },
     // Website Schema

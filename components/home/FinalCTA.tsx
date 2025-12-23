@@ -1,6 +1,7 @@
 'use client';
 
 import React, { memo, useState } from 'react';
+import { SITE_EMAIL, WEB3FORMS_ACCESS_KEY } from '@/lib/constants';
 
 const FreeAudit: React.FC = memo(() => {
   const [formData, setFormData] = useState({
@@ -10,12 +11,44 @@ const FreeAudit: React.FC = memo(() => {
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isError, setIsError] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission
-    console.log('Form submitted:', formData);
-    setIsSubmitted(true);
+    setIsSubmitting(true);
+    setIsError(false);
+
+    try {
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          access_key: WEB3FORMS_ACCESS_KEY,
+          subject: `New LinkedIn Audit Request from ${formData.name}`,
+          from_name: 'Hirenum Website',
+          to: SITE_EMAIL,
+          name: formData.name,
+          email: formData.email,
+          linkedin_url: formData.linkedinUrl,
+          message: `Name: ${formData.name}\nEmail: ${formData.email}\nLinkedIn URL: ${formData.linkedinUrl}`,
+        }),
+      });
+
+      const data = await response.json();
+      
+      if (data.success) {
+        setIsSubmitted(true);
+        setFormData({ name: '', email: '', linkedinUrl: '' });
+      } else {
+        setIsError(true);
+      }
+    } catch {
+      setIsError(true);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -141,10 +174,11 @@ const FreeAudit: React.FC = memo(() => {
                   {/* Submit Button */}
                   <button
                     type="submit"
-                    className="w-full sm:w-auto self-start py-3 px-8 rounded-full font-bold text-center transition-all duration-300 bg-zinc-900 dark:bg-white text-white dark:text-zinc-900 hover:bg-gradient-to-r hover:from-[#1BB8BD] hover:to-[#DC0078] hover:text-white font-btn relative overflow-hidden group hover:scale-105 active:scale-95"
+                    disabled={isSubmitting}
+                    className="w-full sm:w-auto self-start py-3 px-8 rounded-full font-bold text-center transition-all duration-300 bg-zinc-900 dark:bg-white text-white dark:text-zinc-900 hover:bg-gradient-to-r hover:from-[#1BB8BD] hover:to-[#DC0078] hover:text-white font-btn relative overflow-hidden group hover:scale-105 active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
                   >
                     <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
-                    <span className="relative z-10">Submit</span>
+                    <span className="relative z-10">{isSubmitting ? 'Submitting...' : 'Submit'}</span>
                   </button>
 
                   
