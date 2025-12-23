@@ -37,6 +37,7 @@ const Footer: React.FC<FooterProps> = memo(({ scrollToSection }) => {
               <p className="font-bold mb-4 sm:mb-6 uppercase tracking-wider text-xs sm:text-sm">Socials</p>
               <ul className="space-y-3 sm:space-y-4 text-xs sm:text-sm text-gray-500 dark:text-gray-400">
                 <li><a href="https://www.linkedin.com/company/hirenum/" target="_blank" rel="noopener noreferrer" className="hover:text-[#17A8AD] dark:hover:text-[#1BB8BD] transition-colors">LinkedIn</a></li>
+                <li><a href="https://wa.me/" target="_blank" rel="noopener noreferrer" className="hover:text-[#17A8AD] dark:hover:text-[#1BB8BD] transition-colors">WhatsApp</a></li>
                 <li><a href="mailto:info@hirenum.com" className="hover:text-[#17A8AD] dark:hover:text-[#1BB8BD] transition-colors">Email</a></li>
               </ul>
             </div>

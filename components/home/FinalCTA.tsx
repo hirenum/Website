@@ -1,7 +1,7 @@
 'use client';
 
 import React, { memo, useState } from 'react';
-import { SITE_EMAIL, WEB3FORMS_ACCESS_KEY } from '@/lib/constants';
+import { FORM_API_URL } from '@/lib/constants';
 
 const FreeAudit: React.FC = memo(() => {
   const [formData, setFormData] = useState({
@@ -19,24 +19,19 @@ const FreeAudit: React.FC = memo(() => {
     setIsError(false);
 
     try {
-      const response = await fetch('https://api.web3forms.com/submit', {
+      const response = await fetch(FORM_API_URL, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          access_key: WEB3FORMS_ACCESS_KEY,
-          subject: `New LinkedIn Audit Request from ${formData.name}`,
-          from_name: 'Hirenum Website',
-          to: SITE_EMAIL,
           name: formData.name,
           email: formData.email,
-          linkedin_url: formData.linkedinUrl,
-          message: `Name: ${formData.name}\nEmail: ${formData.email}\nLinkedIn URL: ${formData.linkedinUrl}`,
+          linkedinUrl: formData.linkedinUrl,
         }),
       });
 
-      const data = await response.json();
+      const data = await response.json() as { success: boolean };
       
       if (data.success) {
         setIsSubmitted(true);
