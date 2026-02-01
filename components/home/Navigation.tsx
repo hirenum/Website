@@ -38,10 +38,11 @@ const Navigation: React.FC<NavigationProps> = memo(({
         {/* Desktop Nav */}
         <div className="hidden lg:flex items-center space-x-6 text-sm font-medium text-gray-600 dark:text-gray-300">
           <button onClick={() => scrollToSection('what-we-do')} className="relative hover:text-[#17A8AD] dark:hover:text-[#1BB8BD] transition-all duration-300 after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-gradient-to-r after:from-[#1BB8BD] after:to-[#DC0078] hover:after:w-full after:transition-all after:duration-300">What We Do</button>
+          <button onClick={() => scrollToSection('why-it-works')} className="relative hover:text-[#17A8AD] dark:hover:text-[#1BB8BD] transition-all duration-300 after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-gradient-to-r after:from-[#1BB8BD] after:to-[#DC0078] hover:after:w-full after:transition-all after:duration-300">Why It Works</button>
           <button onClick={() => scrollToSection('who-we-work-with')} className="relative hover:text-[#17A8AD] dark:hover:text-[#1BB8BD] transition-all duration-300 after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-gradient-to-r after:from-[#1BB8BD] after:to-[#DC0078] hover:after:w-full after:transition-all after:duration-300">Who We Work With</button>
           <button onClick={() => scrollToSection('how-it-works')} className="relative hover:text-[#17A8AD] dark:hover:text-[#1BB8BD] transition-all duration-300 after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-gradient-to-r after:from-[#1BB8BD] after:to-[#DC0078] hover:after:w-full after:transition-all after:duration-300">How It Works</button>
           <button onClick={() => scrollToSection('packages')} className="relative hover:text-[#17A8AD] dark:hover:text-[#1BB8BD] transition-all duration-300 after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-gradient-to-r after:from-[#1BB8BD] after:to-[#DC0078] hover:after:w-full after:transition-all after:duration-300">Packages</button>
-          <button onClick={() => scrollToSection('learn-for-free')} className="relative hover:text-[#17A8AD] dark:hover:text-[#1BB8BD] transition-all duration-300 after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-gradient-to-r after:from-[#1BB8BD] after:to-[#DC0078] hover:after:w-full after:transition-all after:duration-300">Learn for Free</button>
+          <button onClick={() => scrollToSection('faqs')} className="relative hover:text-[#17A8AD] dark:hover:text-[#1BB8BD] transition-all duration-300 after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-gradient-to-r after:from-[#1BB8BD] after:to-[#DC0078] hover:after:w-full after:transition-all after:duration-300">FAQs</button>
           
           {/* Theme Toggle */}
           <button 
@@ -88,10 +89,11 @@ const Navigation: React.FC<NavigationProps> = memo(({
           className="lg:hidden absolute top-full left-0 w-full border-b p-6 flex flex-col space-y-4 shadow-2xl bg-[var(--bg-primary)] border-[var(--border-color)]"
         >
           <button onClick={() => scrollToSection('what-we-do')} className="text-lg hover:text-[#17A8AD] dark:hover:text-[#1BB8BD] transition-all duration-300 hover:translate-x-2">What We Do</button>
+          <button onClick={() => scrollToSection('why-it-works')} className="text-lg hover:text-[#17A8AD] dark:hover:text-[#1BB8BD] transition-all duration-300 hover:translate-x-2">Why It Works</button>
           <button onClick={() => scrollToSection('who-we-work-with')} className="text-lg hover:text-[#17A8AD] dark:hover:text-[#1BB8BD] transition-all duration-300 hover:translate-x-2">Who We Work With</button>
           <button onClick={() => scrollToSection('how-it-works')} className="text-lg hover:text-[#17A8AD] dark:hover:text-[#1BB8BD] transition-all duration-300 hover:translate-x-2">How It Works</button>
           <button onClick={() => scrollToSection('packages')} className="text-lg hover:text-[#17A8AD] dark:hover:text-[#1BB8BD] transition-all duration-300 hover:translate-x-2">Packages</button>
-          <button onClick={() => scrollToSection('learn-for-free')} className="text-lg hover:text-[#17A8AD] dark:hover:text-[#1BB8BD] transition-all duration-300 hover:translate-x-2">Learn for Free</button>
+          <button onClick={() => scrollToSection('faqs')} className="text-lg hover:text-[#17A8AD] dark:hover:text-[#1BB8BD] transition-all duration-300 hover:translate-x-2">FAQs</button>
           <button 
             onClick={() => { setIsMenuOpen(false); window.open(CALENDLY_URL, '_blank'); }}
             className="bg-[#1BB8BD] text-white px-5 py-3 rounded-full font-bold text-center transition-all duration-300 hover:bg-[#1fcfd4]"
