@@ -38,11 +38,11 @@ const Footer: React.FC<FooterProps> = memo(({ scrollToSection }) => {
               <ul className="space-y-3 sm:space-y-4 text-xs sm:text-sm text-gray-500 dark:text-gray-400">
                 <li><a href="https://www.linkedin.com/company/hirenum/" target="_blank" rel="noopener noreferrer" className="hover:text-[#17A8AD] dark:hover:text-[#1BB8BD] transition-colors">LinkedIn</a></li>
                 <li><a href="https://wa.me/" target="_blank" rel="noopener noreferrer" className="hover:text-[#17A8AD] dark:hover:text-[#1BB8BD] transition-colors">WhatsApp</a></li>
-                <li><a href="mailto:info@hirenum.com" className="hover:text-[#17A8AD] dark:hover:text-[#1BB8BD] transition-colors">Email</a></li>
+                <li><a href="mailto:hello@hirenum.com" className="hover:text-[#17A8AD] dark:hover:text-[#1BB8BD] transition-colors">Email</a></li>
               </ul>
             </div>
             <div>
-              <p className="font-bold mb-4 sm:mb-6  uppercase tracking-wider text-xs sm:text-sm">INFO@HIRENUM.COM</p>
+              <p className="font-bold mb-4 sm:mb-6  uppercase tracking-wider text-xs sm:text-sm">HELLO@HIRENUM.COM</p>
               <div className="text-xs sm:text-sm text-gray-500 dark:text-gray-400 space-y-2">
                 <p className="hover:text-[#17A8AD] dark:hover:text-[#1BB8BD] cursor-pointer transition-colors">Privacy Policy</p>
                 <p>©2025 All Rights Reserved</p>
