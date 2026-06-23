@@ -34,8 +34,8 @@ const Footer: React.FC<FooterProps> = memo(({ scrollToSection }) => {
               </ul>
             </div>
             <div>
-              <p className="font-bold mb-4 sm:mb-6 uppercase tracking-wider text-xs sm:text-sm">Socials</p>
-              <div className="flex flex-col items-start gap-4">
+              <p className="font-bold mb-4 sm:mb-6 uppercase tracking-wider text-xs sm:text-sm text-center">Socials</p>
+              <div className="flex flex-col items-center gap-4">
                 <a href="https://www.linkedin.com/company/hirenum/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="text-[#0A66C2] hover:opacity-80 transition-opacity">
                   <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5" aria-hidden="true">
                     <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z" />
@@ -68,7 +68,7 @@ const Footer: React.FC<FooterProps> = memo(({ scrollToSection }) => {
               </div>
             </div>
             <div>
-              <p className="font-bold mb-4 sm:mb-6  uppercase tracking-wider text-xs sm:text-sm">HELLO@HIRENUM.COM</p>
+              <a href="mailto:hello@hirenum.com" className="block font-bold mb-4 sm:mb-6 tracking-wider text-xs sm:text-sm hover:text-[#17A8AD] dark:hover:text-[#1BB8BD] transition-colors">hello@hirenum.com</a>
               <div className="text-xs sm:text-sm text-gray-500 dark:text-gray-400 space-y-2">
                 <p className="hover:text-[#17A8AD] dark:hover:text-[#1BB8BD] cursor-pointer transition-colors">Privacy Policy</p>
                 <p>©2025 All Rights Reserved</p>

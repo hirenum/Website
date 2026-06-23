@@ -1,6 +1,7 @@
 'use client';
 
 import React, { memo } from 'react';
+import Image from 'next/image';
 import { Menu, X, Sun, Moon } from 'lucide-react';
 import { useTheme } from 'next-themes';
 import { CALENDLY_URL } from '@/lib/constants';
@@ -31,9 +32,16 @@ const Navigation: React.FC<NavigationProps> = memo(({
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${scrolled ? 'backdrop-blur-md py-4 border-b bg-[var(--nav-bg)] border-[var(--border-color)]' : 'bg-transparent py-6 border-transparent'}`}
     >
       <div className="w-full px-8 flex justify-between items-center">
-        <div className="text-2xl text-[#1BB8BD] font-bold tracking-tighter cursor-pointer font-logo" onClick={() => scrollToSection('start-here')}>
-          H<span className="relative">ı<span className="absolute top-[0.15em] left-1 -translate-x-1/2 w-[0.18em] h-[0.18em] bg-[#dc0078] rounded-full"></span></span>renum
-        </div>
+        <button onClick={() => scrollToSection('start-here')} className="cursor-pointer" aria-label="Hirenum home">
+          <Image
+            src="/hirenum-logo.png"
+            alt="Hirenum"
+            width={1183}
+            height={216}
+            priority
+            className="h-7 w-auto"
+          />
+        </button>
 
         {/* Desktop Nav */}
         <div className="hidden lg:flex items-center space-x-6 text-sm font-medium text-gray-600 dark:text-gray-300">
