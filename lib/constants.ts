@@ -11,4 +11,4 @@ export const CALENDLY_URL = 'https://calendly.com/noorulainjaved1104/linkedin-pe
 // After deploying the Cloudflare Worker, update this URL
 // It will be something like: https://hirenum-form-handler.<your-subdomain>.workers.dev
 // Or if you set up a custom route: https://api.hirenum.com/submit
-export const FORM_API_URL = 'https://hirenum-form-handler.aniqaaqeel6.workers.dev';
+export const FORM_API_URL = 'https://hirenum-form-handler.curly-sky-3aeb.workers.dev';
