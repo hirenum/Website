@@ -12,13 +12,7 @@
 	],
 	"observability": {
 		"enabled": true
-	},
-	"send_email": [
-		{
-			"name": "SEND_EMAIL",
-			"destination_address": "hello@hirenum.com"
-		}
-	]
+	}
 	/**
 	 * Smart Placement
 	 * https://developers.cloudflare.com/workers/configuration/smart-placement/#smart-placement

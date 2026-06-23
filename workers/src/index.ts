@@ -1,9 +1,5 @@
-import { EmailMessage } from "cloudflare:email";
-import { createMimeMessage } from "mimetext";
-
 export default {
-	async fetch(request, env, ctx): Promise<Response> {
-		// Handle CORS preflight requests
+	async fetch(request: Request, env: any): Promise<Response> {
 		if (request.method === "OPTIONS") {
 			return new Response(null, {
 				headers: {
@@ -19,7 +15,11 @@ export default {
 		}
 
 		try {
-			const { name, email, linkedinUrl } = await request.json() as { name: string; email: string; linkedinUrl: string };
+			const { name, email, linkedinUrl } = await request.json() as {
+				name: string;
+				email: string;
+				linkedinUrl: string;
+			};
 
 			if (!name || !email || !linkedinUrl) {
 				return new Response(JSON.stringify({ success: false, error: "Missing required fields" }), {
@@ -31,23 +31,25 @@ export default {
 				});
 			}
 
-			const msg = createMimeMessage();
-			msg.setSender({ name: "Hirenum Worker", addr: "hello@hirenum.com" });
-			msg.setRecipient("hello@hirenum.com");
-			msg.setHeader("Reply-To", email);
-			msg.setSubject(`New LinkedIn Audit Request from ${name}`);
-			msg.addMessage({
-				contentType: "text/plain",
-				data: `Name: ${name}\nEmail: ${email}\nLinkedIn URL: ${linkedinUrl}`,
+			const response = await fetch("https://api.resend.com/emails", {
+				method: "POST",
+				headers: {
+					"Authorization": `Bearer ${env.RESEND_API_KEY}`,
+					"Content-Type": "application/json",
+				},
+				body: JSON.stringify({
+					from: "Hirenum Form <hello@hirenum.com>",
+					to: "hello@hirenum.com",
+					reply_to: email,
+					subject: `New LinkedIn Audit Request from ${name}`,
+					text: `Name: ${name}\nEmail: ${email}\nLinkedIn URL: ${linkedinUrl}`,
+				}),
 			});
 
-			const message = new EmailMessage(
-				"hello@hirenum.com",
-				"hello@hirenum.com",
-				msg.asRaw()
-			);
-
-			await env.SEND_EMAIL.send(message);
+			if (!response.ok) {
+				const error = await response.text();
+				throw new Error(`Resend API error: ${error}`);
+			}
 
 			return new Response(JSON.stringify({ success: true }), {
 				headers: {
@@ -65,4 +67,4 @@ export default {
 			});
 		}
 	},
-} satisfies ExportedHandler<Env>;
+};
