@@ -1,7 +1,7 @@
 // Site-wide constants
 // Update these values to configure your website
 
-export const SITE_EMAIL = 'info@hirenum.com';
+export const SITE_EMAIL = 'hello@hirenum.com';
 
 // Calendly URL - Replace with your actual Calendly link
 // Example: https://calendly.com/hirenum/discovery-call

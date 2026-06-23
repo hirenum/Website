@@ -32,8 +32,8 @@ export default {
 			}
 
 			const msg = createMimeMessage();
-			msg.setSender({ name: "Hirenum Worker", addr: "info@hirenum.com" });
-			msg.setRecipient("info@hirenum.com");
+			msg.setSender({ name: "Hirenum Worker", addr: "hello@hirenum.com" });
+			msg.setRecipient("hello@hirenum.com");
 			msg.setHeader("Reply-To", email);
 			msg.setSubject(`New LinkedIn Audit Request from ${name}`);
 			msg.addMessage({
@@ -42,8 +42,8 @@ export default {
 			});
 
 			const message = new EmailMessage(
-				"info@hirenum.com",
-				"info@hirenum.com",
+				"hello@hirenum.com",
+				"hello@hirenum.com",
 				msg.asRaw()
 			);
 

@@ -16,7 +16,7 @@
 	"send_email": [
 		{
 			"name": "SEND_EMAIL",
-			"destination_address": "info@hirenum.com"
+			"destination_address": "hello@hirenum.com"
 		}
 	]
 	/**
