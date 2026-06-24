@@ -23,7 +23,7 @@ const siteUrl = "https://hirenum.com";
 export const metadata: Metadata = {
   // Basic metadata
   title: {
-    default: "Hirenum — LinkedIn Personal Branding for Founders & Leaders",
+    default: "Hirenum | LinkedIn Personal Branding for Founders & Leaders",
     template: "%s | Hirenum",
   },
   description: "We help founders, entrepreneurs, and C-suites build strategic LinkedIn personal brands that turn them into their industry's go-to thought leaders.",
