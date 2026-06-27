@@ -36,8 +36,8 @@ const Navigation: React.FC<NavigationProps> = memo(({
           <Image
             src="/hirenum-logo.png"
             alt="Hirenum"
-            width={1183}
-            height={216}
+            width={1178}
+            height={204}
             priority
             className="h-7 w-auto"
           />

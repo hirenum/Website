@@ -43,25 +43,22 @@ export const metadata: Metadata = {
     "LinkedIn Content Strategy",
     "Executive LinkedIn",
     "Leadership Branding",
+    "LinkdedIn"
   ],
   authors: [{ name: "Hirenum", url: siteUrl }],
   creator: "Hirenum",
   publisher: "Hirenum",
   
-  // Icons
-  icons: {
-    icon: [
-      { url: "/favicon/favicon.ico" },
-      { url: "/favicon/favicon.svg", type: "image/svg+xml" },
-      { url: "/favicon/favicon-96x96.png", type: "image/png", sizes: "96x96" },
-    ],
-    apple: [
-      { url: "/favicon/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
-    ],
-  },
-  
+  // Icons: intentionally NOT declared here.
+  // The single source of truth is the Next.js file convention in /app:
+  //   app/favicon.ico, app/icon.png, app/icon.svg, app/apple-icon.png
+  // Next.js emits these as content-hashed URLs (e.g. /icon.png?<hash>),
+  // which auto-busts browser & crawler caches whenever the artwork changes.
+  // Declaring metadata.icons here too would emit a second, conflicting set
+  // of <link rel="icon"> tags pointing at /favicon/* — do not re-add it.
+
   // Manifest for PWA
-  manifest: "/favicon/site.webmanifest",
+  manifest: "/site.webmanifest",
   
   // Robots directives
   robots: {
@@ -80,8 +77,8 @@ export const metadata: Metadata = {
   
   // Open Graph metadata for social sharing
   openGraph: {
-    title: "Hirenum — LinkedIn Personal Branding for Founders & Leaders",
-    description: "We help founders, entrepreneurs, and C-suites build strategic LinkedIn personal brands that turn them into their industry's go-to thought leaders.",
+    title: "LinkedIn Personal Branding for Founders & CEOs | Hirenum",
+    description: "Turn your LinkedIn profile into a source of inbound clients. We help founders and CEOs build the positioning and content that drives real thought leadership and business.",
     url: siteUrl,
     siteName: "Hirenum",
     locale: "en_US",
@@ -99,8 +96,8 @@ export const metadata: Metadata = {
   // Twitter Card metadata
   twitter: {
     card: "summary_large_image",
-    title: "Hirenum — LinkedIn Personal Branding for Founders & Leaders",
-    description: "We help founders, entrepreneurs, and C-suites build strategic LinkedIn personal brands that turn them into their industry's go-to thought leaders.",
+    title: "LinkedIn Personal Branding for Founders & CEOs | Hirenum",
+    description: "Turn your LinkedIn profile into a source of inbound clients. We help founders and CEOs build the positioning and content that drives real thought leadership and business.",
     creator: "@hirenum",
     site: "@hirenum",
     images: [`${siteUrl}/og-image.png`],
@@ -111,12 +108,12 @@ export const metadata: Metadata = {
     canonical: siteUrl,
   },
   
-  // Verification tokens (add your actual tokens when available)
-  verification: {
-    google: "your-google-verification-code", // Replace with actual code
-    // yandex: "your-yandex-verification-code",
-    // yahoo: "your-yahoo-verification-code",
-  },
+  // Verification tokens. Leave commented until you have the REAL token from
+  // Search Console — emitting a placeholder value renders a bogus
+  // <meta name="google-site-verification"> tag that can fail verification.
+  // verification: {
+  //   google: "REAL-TOKEN-FROM-SEARCH-CONSOLE",
+  // },
   
   // Category
   category: "Business Services",
@@ -142,7 +139,9 @@ const jsonLd = {
       url: siteUrl,
       logo: {
         "@type": "ImageObject",
-        url: `${siteUrl}/logo.png`,
+        // Square "hi" mark — same artwork as app/icon.png, served from a
+        // stable public URL so Google can use it as the site's logo/icon.
+        url: `${siteUrl}/icon-512x512.png`,
         width: 512,
         height: 512,
       },
