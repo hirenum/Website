@@ -35,6 +35,8 @@
 # intentionally placed AFTER the broad /*.png and /*.ico rules so they win.
 /favicon.ico
   Cache-Control: public,max-age=3600,must-revalidate
+/og-image.png
+  Cache-Control: public,max-age=3600,must-revalidate
 /icon-512x512.png
   Cache-Control: public,max-age=3600,must-revalidate
 /logo.png
